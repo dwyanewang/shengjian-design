@@ -12,7 +12,9 @@
 
 ## 怎么看
 
-不用安装任何东西。直接用浏览器打开 HTML 文件就能看（`file://` 下也能用）：
+**在线预览：https://dwyanewang.github.io/shengjian-design/**（GitHub Pages，首页列出了所有原型的入口）
+
+也可以在本地看，不用安装任何东西。直接用浏览器打开 HTML 文件就行（`file://` 下也能用）：
 
 - 工作台最新一轮：[`workbench/v12.2/index.html`](workbench/v12.2/index.html)
 - 商业化重新设计的三个方向：[`redesign/design-demos/dir-1.html`](redesign/design-demos/dir-1.html)、[`dir-2.html`](redesign/design-demos/dir-2.html)、[`dir-3.html`](redesign/design-demos/dir-3.html)

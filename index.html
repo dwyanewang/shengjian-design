@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>声剪 · 设计稿</title>
+<meta name="description" content="声剪（Android 音频编辑 App）的交互设计稿：工作台逐轮迭代与商业化重新设计的三个方向。">
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --card: #ffffff;
+    --ink: #16181d;
+    --muted: #5b6170;
+    --line: #e3e6ec;
+    --accent: #1f6feb;
+    --accent-soft: #e8f0fe;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111318;
+      --card: #1a1d24;
+      --ink: #eceef3;
+      --muted: #a2a8b6;
+      --line: #2b2f39;
+      --accent: #6ea8ff;
+      --accent-soft: #1c2a44;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.65 system-ui, -apple-system, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+  }
+  main { max-width: 960px; margin: 0 auto; padding: 56px 20px 72px; }
+  header h1 { font-size: 34px; line-height: 1.2; margin: 0 0 12px; letter-spacing: 0.02em; }
+  header p { margin: 0; color: var(--muted); max-width: 640px; }
+  h2 { font-size: 22px; margin: 56px 0 6px; }
+  .lead { color: var(--muted); margin: 0 0 20px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .feature {
+    display: block;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 24px;
+    color: inherit;
+  }
+  .feature:hover { border-color: var(--accent); text-decoration: none; }
+  .tag {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-radius: 999px;
+    padding: 2px 10px;
+    margin-bottom: 8px;
+  }
+  .feature strong { display: block; font-size: 19px; margin-bottom: 4px; }
+  .feature span { color: var(--muted); }
+
+  .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  @media (max-width: 760px) { .grid { grid-template-columns: minmax(0, 1fr); } }
+
+  ol.rounds { list-style: none; margin: 14px 0 0; padding: 0; border-top: 1px solid var(--line); }
+  ol.rounds li {
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 16px;
+    padding: 12px 4px;
+    border-bottom: 1px solid var(--line);
+  }
+  ol.rounds .v { font-variant-numeric: tabular-nums; font-weight: 600; }
+  ol.rounds .d { color: var(--muted); }
+
+  .docs { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 18px; }
+  footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>声剪 · 设计稿</h1>
+    <p>声剪是一款 Android 音频编辑 App，剪辑和处理都在手机本机完成。这里是它的交互设计稿，每一页都是能点着操作的原型。在电脑上看效果最好，手机上也能打开。</p>
+  </header>
+
+  <h2>工作台迭代</h2>
+  <p class="lead">编辑页一轮一轮的改动。已经定下的结构是「一块画布 + 一个浮动工具坞」，视觉方向是「清水」。</p>
+
+  <a class="feature" href="workbench/v12.2/">
+    <div class="tag">最新 · v12.2</div>
+    <strong>画布手势：音频像一行字，播放头就是光标</strong>
+    <span>单指滚动、双指缩放、像选文字一样选一段；波形来自真的说话声，停顿看得见。</span>
+  </a>
+
+  <ol class="rounds">
+    <li><a class="v" href="workbench/v12.1/">v12.1</a><span class="d">标尺贴住声音；有背景轨时不再留空的把手行</span></li>
+    <li><a class="v" href="workbench/v12/">v12</a><span class="d">真实语音波形、按住会放大的选区把手、导出先问用途</span></li>
+    <li><a class="v" href="workbench/v11/">v11</a><span class="d">工具坞是固定大小的舞台，工具栏、设置和要拍板的事轮流上台</span></li>
+    <li><a class="v" href="workbench/v10/">v10</a><span class="d">固定高度的工具坞；播放在水线上</span></li>
+    <li><a class="v" href="workbench/v9/">v9</a><span class="d">工作台重做：工具都在底部，随你点的东西变化</span></li>
+    <li><a class="v" href="workbench/v8/">v8</a><span class="d">同上</span></li>
+    <li><a class="v" href="workbench/v7/">v7</a><span class="d">同上</span></li>
+    <li><a class="v" href="workbench/v6/">v6</a><span class="d">同上</span></li>
+    <li><a class="v" href="workbench/v5/">v5</a><span class="d">同上</span></li>
+    <li><a class="v" href="workbench/v4/">v4</a><span class="d">同上</span></li>
+    <li><a class="v" href="workbench/v3/">v3</a><span class="d">同上</span></li>
+    <li><a class="v" href="workbench/v2/">v2</a><span class="d">工作台重做的第一版：能操作的原型、八个任务、关键画面、功能清单</span></li>
+    <li><a class="v" href="workbench/">最早稿</a><span class="d">工作台重排：移动一段、平静的默认工作台、原地处理、创作任务的去处</span></li>
+  </ol>
+
+  <h2>商业化重新设计</h2>
+  <p class="lead">不参考现有设计，93 项功能一项不少，目标是让人愿意用、愿意付费。三个方向各有一块 1600px 宽的展示板，板上的手机都能操作。</p>
+
+  <div class="grid">
+    <a class="feature" href="redesign/design-demos/dir-1.html">
+      <div class="tag">方向一</div>
+      <strong>说一句，落在声音上</strong>
+      <span>用户说的一句话是全屏最大的字，每一步用同一种荧光色连到波形上的对应区域。</span>
+    </a>
+    <a class="feature" href="redesign/design-demos/dir-2.html">
+      <div class="tag">方向二</div>
+      <strong>一个字一件事</strong>
+      <span>每件活儿就是一个汉字：剪、铃、配、净、串……首页是汉字墙，一屏只做一件事。</span>
+    </a>
+    <a class="feature" href="redesign/design-demos/dir-3.html">
+      <div class="tag">方向三</div>
+      <strong>竖着的声音</strong>
+      <span>时间沿竖直的脊线往下流，录音像文字稿一样滚动；停顿是空档，捏一下就删掉。</span>
+    </a>
+  </div>
+
+  <div class="docs">
+    <a href="https://github.com/dwyanewang/shengjian-design/blob/main/redesign/spec.md">设计 spec</a>
+    <a href="https://github.com/dwyanewang/shengjian-design/blob/main/redesign/directions.md">六张方向卡</a>
+    <a href="https://github.com/dwyanewang/shengjian-design/blob/main/redesign/polish-log.md">打磨记录</a>
+  </div>
+
+  <footer>
+    原型里的曲目、音频、价格都是示例数据。源文件见 <a href="https://github.com/dwyanewang/shengjian-design">GitHub 仓库</a>。
+  </footer>
+</main>
+</body>
+</html>
