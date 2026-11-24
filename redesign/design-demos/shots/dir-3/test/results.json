@@ -1,0 +1,95 @@
+{
+  "results": [
+    {
+      "name": "page loads without errors",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "workbench scrolls down in time (wheel)",
+      "pass": true,
+      "info": "0:20.0 -> 0:43.1"
+    },
+    {
+      "name": "workbench drag scrolls back up",
+      "pass": true,
+      "info": "0:43.1 -> 0:32.1"
+    },
+    {
+      "name": "swipe across a pause closes it",
+      "pass": true,
+      "info": "停顿 2.2 秒 | 18:40和王老师聊阅读 -> 18:38原 18:40和王老师聊阅读 | 这处停顿合上了，留 0.3 秒，省下 1.9 秒撤销"
+    },
+    {
+      "name": "undo brings the pause back",
+      "pass": true,
+      "info": "18:40和王老师聊阅读"
+    },
+    {
+      "name": "sentence becomes a 4-step plan on the spine",
+      "pass": true,
+      "info": "听懂了 4 件事"
+    },
+    {
+      "name": "plan steps are tagged on the spine",
+      "pass": true,
+      "info": "12 tags visible"
+    },
+    {
+      "name": "apply changes the audio as one step",
+      "pass": true,
+      "info": "18:23原 18:40和王老师聊阅读 | 改好了。4 步算一步，可以一起撤销撤销整条"
+    },
+    {
+      "name": "voice upsell opens the membership page",
+      "pass": true,
+      "info": "声剪会员"
+    },
+    {
+      "name": "subscribing asks to sign in first (Google / email)",
+      "pass": true,
+      "info": "登录声剪用 Google 账号登录用邮箱验证码登录只用于身份和会员，不会上传你的"
+    },
+    {
+      "name": "after paying the page shows the member state",
+      "pass": true,
+      "info": "年度会员，试用到 11月30日"
+    },
+    {
+      "name": "export: purpose 设成铃声 changes the main button",
+      "pass": true,
+      "info": "设成来电铃声"
+    },
+    {
+      "name": "ringtone set after the system permission",
+      "pass": true,
+      "info": "好了已设为来电铃声最后一秒淡出；「铃声」文件夹里也留了一份再"
+    },
+    {
+      "name": "coverage item A9 jumps the voice phone to cloning",
+      "pass": true,
+      "info": "克隆我的声音"
+    },
+    {
+      "name": "coverage item D2 opens 删掉停顿 on the processing phone",
+      "pass": true,
+      "info": "删掉停顿"
+    },
+    {
+      "name": "pinch / ctrl+wheel zooms",
+      "pass": true,
+      "info": "每屏 39 秒 -> 每屏 12 秒"
+    },
+    {
+      "name": "chorus → ringtone opens export with 设成铃声 chosen",
+      "pass": true,
+      "info": "设成铃声来电 / 通知 / 闹钟，最后一秒自动淡出"
+    },
+    {
+      "name": "no page errors after all interactions",
+      "pass": true,
+      "info": ""
+    }
+  ],
+  "errors": []
+}

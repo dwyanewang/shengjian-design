@@ -1,0 +1,2282 @@
+[
+ {
+  "ver": "v9",
+  "name": "rest",
+  "scene": "t6a",
+  "w": 390,
+  "theme": "light",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-rest-390l.png",
+  "parts": {
+   "dock": [
+    0,
+    645,
+    390,
+    176
+   ],
+   "slot": [
+    68,
+    659,
+    206,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    653,
+    390,
+    56
+   ],
+   "lit": null,
+   "tools": [
+    0,
+    709,
+    390,
+    62
+   ],
+   "cats": [
+    0,
+    771,
+    390,
+    48
+   ],
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    657,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "denoise",
+  "scene": "t4d",
+  "w": 390,
+  "theme": "light",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-denoise-390l.png",
+  "parts": {
+   "dock": [
+    0,
+    541,
+    390,
+    280
+   ],
+   "slot": [
+    68,
+    659,
+    206,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    653,
+    390,
+    56
+   ],
+   "lit": [
+    72,
+    709,
+    68,
+    62
+   ],
+   "tools": [
+    0,
+    709,
+    390,
+    62
+   ],
+   "cats": [
+    0,
+    771,
+    390,
+    48
+   ],
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    657,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "fade",
+  "scene": "kFade",
+  "w": 390,
+  "theme": "light",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-fade-390l.png",
+  "parts": {
+   "dock": [
+    0,
+    557,
+    390,
+    264
+   ],
+   "slot": [
+    68,
+    659,
+    206,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    653,
+    390,
+    56
+   ],
+   "lit": [
+    209,
+    709,
+    68,
+    62
+   ],
+   "tools": [
+    0,
+    709,
+    390,
+    62
+   ],
+   "cats": [
+    0,
+    771,
+    390,
+    48
+   ],
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    657,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "export",
+  "scene": "t8a",
+  "w": 390,
+  "theme": "light",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-export-390l.png",
+  "parts": {
+   "dock": [
+    0,
+    453,
+    390,
+    368
+   ],
+   "slot": [
+    68,
+    659,
+    206,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    653,
+    390,
+    56
+   ],
+   "lit": null,
+   "tools": [
+    0,
+    709,
+    390,
+    62
+   ],
+   "cats": [
+    0,
+    771,
+    390,
+    48
+   ],
+   "main": [
+    310,
+    605,
+    64,
+    40
+   ],
+   "cancel": [
+    238,
+    605,
+    64,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    657,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "tts",
+  "scene": "kTts",
+  "w": 390,
+  "theme": "light",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-tts-390l.png",
+  "parts": {
+   "dock": [
+    0,
+    520,
+    390,
+    301
+   ],
+   "slot": [
+    68,
+    659,
+    206,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    653,
+    390,
+    56
+   ],
+   "lit": [
+    277,
+    709,
+    68,
+    62
+   ],
+   "tools": [
+    0,
+    709,
+    390,
+    62
+   ],
+   "cats": [
+    0,
+    771,
+    390,
+    48
+   ],
+   "main": [
+    310,
+    605,
+    64,
+    40
+   ],
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    657,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "move",
+  "scene": "t2d",
+  "w": 390,
+  "theme": "light",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-move-390l.png",
+  "parts": {
+   "dock": [
+    0,
+    593,
+    390,
+    228
+   ],
+   "slot": [
+    68,
+    659,
+    206,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    653,
+    390,
+    56
+   ],
+   "lit": null,
+   "tools": [
+    0,
+    709,
+    390,
+    62
+   ],
+   "cats": [
+    0,
+    771,
+    390,
+    48
+   ],
+   "main": [
+    303,
+    605,
+    71,
+    40
+   ],
+   "cancel": [
+    224,
+    605,
+    71,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    657,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "record",
+  "scene": "t6b",
+  "w": 390,
+  "theme": "light",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-record-390l.png",
+  "parts": {
+   "dock": [
+    0,
+    541,
+    390,
+    280
+   ],
+   "slot": [
+    68,
+    659,
+    206,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    653,
+    390,
+    56
+   ],
+   "lit": [
+    277,
+    709,
+    68,
+    62
+   ],
+   "tools": [
+    0,
+    709,
+    390,
+    62
+   ],
+   "cats": [
+    0,
+    771,
+    390,
+    48
+   ],
+   "main": [
+    310,
+    605,
+    64,
+    40
+   ],
+   "cancel": [
+    231,
+    605,
+    71,
+    40
+   ],
+   "rec": [
+    16,
+    557,
+    40,
+    40
+   ],
+   "field": null,
+   "play": [
+    12,
+    657,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "range",
+  "scene": "t1b",
+  "w": 390,
+  "theme": "light",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-range-390l.png",
+  "parts": {
+   "dock": [
+    0,
+    645,
+    390,
+    176
+   ],
+   "slot": [
+    68,
+    659,
+    206,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    653,
+    390,
+    56
+   ],
+   "lit": null,
+   "tools": [
+    0,
+    709,
+    390,
+    62
+   ],
+   "cats": [
+    0,
+    771,
+    390,
+    48
+   ],
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    657,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "typing",
+  "scene": "kSayFocus",
+  "w": 390,
+  "theme": "light",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-typing-390l.png",
+  "parts": {
+   "dock": [
+    0,
+    407,
+    390,
+    146
+   ],
+   "slot": [
+    0,
+    415,
+    390,
+    136
+   ],
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": [
+    16,
+    501,
+    358,
+    42
+   ],
+   "play": null
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "tracks",
+  "scene": "kTrackVol",
+  "w": 390,
+  "theme": "light",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-tracks-390l.png",
+  "parts": {
+   "dock": [
+    0,
+    593,
+    390,
+    228
+   ],
+   "slot": [
+    68,
+    659,
+    206,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    653,
+    390,
+    56
+   ],
+   "lit": [
+    4,
+    709,
+    68,
+    62
+   ],
+   "tools": [
+    0,
+    709,
+    390,
+    62
+   ],
+   "cats": [
+    0,
+    771,
+    390,
+    48
+   ],
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    657,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "rest",
+  "scene": "t6a",
+  "w": 390,
+  "theme": "dark",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-rest-390d.png",
+  "parts": {
+   "dock": [
+    0,
+    645,
+    390,
+    176
+   ],
+   "slot": [
+    68,
+    659,
+    206,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    653,
+    390,
+    56
+   ],
+   "lit": null,
+   "tools": [
+    0,
+    709,
+    390,
+    62
+   ],
+   "cats": [
+    0,
+    771,
+    390,
+    48
+   ],
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    657,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "denoise",
+  "scene": "t4d",
+  "w": 390,
+  "theme": "dark",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-denoise-390d.png",
+  "parts": {
+   "dock": [
+    0,
+    541,
+    390,
+    280
+   ],
+   "slot": [
+    68,
+    659,
+    206,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    653,
+    390,
+    56
+   ],
+   "lit": [
+    72,
+    709,
+    68,
+    62
+   ],
+   "tools": [
+    0,
+    709,
+    390,
+    62
+   ],
+   "cats": [
+    0,
+    771,
+    390,
+    48
+   ],
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    657,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "fade",
+  "scene": "kFade",
+  "w": 390,
+  "theme": "dark",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-fade-390d.png",
+  "parts": {
+   "dock": [
+    0,
+    557,
+    390,
+    264
+   ],
+   "slot": [
+    68,
+    659,
+    206,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    653,
+    390,
+    56
+   ],
+   "lit": [
+    209,
+    709,
+    68,
+    62
+   ],
+   "tools": [
+    0,
+    709,
+    390,
+    62
+   ],
+   "cats": [
+    0,
+    771,
+    390,
+    48
+   ],
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    657,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "export",
+  "scene": "t8a",
+  "w": 390,
+  "theme": "dark",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-export-390d.png",
+  "parts": {
+   "dock": [
+    0,
+    453,
+    390,
+    368
+   ],
+   "slot": [
+    68,
+    659,
+    206,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    653,
+    390,
+    56
+   ],
+   "lit": null,
+   "tools": [
+    0,
+    709,
+    390,
+    62
+   ],
+   "cats": [
+    0,
+    771,
+    390,
+    48
+   ],
+   "main": [
+    310,
+    605,
+    64,
+    40
+   ],
+   "cancel": [
+    238,
+    605,
+    64,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    657,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "tts",
+  "scene": "kTts",
+  "w": 390,
+  "theme": "dark",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-tts-390d.png",
+  "parts": {
+   "dock": [
+    0,
+    520,
+    390,
+    301
+   ],
+   "slot": [
+    68,
+    659,
+    206,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    653,
+    390,
+    56
+   ],
+   "lit": [
+    277,
+    709,
+    68,
+    62
+   ],
+   "tools": [
+    0,
+    709,
+    390,
+    62
+   ],
+   "cats": [
+    0,
+    771,
+    390,
+    48
+   ],
+   "main": [
+    310,
+    605,
+    64,
+    40
+   ],
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    657,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "move",
+  "scene": "t2d",
+  "w": 390,
+  "theme": "dark",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-move-390d.png",
+  "parts": {
+   "dock": [
+    0,
+    593,
+    390,
+    228
+   ],
+   "slot": [
+    68,
+    659,
+    206,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    653,
+    390,
+    56
+   ],
+   "lit": null,
+   "tools": [
+    0,
+    709,
+    390,
+    62
+   ],
+   "cats": [
+    0,
+    771,
+    390,
+    48
+   ],
+   "main": [
+    303,
+    605,
+    71,
+    40
+   ],
+   "cancel": [
+    224,
+    605,
+    71,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    657,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "record",
+  "scene": "t6b",
+  "w": 390,
+  "theme": "dark",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-record-390d.png",
+  "parts": {
+   "dock": [
+    0,
+    541,
+    390,
+    280
+   ],
+   "slot": [
+    68,
+    659,
+    206,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    653,
+    390,
+    56
+   ],
+   "lit": [
+    277,
+    709,
+    68,
+    62
+   ],
+   "tools": [
+    0,
+    709,
+    390,
+    62
+   ],
+   "cats": [
+    0,
+    771,
+    390,
+    48
+   ],
+   "main": [
+    310,
+    605,
+    64,
+    40
+   ],
+   "cancel": [
+    231,
+    605,
+    71,
+    40
+   ],
+   "rec": [
+    16,
+    557,
+    40,
+    40
+   ],
+   "field": null,
+   "play": [
+    12,
+    657,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "range",
+  "scene": "t1b",
+  "w": 390,
+  "theme": "dark",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-range-390d.png",
+  "parts": {
+   "dock": [
+    0,
+    645,
+    390,
+    176
+   ],
+   "slot": [
+    68,
+    659,
+    206,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    653,
+    390,
+    56
+   ],
+   "lit": null,
+   "tools": [
+    0,
+    709,
+    390,
+    62
+   ],
+   "cats": [
+    0,
+    771,
+    390,
+    48
+   ],
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    657,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "typing",
+  "scene": "kSayFocus",
+  "w": 390,
+  "theme": "dark",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-typing-390d.png",
+  "parts": {
+   "dock": [
+    0,
+    407,
+    390,
+    146
+   ],
+   "slot": [
+    0,
+    415,
+    390,
+    136
+   ],
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": [
+    16,
+    501,
+    358,
+    42
+   ],
+   "play": null
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "tracks",
+  "scene": "kTrackVol",
+  "w": 390,
+  "theme": "dark",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-tracks-390d.png",
+  "parts": {
+   "dock": [
+    0,
+    593,
+    390,
+    228
+   ],
+   "slot": [
+    68,
+    659,
+    206,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    653,
+    390,
+    56
+   ],
+   "lit": [
+    4,
+    709,
+    68,
+    62
+   ],
+   "tools": [
+    0,
+    709,
+    390,
+    62
+   ],
+   "cats": [
+    0,
+    771,
+    390,
+    48
+   ],
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    657,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "rest",
+  "scene": "t6a",
+  "w": 360,
+  "theme": "light",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-rest-360l.png",
+  "parts": {
+   "dock": [
+    0,
+    582,
+    360,
+    176
+   ],
+   "slot": [
+    68,
+    596,
+    176,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    590,
+    360,
+    56
+   ],
+   "lit": null,
+   "tools": [
+    0,
+    646,
+    360,
+    62
+   ],
+   "cats": [
+    0,
+    708,
+    360,
+    48
+   ],
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    594,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "denoise",
+  "scene": "t4d",
+  "w": 360,
+  "theme": "light",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-denoise-360l.png",
+  "parts": {
+   "dock": [
+    0,
+    478,
+    360,
+    280
+   ],
+   "slot": [
+    68,
+    596,
+    176,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    590,
+    360,
+    56
+   ],
+   "lit": [
+    67,
+    646,
+    63,
+    62
+   ],
+   "tools": [
+    0,
+    646,
+    360,
+    62
+   ],
+   "cats": [
+    0,
+    708,
+    360,
+    48
+   ],
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    594,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "fade",
+  "scene": "kFade",
+  "w": 360,
+  "theme": "light",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-fade-360l.png",
+  "parts": {
+   "dock": [
+    0,
+    494,
+    360,
+    264
+   ],
+   "slot": [
+    68,
+    596,
+    176,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    590,
+    360,
+    56
+   ],
+   "lit": [
+    193,
+    646,
+    63,
+    62
+   ],
+   "tools": [
+    0,
+    646,
+    360,
+    62
+   ],
+   "cats": [
+    0,
+    708,
+    360,
+    48
+   ],
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    594,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "export",
+  "scene": "t8a",
+  "w": 360,
+  "theme": "light",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-export-360l.png",
+  "parts": {
+   "dock": [
+    0,
+    390,
+    360,
+    368
+   ],
+   "slot": [
+    68,
+    596,
+    176,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    590,
+    360,
+    56
+   ],
+   "lit": null,
+   "tools": [
+    0,
+    646,
+    360,
+    62
+   ],
+   "cats": [
+    0,
+    708,
+    360,
+    48
+   ],
+   "main": [
+    280,
+    542,
+    64,
+    40
+   ],
+   "cancel": [
+    208,
+    542,
+    64,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    594,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "tts",
+  "scene": "kTts",
+  "w": 360,
+  "theme": "light",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-tts-360l.png",
+  "parts": {
+   "dock": [
+    0,
+    457,
+    360,
+    301
+   ],
+   "slot": [
+    68,
+    596,
+    176,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    590,
+    360,
+    56
+   ],
+   "lit": [
+    256,
+    646,
+    63,
+    62
+   ],
+   "tools": [
+    0,
+    646,
+    360,
+    62
+   ],
+   "cats": [
+    0,
+    708,
+    360,
+    48
+   ],
+   "main": [
+    280,
+    542,
+    64,
+    40
+   ],
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    594,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "move",
+  "scene": "t2d",
+  "w": 360,
+  "theme": "light",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-move-360l.png",
+  "parts": {
+   "dock": [
+    0,
+    530,
+    360,
+    228
+   ],
+   "slot": [
+    68,
+    596,
+    176,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    590,
+    360,
+    56
+   ],
+   "lit": null,
+   "tools": [
+    0,
+    646,
+    360,
+    62
+   ],
+   "cats": [
+    0,
+    708,
+    360,
+    48
+   ],
+   "main": [
+    273,
+    542,
+    71,
+    40
+   ],
+   "cancel": [
+    194,
+    542,
+    71,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    594,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "record",
+  "scene": "t6b",
+  "w": 360,
+  "theme": "light",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-record-360l.png",
+  "parts": {
+   "dock": [
+    0,
+    478,
+    360,
+    280
+   ],
+   "slot": [
+    68,
+    596,
+    176,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    590,
+    360,
+    56
+   ],
+   "lit": [
+    256,
+    646,
+    63,
+    62
+   ],
+   "tools": [
+    0,
+    646,
+    360,
+    62
+   ],
+   "cats": [
+    0,
+    708,
+    360,
+    48
+   ],
+   "main": [
+    280,
+    542,
+    64,
+    40
+   ],
+   "cancel": [
+    201,
+    542,
+    71,
+    40
+   ],
+   "rec": [
+    16,
+    494,
+    40,
+    40
+   ],
+   "field": null,
+   "play": [
+    12,
+    594,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "range",
+  "scene": "t1b",
+  "w": 360,
+  "theme": "light",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-range-360l.png",
+  "parts": {
+   "dock": [
+    0,
+    582,
+    360,
+    176
+   ],
+   "slot": [
+    68,
+    596,
+    176,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    590,
+    360,
+    56
+   ],
+   "lit": null,
+   "tools": [
+    0,
+    646,
+    360,
+    62
+   ],
+   "cats": [
+    0,
+    708,
+    360,
+    48
+   ],
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    594,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "typing",
+  "scene": "kSayFocus",
+  "w": 360,
+  "theme": "light",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-typing-360l.png",
+  "parts": {
+   "dock": [
+    0,
+    344,
+    360,
+    146
+   ],
+   "slot": [
+    0,
+    352,
+    360,
+    136
+   ],
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": [
+    16,
+    438,
+    328,
+    42
+   ],
+   "play": null
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "tracks",
+  "scene": "kTrackVol",
+  "w": 360,
+  "theme": "light",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-tracks-360l.png",
+  "parts": {
+   "dock": [
+    0,
+    530,
+    360,
+    228
+   ],
+   "slot": [
+    68,
+    596,
+    176,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    590,
+    360,
+    56
+   ],
+   "lit": [
+    4,
+    646,
+    63,
+    62
+   ],
+   "tools": [
+    0,
+    646,
+    360,
+    62
+   ],
+   "cats": [
+    0,
+    708,
+    360,
+    48
+   ],
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    594,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "rest",
+  "scene": "t6a",
+  "w": 360,
+  "theme": "dark",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-rest-360d.png",
+  "parts": {
+   "dock": [
+    0,
+    582,
+    360,
+    176
+   ],
+   "slot": [
+    68,
+    596,
+    176,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    590,
+    360,
+    56
+   ],
+   "lit": null,
+   "tools": [
+    0,
+    646,
+    360,
+    62
+   ],
+   "cats": [
+    0,
+    708,
+    360,
+    48
+   ],
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    594,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "denoise",
+  "scene": "t4d",
+  "w": 360,
+  "theme": "dark",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-denoise-360d.png",
+  "parts": {
+   "dock": [
+    0,
+    478,
+    360,
+    280
+   ],
+   "slot": [
+    68,
+    596,
+    176,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    590,
+    360,
+    56
+   ],
+   "lit": [
+    67,
+    646,
+    63,
+    62
+   ],
+   "tools": [
+    0,
+    646,
+    360,
+    62
+   ],
+   "cats": [
+    0,
+    708,
+    360,
+    48
+   ],
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    594,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "fade",
+  "scene": "kFade",
+  "w": 360,
+  "theme": "dark",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-fade-360d.png",
+  "parts": {
+   "dock": [
+    0,
+    494,
+    360,
+    264
+   ],
+   "slot": [
+    68,
+    596,
+    176,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    590,
+    360,
+    56
+   ],
+   "lit": [
+    193,
+    646,
+    63,
+    62
+   ],
+   "tools": [
+    0,
+    646,
+    360,
+    62
+   ],
+   "cats": [
+    0,
+    708,
+    360,
+    48
+   ],
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    594,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "export",
+  "scene": "t8a",
+  "w": 360,
+  "theme": "dark",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-export-360d.png",
+  "parts": {
+   "dock": [
+    0,
+    390,
+    360,
+    368
+   ],
+   "slot": [
+    68,
+    596,
+    176,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    590,
+    360,
+    56
+   ],
+   "lit": null,
+   "tools": [
+    0,
+    646,
+    360,
+    62
+   ],
+   "cats": [
+    0,
+    708,
+    360,
+    48
+   ],
+   "main": [
+    280,
+    542,
+    64,
+    40
+   ],
+   "cancel": [
+    208,
+    542,
+    64,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    594,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "tts",
+  "scene": "kTts",
+  "w": 360,
+  "theme": "dark",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-tts-360d.png",
+  "parts": {
+   "dock": [
+    0,
+    457,
+    360,
+    301
+   ],
+   "slot": [
+    68,
+    596,
+    176,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    590,
+    360,
+    56
+   ],
+   "lit": [
+    256,
+    646,
+    63,
+    62
+   ],
+   "tools": [
+    0,
+    646,
+    360,
+    62
+   ],
+   "cats": [
+    0,
+    708,
+    360,
+    48
+   ],
+   "main": [
+    280,
+    542,
+    64,
+    40
+   ],
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    594,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "move",
+  "scene": "t2d",
+  "w": 360,
+  "theme": "dark",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-move-360d.png",
+  "parts": {
+   "dock": [
+    0,
+    530,
+    360,
+    228
+   ],
+   "slot": [
+    68,
+    596,
+    176,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    590,
+    360,
+    56
+   ],
+   "lit": null,
+   "tools": [
+    0,
+    646,
+    360,
+    62
+   ],
+   "cats": [
+    0,
+    708,
+    360,
+    48
+   ],
+   "main": [
+    273,
+    542,
+    71,
+    40
+   ],
+   "cancel": [
+    194,
+    542,
+    71,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    594,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "record",
+  "scene": "t6b",
+  "w": 360,
+  "theme": "dark",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-record-360d.png",
+  "parts": {
+   "dock": [
+    0,
+    478,
+    360,
+    280
+   ],
+   "slot": [
+    68,
+    596,
+    176,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    590,
+    360,
+    56
+   ],
+   "lit": [
+    256,
+    646,
+    63,
+    62
+   ],
+   "tools": [
+    0,
+    646,
+    360,
+    62
+   ],
+   "cats": [
+    0,
+    708,
+    360,
+    48
+   ],
+   "main": [
+    280,
+    542,
+    64,
+    40
+   ],
+   "cancel": [
+    201,
+    542,
+    71,
+    40
+   ],
+   "rec": [
+    16,
+    494,
+    40,
+    40
+   ],
+   "field": null,
+   "play": [
+    12,
+    594,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "range",
+  "scene": "t1b",
+  "w": 360,
+  "theme": "dark",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-range-360d.png",
+  "parts": {
+   "dock": [
+    0,
+    582,
+    360,
+    176
+   ],
+   "slot": [
+    68,
+    596,
+    176,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    590,
+    360,
+    56
+   ],
+   "lit": null,
+   "tools": [
+    0,
+    646,
+    360,
+    62
+   ],
+   "cats": [
+    0,
+    708,
+    360,
+    48
+   ],
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    594,
+    48,
+    48
+   ]
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "typing",
+  "scene": "kSayFocus",
+  "w": 360,
+  "theme": "dark",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-typing-360d.png",
+  "parts": {
+   "dock": [
+    0,
+    344,
+    360,
+    146
+   ],
+   "slot": [
+    0,
+    352,
+    360,
+    136
+   ],
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": [
+    16,
+    438,
+    328,
+    42
+   ],
+   "play": null
+  }
+ },
+ {
+  "ver": "v9",
+  "name": "tracks",
+  "scene": "kTrackVol",
+  "w": 360,
+  "theme": "dark",
+  "file": "/tmp/claude-1000/-home-game168-wangwei-Projects-shengjian-android/6d5ba96a-b08d-4471-96a3-84a7972a1b4b/scratchpad/mockups-lan/workbench-work/v10/shots/squint/v9-tracks-360d.png",
+  "parts": {
+   "dock": [
+    0,
+    530,
+    360,
+    228
+   ],
+   "slot": [
+    68,
+    596,
+    176,
+    44
+   ],
+   "done": null,
+   "head": [
+    0,
+    590,
+    360,
+    56
+   ],
+   "lit": [
+    4,
+    646,
+    63,
+    62
+   ],
+   "tools": [
+    0,
+    646,
+    360,
+    62
+   ],
+   "cats": [
+    0,
+    708,
+    360,
+    48
+   ],
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    594,
+    48,
+    48
+   ]
+  }
+ }
+]

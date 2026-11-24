@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>声剪工作台 第十二轮</title>
+<meta name="description" content="声剪工作台第十二轮：波形来自真的说话声，停顿看得见；一段音频时波形贴近播放；选区两头是按住会放大的把手；导出先问用途。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="sec live-sec" id="live">
+  <div class="live-wrap">
+    <div class="phone live"><div class="scr live" data-scene="live"></div></div>
+    <div class="live-notes">
+      <header class="topbar">
+        <b>声剪 · 工作台</b><span class="tag acc">第十二轮</span>
+        <span class="pseg" id="theme" role="group" aria-label="主题"><button data-t="" class="on">系统</button><button data-t="light">浅色</button><button data-t="dark">深色</button></span>
+        <span class="pseg" id="blur" role="group" aria-label="材质"><button data-b="" class="on">玻璃</button><button data-b="noblur">无模糊（Android 12 以下）</button></span>
+        <nav class="toc"><a href="#r12">这一轮</a><a href="#r11">上一轮</a><a href="#idea">结构</a><a href="#tasks">八个任务</a><a href="#states">关键画面</a><a href="#inv">功能清单</a><a href="#notes">说明</a><a href="#look">清水</a><a href="#squint">眯眼看</a><a href="#eval">评估</a><a href="#ba">前后对比</a></nav>
+      </header>
+      <div class="card">
+        <h2>试一试</h2>
+        <ol class="try">
+          <li><i>1</i><span>点「降噪」：降噪盖住整个工具坞，高度不变——左上是「降噪 适中」，下面一条有档位的滑杆占满宽度，拖一下就生效；右下一个「完成」。画布、播放一动不动，屏幕下半部只有这一样东西。拨到最左边的「关」再点完成，降噪就拿掉了。</span></li>
+          <li><i>2</i><span>点「完成」：工具这一行原样回来（一个都没挪、没滚），再点「统一音量」就换成统一音量。换一个设置是两下：完成、再点。</span></li>
+          <li><i>3</i><span>播放是水线上那个声音蓝的圆，整个画面只有它和工具坞投影子。有声音设置时它后面拖出一截「原声」，按住听没处理的；撤销、重做在水线另一头，只是一圈细线和一层淡淡的底，什么都没得撤时更淡。</span></li>
+          <li><i>4</i><span>在波形上拖动选一段：两头吸到最近的停顿中间，工具这一行换成选中的能做的；「说一句」那一格写着「选中的」。选区下面是两片橙色把手，起点的在左、终点的在右；按住一片不动一下，它周围的时间放大约十二倍，停顿有一指宽，落进去再松手，画面回到整段。这时再点「降噪」，按播放就只循环这一段（播放键上有个小循环标）。</span></li>
+          <li><i>5</i><span>右上「导出」：第一行问用途——存文件、分享、设铃声；下面一行「音质 MP3 · 192k」，点开在工具坞里展开；主按钮写着会发生什么（「保存 MP3」「分享 M4A」「设为来电铃声」）。只有拍板才结束（系统返回 = 取消）。点「录音」：播放让开，红色录音键是唯一的圆按钮。</span></li>
+          <li><i>6</i><span>第一次打开时「说一句」那一格写着「试试「删掉超过1秒的停顿」」；点它，键盘上来，句子和例句骑在键盘上；点那一句就是计划：9 处停顿各画在自己的缺口里，「应用」一次改完。用过一次，那一格就只写「说一句」。</span></li>
+          <li><i>7</i><span>「音乐」：从下面升起一张选音乐的面板（这一版只有两张面板，这是其中一张），选一首就成为下面一轨，工具行前头换成这一轨的颜色。</span></li>
+        </ol>
+        <div class="demo-ctl"><button class="pri" onclick="resetLive()">从头再来</button></div>
+      </div>
+      <div class="card">
+        <h2>手势</h2>
+        <table class="gest">
+          <tr><td>从左右边缘往里滑</td><td>系统返回：先关面板；要拍板的事等于「取消」；开着的设置等于「完成」（值留着）；再放开选中的。波形上要拖的东西都离边 32 dp 以上</td></tr>
+          <tr><td>「完成」</td><td>收起开着的设置（它早就生效了），工具这一行原样回来</td></tr>
+          <tr><td>点</td><td>放播放头；点选区外面就放开选区；点下面的轨道就选中那一轨</td></tr>
+          <tr><td>在波形上横着拖</td><td>选一段（两头落在最近的停顿中间；吸附到开头、结尾、接缝、标记、播放头；手指过了开头或结尾就算开头、结尾；放大时拖到离边 64 dp 以内画面自己滚）。开着一个整段的设置时也能选，设置收起</td></tr>
+          <tr><td>竖着拖</td><td>轨道多到放不下时：轨道在主线下面、水线后面上下滚；工具坞不动</td></tr>
+          <tr><td>在工具这一行横着滑</td><td>看后面的工具；右边总露出半个</td></tr>
+          <tr><td>按住 0.4 秒再拖</td><td>拿起选区或一个片段，挪到别处；靠近左右时画面自己滚</td></tr>
+          <tr><td>拖选区下面的把手</td><td>改选区的起点或终点，吸到最近的停顿中间；按住不动一下，把手周围的时间放大，落在手指的地方，松手回到原来的画面</td></tr>
+          <tr><td>按住「原声」</td><td>听没有声音设置的样子（开着一个设置时只去掉那一个）</td></tr>
+          <tr><td>按住撤销</td><td>历史：在波形上一步步看，「回到这一步」或「取消」</td></tr>
+          <tr><td>双击；拖时间刻度、双指</td><td>选中整个片段；滚动、缩放（电脑：滚轮滚动，Ctrl+滚轮缩放）</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="r12">
+  <div class="idea">
+    <div class="card">
+      <h2>第十二轮：真的声音，看得见停顿</h2>
+      <p>结构、清水、工具坞都不动。上一轮看起来还是原型，毛病在画面这一层：波形是假的、均匀的，看不出哪里在说话、哪里停顿。这一轮按批准的顺序改了五件事：</p>
+      <ol class="rules">
+        <li><b>波形是真的说话声</b><span>一段两人的采访「城市里的小店」（2:41）：局域网的语音服务用内置音色说出来，主持人离麦克风远一点、声音小一点，叠上房间的底噪，每 10 毫秒量一次电平。三段素材、朗读、配音、新录音、两小时的周会录音都来自真的说话声；歌和背景音乐是生成的，但有鼓点、衰减和段落。整段看时，每个超过一秒的停顿是一道淡色的缺口，倒影在那里也断开；删停顿的计划画在缺口里：上面一个橙色小针，一条线落进缺口，水平线上一个点。</span></li>
+        <li><b>一段音频时没有空着的中间</b><span>波形更高、更靠下，贴在播放上面那一条；上面是天空，播放上面留着一条空气。播放头是一根细的蓝线，只画到声音的倒影为止，不再一直下到播放。时间和刻度用界面字体、等宽数字（0:39.8，不再是 00:39.8 的代码字体）。浅色里水平线以下的地面深一点，倒影落在水里，清水在浅色里也看得出来。</span></li>
+        <li><b>选区两头是两片把手，按住就放大</b><span>把手挂在边线外侧：起点的在左、终点的在右，各占 48 dp 以上，再短的选区也不会叠在一起；靠近屏幕边时把手转向里，碰到另一片就挪到声音上面（左上角、右下角）。按住把手不动一下，把手周围的时间放大约十二倍，停顿有一指宽，落进停顿再松手，画面回到整段。不按住拖时，两头吸到最近的停顿中间：句子从停顿开始，到停顿结束。</span></li>
+        <li><b>录音时只有一个圆按钮；导出先问用途</b><span>录音时播放让开，红色的录音键是屏幕上唯一的圆形主按钮，电平条是这一段录音自己的电平。导出第一行是用途：存文件 / 分享 / 设铃声（有选区时第二行是整段 / 选中的）；格式和码率跟着用途和上次用的走，收成一行「音质 MP3 · 192k」，点开在工具坞里展开；主按钮写着会发生什么：「保存 MP3」「分享 M4A」「设为来电铃声」。</span></li>
+        <li><b>第一次给一句话；工具用大家的说法</b><span>第一次打开时「说一句」那一格写着这段音频能用的一句话：采访是「删掉超过1秒的停顿」，歌是「把副歌做成铃声」；用过一次就只写「说一句」。拉齐 → 统一音量，分离 → 人声分离，曲线 → 音量曲线，修复里的削波 → 破音、噪声门 → 静音间隙。「常用」跟着音频是什么：说话的是分割、降噪、统一音量、音乐、录音、停顿……；歌第一个是副歌，做铃声还是 3 步。</span></li>
+      </ol>
+    </div>
+    <div class="card">
+      <h2>和协调者的方案不一样的地方</h2>
+      <ul>
+        <li><b>「常用」不只看导入方式</b>：导入方式分不出一个采访文件和一首歌文件（这段采访就是从文件导入的），「周末录的歌」也可能是录的。所以先看导入方式能不能定（在应用里录的、从音乐库选的），定不了再听内容（导入时在手机上做一次说话 / 音乐判断）。</li>
+        <li><b>停顿是 9 处，不是 8 处</b>：计划数的是音频里真的停顿；这段采访里有一处停顿在一句话中间（「很大。」之后停了一下），也超过一秒。</li>
+        <li><b>整段视图画 1 dp 一列，不是 3 dp 一根</b>：整段时半秒一个像素，一秒的停顿只有两个像素；3 dp 一根时它最多是一根短一点的竖条。所以竖条更密，停顿的那几列用淡色画、不画倒影。仍然是水平线上的竖条和更稀的倒影。</li>
+        <li><b>多加了两件</b>：拖选区和拖把手时吸到停顿中间（放大时不吸，落在手指的地方）；浅色里水平线以下深一点，这是让清水在浅色里成立的最小一步，没有加装饰。</li>
+        <li><b>一条轨道时也一样</b>：上一轮主线最多占四成六，一条音乐轨下面空着一大块；现在主线拿走轨道剩下的，声音照样靠下，空出来的给天空。</li>
+        <li><b>点一下放播放头不吸停顿</b>：只有选区的两头吸到停顿中间；点一下就落在手指的地方（吸过去会跳三秒多，听的时候让人意外）。</li>
+      </ul>
+      <h2 style="margin-top:16px">量出来的</h2>
+      <ul>
+        <li>9 处超过一秒的停顿，整段视图里每一处都至少有一列淡色（360、390）。</li>
+        <li>一段音频时，声音的最低点离播放 52 dp（字号 1.3 时 65 dp），水平线在刻度和播放之间那片水的下半；播放头和声音都停在播放上面，录音、多条轨道时也一样。</li>
+        <li>把手：10 种选区（一句话那么短、一个单位、从头、到尾、整段、放大后两头……）× 360 / 390 × 字号 1.0 / 1.3 × 中英，每片至少 48 × 44 dp，两片从不重叠，离屏幕边至少 32 dp；点哪片就拿起哪片。</li>
+        <li>按住把手：时间放大 12 倍，把手不离开手指（0 dp），手指挪 30 dp 就是放大后的 30 dp；松手回到整段，不出现全局条。</li>
+        <li>录音时屏幕上只有录音键一个圆形主按钮（浅色、深色）。导出第一次分享是 M4A 128k；有选区时三行：用途、整段 / 选中的、音质。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="r11">
+  <div class="idea">
+    <div class="card">
+      <h2>上一轮（第十一轮）：常态减负，浮着的东西同一种材质</h2>
+      <p>结构不动（设置和要拍板的事轮流盖住工具坞、水线、两张面板）。改的是重量和材质：</p>
+      <ol class="rules">
+        <li><b>只有两样东西投影子：工具坞和播放</b><span>播放是锚点：一个声音蓝的实心圆（深色里是亮蓝），整个画面最先看到它。其余浮在画布上的——时间标签、导出、声音上的标签、轨道名、「原声」、撤销重做——都是同一种安静的材质：一层淡淡的底加一圈细线，没有影子。</span></li>
+        <li><b>「原声」是播放的尾巴</b><span>有声音设置时，它从播放后面拖出来，和播放是一个东西；按住它听原声，点圆是播放。分开放时它是第三个小岛。</span></li>
+        <li><b>撤销重做退到后面</b><span>平时是细线加淡底；什么都没得撤也没得重做时，底更淡（轨道从下面滚过时还看得清）。</span></li>
+        <li><b>工具坞里没有东西是凸起的</b><span>「说一句」是凹进工具坞的一格，麦克风从实心橙圆换成淡橙底上的橙色图标：常态的主角是播放，不是麦克风；屏幕上不再有实心橙。选中的选项是细线，不再浮起一层。</span></li>
+        <li><b>刻度说出两头</b><span>有「关」的刻度下面写两头：降噪「关…很强」，自动调小「关…最低」，起点「0 秒…60 秒」。不写整排标签。音量、变速用两头的图标（小声↔大声、慢↔快），淡化两头本来就是两个时间。</span></li>
+        <li><b>淡化曲线是蓝的</b><span>数值是声音的蓝：波形上的淡入淡出线从橙色换成蓝色，下面垫一道底色，压在竖条上也看得见。</span></li>
+      </ol>
+    </div>
+    <div class="card">
+      <h2>常态下数一数（浅色，390）</h2>
+      <table class="mini">
+        <tr><th></th><th>第十轮</th><th>第十一轮</th></tr>
+        <tr><td>投影子的东西</td><td>5（时间标签、播放、撤销、说一句、工具坞）</td><td>2（播放、工具坞）</td></tr>
+        <tr><td>浮在画布上、有自己底板的</td><td>4，其中 3 个是白底加影子</td><td>4，只有播放是实心，其余三个是细线</td></tr>
+        <tr><td>实心橙</td><td>1（麦克风）</td><td>0</td></tr>
+        <tr><td>眯眼看最显眼的</td><td>麦克风和播放两个点</td><td>播放</td></tr>
+      </table>
+      <p>深色同样是 5 → 2。对比度（检查里量的，开模糊 / 不开模糊）：能用的撤销 14.5 / 15.7，「原声」14.5 / 15.7，轨道从下面滚过时一样；没得撤时的灰图标 3.3–3.8（禁用，按规范不要求，但还看得清）；时间标签第二行 5.6 / 6.1；刻度两头的字 5.3 / 5.8；麦克风图标 3.5 / 3.8（图标要 3）。</p>
+      <p>和用户、协调者不一样的地方：深色的播放也换成了亮蓝实心圆——用户说深色更连贯，但「播放是锚点」两个主题要一样；代价是深色里多了一个亮点。</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="idea">
+  <div class="idea">
+    <div class="card">
+      <h2>这一版的工作台：一个舞台，一次只演一样</h2>
+      <p class="big-idea">第九轮的毛病是：每样东西都有一个永久的位置，每多一个状态就多叠一层。打开降噪是五层，导出是七层，「说一句」夹在中间没事干。这一版的工具坞是<b>一个固定大小的舞台</b>：工具栏和打开的东西轮流上台，从不同时在台上。</p>
+      <ol class="rules">
+        <li><b>静止：工具栏，三层由重到轻</b><span>「说一句」一格（这个产品的招牌，橙色麦克风是屏幕上唯一的实心橙），一行工具，一行分类。</span></li>
+        <li><b>打开一个设置：它盖住整个工具坞，高度不变</b><span>左上是名字和数值（数值是声音的蓝），中间是占满宽度的控件，第二个值在下面一行，右下一个「完成」。没有标题栏、没有 ✕、没有返回箭头：设置早就生效了，「完成」只是收起，撤销收回。画布和播放一动不动。</span></li>
+        <li><b>要拍板的事也盖住工具坞</b><span>导出、朗读、录音、移动一段、删停顿、副歌、历史、计划：最后一行是写着字的决定，唯一的实心橙在那里，只能拍板结束，系统返回等于「取消」；需要时可以比工具栏高。</span></li>
+        <li><b>播放在水线上</b><span>水线是工具坞上沿上方的一条：左边是播放（一只浮标），有声音设置时旁边是「按住听原声」，右边远处是撤销和重做。主线和它的把手永远停在水线上面；多条轨道可以从水线后面滚上来。</span></li>
+        <li><b>两张老实的面板</b><span>不需要看波形的选单才用面板：「选声音」（配乐、插入音频、换一首）和「这段音频」（点名字：改名、详情、署名、另存、工程包、删除）。一次只有一张，不叠。</span></li>
+      </ol>
+    </div>
+    <div class="card">
+      <h2>四种东西，各有一个地方</h2>
+      <table class="mini">
+        <tr><th>类</th><th>在哪</th><th>怎么结束</th></tr>
+        <tr><td>点一下就做完（分割、删除、只留、倒放、静音……）</td><td>工具这一行</td><td>撤销</td></tr>
+        <tr><td>即时设置（降噪、统一音量、音量、淡化、变速……）</td><td>盖住工具坞，和工具栏一样高</td><td>「完成」或系统返回；值留着，撤销收回；拨到「关」就去掉</td></tr>
+        <tr><td>要拍板的事（导出、朗读、录音、移动……）</td><td>盖住工具坞，按需要的高度</td><td>只能拍板；系统返回 = 取消</td></tr>
+        <tr><td>从列表里选（音乐、要插的音频）；这段音频本身</td><td>从工具坞升起的面板</td><td>选一个；或往下关、系统返回</td></tr>
+      </table>
+      <p style="margin-top:10px">打字（说一句、朗读的文字、标记的名字）是键盘接管：要打的那一行骑在键盘上，水线空出来。</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="tasks">
+  <h2><span class="n">1</span>八个任务</h2>
+
+  <div class="task">
+    <div class="task-h"><h3><span class="n">①</span>剪掉一段，或只留一段，然后保存</h3><span class="count">现在 <b>5</b> 步 · 今天 <b>5</b> 步</span></div>
+    <p>步数一样：今天这条路本来就短。不同的是导出不离开工作台：它接管工具坞，最后一行是「取消」「导出」。只留一段：2 步，和今天一样。</p>
+    <div class="strip">
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t1a"></div></div></div><p class="cap"><b>0</b>打开。提示只在第一次出现。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t1b"></div></div></div><p class="cap"><b>1</b>拖一下：两头吸到停顿中间（这里是整整一问一答，0:39.8–0:58.5）；工具换成选中的能做的，「说一句」是「说一句 · 选中的」。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t1c"></div></div></div><p class="cap"><b>2</b>删除，后面的合上来。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t1d"></div></div></div><p class="cap"><b>3–5</b>导出（第一行是用途，「存文件」已选好）→ 保存 MP3 → 系统选位置保存。</p></div>
+    </div>
+  </div>
+
+  <div class="task">
+    <div class="task-h"><h3><span class="n">②</span>把一段挪到别处</h3><span class="count">现在 <b>2</b> 步（远处 <b>4</b> 步）· 今天 <b>7</b> 步</span></div>
+    <p>今天：拖选、⋯、剪切、点位置、全部工具、展开时间线、粘贴（粘贴进了「最近用过」后是 6 步）。</p>
+    <div class="strip">
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t2a"></div></div></div><p class="cap"><b>1</b>选一段。第一次会提示可以按住拖走。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t2b"></div></div></div><p class="cap"><b>2</b>按住拖：原处合上，要放的地方让开。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t2c"></div></div></div><p class="cap">松手就放好，还是选中的，可以接着调。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t2d"></div></div></div><p class="cap">很远时点「移动」：工具坞只剩一行——放到开头 / 结尾，「放回去」「放这里」。</p></div>
+    </div>
+  </div>
+
+  <div class="task">
+    <div class="task-h"><h3><span class="n">③</span>用一首歌做铃声</h3><span class="count">现在 <b>3</b> 步（第一次 4）· 今天 <b>8</b> 步（之后 7）</span></div>
+    <p>找到的第一段已经选好，长度记住上次的。「做铃声」只留这一段并把导出切到铃声，结尾自动淡出 1 秒。第一次系统还会问一次「修改系统设置」权限，两边都一样。</p>
+    <div class="strip">
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t3a"></div></div></div><p class="cap"><b>1</b>歌的「常用」第一个就是「副歌」（第一次打开时「说一句」写着「把副歌做成铃声」）。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t3b"></div></div></div><p class="cap">几段候选标在波形上，30 秒那一段已选中。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t3c"></div></div></div><p class="cap"><b>2–3</b>做铃声 → 「设为来电铃声」（导出已切到设铃声，MP3 已选好）。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t3d"></div></div></div><p class="cap">设好了。</p></div>
+    </div>
+  </div>
+
+  <div class="task">
+    <div class="task-h"><h3><span class="n">④</span>整理一段人声：降噪、统一音量、去掉长停顿</h3><span class="count">现在 <b>3</b> 步（一项一项来 6 步）· 今天 <b>9</b> 步、3 次跳页、多出 3 个版本（用一句话是 5 步、3 次跳页）</span></div>
+    <p>「人声清理」是一句话配方：点「说一句」，键盘上面第一个例句就是它。也可以一项一项来：降噪、完成、统一音量、完成、停顿、删掉，共 6 步（第九轮是 4 步：换设置不用先收起；这是「盖住」的代价），区别是每一项事后都能改。</p>
+    <div class="strip">
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t4a"></div></div></div><p class="cap"><b>1–2</b>说一句 → 人声清理。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t4b"></div></div></div><p class="cap">9 处停顿各画在自己的缺口里（小针、落进缺口的线、水平线上一个点），要加的设置是贴在声音上面的虚线标签。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t4c"></div></div></div><p class="cap"><b>3</b>「应用」一次改完，一次能撤。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t4d"></div></div></div><p class="cap">之后点「降噪」标签：降噪盖住工具坞，改力度、按住水线上的「原声」听、拨到「关」去掉。</p></div>
+    </div>
+  </div>
+
+  <div class="task">
+    <div class="task-h"><h3><span class="n">⑤</span>给人声配背景音乐，说话时音乐变小</h3><span class="count">现在 <b>2</b> 步 · 今天 <b>5</b> 步，结果是另一段新音频</span></div>
+    <p>音乐铺满整段、开头结尾淡化、说话时自动变小，这些都是默认的，所以选完就好了。选歌是一张面板（要试听，不用看波形）；选完它在同一个工作台里成为下面一轨，人声还能继续剪。</p>
+    <div class="strip">
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t5a"></div></div></div><p class="cap"><b>1</b>「音乐」在常用里。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t5b"></div></div></div><p class="cap"><b>2</b>面板里选一首（上面可以换成在线音乐库或手机里的文件）。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t5c"></div></div></div><p class="cap">音乐在下面，人声出现的地方它就压低。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t5d"></div></div></div><p class="cap">要改多小：点那一轨 → 自动调小；一条滑杆，最左是「关」，左上写着是哪一轨。</p></div>
+    </div>
+  </div>
+
+  <div class="task">
+    <div class="task-h"><h3><span class="n">⑥</span>在某处插入一段新录音；把几段接起来</h3><span class="count">插录音：现在 <b>4</b> 步 · 今天 <b>7</b> 步、2 次跳页 &nbsp; 接 N 个文件：现在 <b>4+N</b> · 今天每个 6 步</span></div>
+    <p>今天的插入工具默认插在开头，要拖滑块找到位置。现在就插在播放头，录的时候那里一点点让开。从音频库新建「把几段接起来」和今天一样是 3+N 步，打开就是工作台，每段开头一个标记。</p>
+    <div class="strip">
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t6a"></div></div></div><p class="cap"><b>1–2</b>点 1:14（两轮对话之间的停顿）→ 「录音」。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t6b"></div></div></div><p class="cap"><b>3</b>录音接管工具坞，播放让开：红色录音键是唯一的圆按钮，电平是这段录音自己的；「插入 / 叠加」和「不要了」「完成」在最后一行。后面的声音被推开。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t6c"></div></div></div><p class="cap"><b>4</b>「完成」，录音落在那里，选中着。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t6d"></div></div></div><p class="cap">接起来的三段，标记就是文件名。</p></div>
+    </div>
+  </div>
+
+  <div class="task">
+    <div class="task-h"><h3><span class="n">⑦</span>说一句，看清会改什么再确认</h3><span class="count">现在 <b>4</b> 步 · 今天 <b>3</b> 步；句子里有工具时 现在 4 · 今天 4 步、跳 2 个页面、多出 2 个版本</span></div>
+    <p>「说一句」就是静止时工具坞的第一格，点一下就能打字（键盘上面有例句，点例句是 2 步）。换来的是：计划画在波形上而不是另一页；句子里的降噪、统一音量也在这一步里，不再一个工具一个页面地走。</p>
+    <div class="strip">
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t7a"></div></div></div><p class="cap"><b>1–3</b>说一句 → 打字或说话 → 发送。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t7b"></div></div></div><p class="cap">删的、淡出的都画在波形上；可以切到「改后」听。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t7c"></div></div></div><p class="cap"><b>4</b>「应用」后接着是导出，MP3 已选好。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t7d"></div></div></div><p class="cap">没看懂的部分不执行，给几个说法可选。</p></div>
+    </div>
+  </div>
+
+  <div class="task">
+    <div class="task-h"><h3><span class="n">⑧</span>导出或分享</h3><span class="count">存文件 <b>3</b> 步、分享 <b>4</b> 步 · 今天一样，但要走两个页面；有选区时今天多一步</span></div>
+    <p>导出接管工具坞，第一行问用途：存文件、分享、设铃声。格式和码率跟着用途和上次用的走（第一次分享是 M4A 128k），收成一行「音质」，点开在工具坞里展开；名字、标签、采样率、预设、每段一个文件也在那里。主按钮写着会发生什么。生成时可以取消。</p>
+    <div class="strip">
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t8a"></div></div></div><p class="cap"><b>1–3</b>导出 → 分享 → 「分享 M4A」。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t8b"></div></div></div><p class="cap">生成中，可以取消。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t8c"></div></div></div><p class="cap"><b>4</b>系统的分享。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t8d"></div></div></div><p class="cap">选着一段时，用途下面一行是「整段 / 选中的」。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="states">
+  <h2><span class="n">2</span>关键画面</h2>
+  <h3 class="grp-h">静止和即时设置：设置盖住工具坞，一样高</h3>
+  <p class="lead">打开一个设置，它盖住整个工具坞：左上名字和数值，中间是占满宽度的控件，右下「完成」。高度和工具栏一样，画布和播放不动；点「完成」工具栏原样回来。</p>
+  <div class="shots">
+    <div class="shot"><div class="phone"><div class="scr" data-scene="t6a"></div></div><h3>静止</h3><p>「说一句」、一行工具、一行分类；橙色麦克风是屏幕上唯一的实心橙。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="t4d"></div></div><h3>降噪</h3><p>「降噪 较强」和一条有档位的滑杆；最左的空心点是「关」。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kLd"></div></div><h3>统一音量：三个值</h3><p>值少时控件就是几个选项，加一个「关」。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kVol"></div></div><h3>音量</h3><p>零是「关」，在零上有一道刻痕，滑过去会吸住。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kFadeRest"></div></div><h3>淡化：两个值</h3><p>一条滑杆两个钮：左钮是开头淡入，右钮是结尾淡出，滑杆就是这段声音。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kSpeed"></div></div><h3>变速</h3><p>档位，后面跟一个「音高不变」的开关；1× 就是关。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kVc"></div></div><h3>变声：十种</h3><p>一排能横滑的小块，第一个是「关」，后面的露出半个。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kFx"></div></div><h3>效果：九种</h3><p>点一下是轻，再点是中、强，再点就关；小块里三道竖线是力度。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kRepair"></div></div><h3>修复：七项</h3><p>力度三档，后面是七项开关，横滑。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kDnOff"></div></div><h3>降噪拨到「关」</h3><p>收起时降噪就从声音上拿掉，和调力度是同一步历史，一次撤销。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kRangeDn"></div></div><h3>选中一段 · 降噪</h3><p>只作用于选中的；名字后面写着「选中的」。按播放只循环这一段（播放键上一个小循环标）。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kFade"></div></div><h3>选区淡化</h3><p>淡入 / 淡出，后面四条曲线。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kEnv"></div></div><h3>音量曲线</h3><p>直接在波形上点、拖；左上写着几个点，下面「清空」。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kBeats"></div></div><h3>节拍</h3><p>速度、显示、吸附，一行。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kPlaying"></div></div><h3>播放中</h3><p>什么都不收起：边听边点「分割」。播放键外面一圈光。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kBrowse"></div></div><h3>放大浏览</h3><p>全局条在刻度下面；工具坞不动。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kRestEdit"></div></div><h3>分类：剪辑</h3><p>一行，往左滑看后面的；打开设置时这一行不重排、不滚。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kRestSound"></div></div><h3>分类：声音</h3></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kRestAdd"></div></div><h3>分类：添加</h3></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kPiece"></div></div><h3>双击选中一个片段</h3><p>第一个分类变成「片段」；工具行前头一道选区的橙色。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kTrackRow"></div></div><h3>选中音乐那一轨</h3><p>第一个分类变成「轨道」；工具行前头是这一轨的颜色。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kSysBack"></div></div><h3>系统返回</h3><p>降噪开着时从左边缘往里滑：等于「完成」，降噪留着。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kStt"></div></div><h3>转文字：未接通</h3><p>说明未接通，下面可以直接导出音频。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kProc"></div></div><h3>人声分离进行中</h3><p>处理好的部分先能听；进度和「取消」。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kErr"></div></div><h3>出错</h3><p>标签变红，点开是原因和两个出路。</p></div>
+  </div>
+  <h3 class="grp-h">要拍板的事：接管整个工具坞</h3>
+  <p class="lead">工具和分类让出来，最后一行是写着字的决定（唯一的实心橙）。点波形、标题、撤销都不会结束它；系统返回等于「取消」。水线上只剩播放。</p>
+  <div class="shots">
+    <div class="shot"><div class="phone"><div class="scr" data-scene="t8a"></div></div><h3>导出 · 分享</h3><p>用途、一行音质，最后一行「取消」「分享 M4A」。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="t8d"></div></div><h3>导出 · 选着一段</h3><p>用途、「整段 / 选中的」、音质、决定。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kExportMore"></div></div><h3>导出 · 音质展开</h3><p>格式、码率，下面是名字、标签、采样率、预设；放不下就在自己里面滚。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="t8b"></div></div><h3>导出 · 生成中</h3><p>一行：进度和「取消」。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="t1e"></div></div><h3>导出完成</h3><p>「完成」才结束。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kTts"></div></div><h3>朗读</h3><p>要读的字、音色和快慢，「取消」「生成」。生成后插在播放头。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kTtsType"></div></div><h3>朗读 · 打字</h3><p>键盘上来时只留文字和决定。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kVoiceOff"></div></div><h3>在线音色：未接通</h3></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="t6b"></div></div><h3>录音</h3><p>播放让开；红色录音键是唯一的圆按钮，时间、这段录音自己的电平；「插入 / 叠加」「不要了」「完成」。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kRecSet"></div></div><h3>录音设置</h3><p>设置在录音键下面展开，决定还在最后一行。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kNew"></div></div><h3>新的录音</h3><p>新建 → 录一段，直接在工作台里录。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="t2d"></div></div><h3>移动一段</h3><p>一层：放到开头 / 结尾，「放回去」「放这里」。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kPauses"></div></div><h3>删停顿</h3><p>点一处可以留下它；「删掉 N 处」是决定。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="t3b"></div></div><h3>副歌</h3><p>候选和长度，「取消」「只留这段」「做铃声」。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kChorusNone"></div></div><h3>没找到副歌</h3></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kHistory"></div></div><h3>历史</h3><p>按住撤销打开；点一步就在波形上看那一步，「回到这一步」或「取消」。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="t7b"></div></div><h3>说一句的计划</h3><p>要改的画在波形上；「不改了」「应用」。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kSayFocus"></div></div><h3>说一句（打字）</h3><p>句子和例句骑在键盘上；水线空出来。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kMarkerName"></div></div><h3>标记改名</h3><p>一个名字框和「取消」「好」，骑在键盘上。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kSub"></div></div><h3>字幕配音</h3><p>生成后成为下面的「配音」轨。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kClone"></div></div><h3>克隆声音</h3></div>
+  </div>
+  <h3 class="grp-h">两张面板：不用看波形的选单</h3>
+  <p class="lead">从工具坞升起，同一种玻璃，一次一张。往下关、点外面或系统返回关掉。</p>
+  <div class="shots">
+    <div class="shot"><div class="phone"><div class="scr" data-scene="t5b"></div></div><h3>面板①：配一首音乐</h3><p>要试听，不要波形：列表、试听、「用这首」。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kAudioPick"></div></div><h3>面板①：插入一段音频</h3><p>同一张面板，多一个「插在播放头 / 接在结尾 / 叠加」。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kOnline"></div></div><h3>面板①：在线音乐库</h3><p>授权写在每首后面。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kOnlineOff"></div></div><h3>面板①：在线音乐库未接通</h3></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kDetails"></div></div><h3>面板②：这段音频（点名字）</h3><p>改名、详情与署名、另存、工程包、删除。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kPicker"></div></div><h3>系统选文件</h3></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kConfirm"></div></div><h3>删了找不回的确认</h3></div>
+  </div>
+  <h3 class="grp-h">把手和水线：播放和把手从不重叠</h3>
+  <p class="lead">把手挂在声音下面那一条里，永远停在水线上方 8 dp；起点的在左、终点的在右，各占 48 dp 以上，再短的选区也不重叠。多条轨道从水线后面滚上来。</p>
+  <div class="shots">
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kGripsShort"></div></div><h3>一句话那么短</h3><p>「是街坊吧。」1.7 秒：两片把手各朝外，碰不到一起。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kGripsStart"></div></div><h3>从最开头选</h3><p>起点的把手离屏幕边太近就朝里，碰到终点的就挪到声音上面：左上角是起点，右下角是终点。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kGripsHeld"></div></div><h3>按住终点的把手</h3><p>把手周围的时间放大约十二倍：停顿一指宽，落进去再松手，画面回到整段。</p></div>
+  </div>
+  <div class="shots">
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kEdges"></div></div><h3>选到开头（标注）</h3><p>红色斜线 24 dp 归系统返回；红虚线 32 dp 以内没有波形上能拖的东西；橙虚线是声音的开头和结尾（40 dp）。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kHandlesEnd"></div></div><h3>选到结尾（标注）</h3></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kEdgesZoomStart"></div></div><h3>放大到开头</h3><p>开头仍然停在 40 dp；把手在播放键上方。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kEdgesZoomEnd"></div></div><h3>放大到结尾</h3></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kTracks5Sel"></div></div><h3>五条轨道 · 选中开头</h3><p>把手在主线下沿，离水线很远。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kTracks5"></div></div><h3>五条轨道</h3><p>音乐天蓝、配音青绿、录音靛蓝、音效石板蓝；主线仍是最深的蓝。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kTracks8"></div></div><h3>八条轨道，滚到一半</h3><p>轨道从播放、「原声」和撤销底下滚过；它们是淡底加细线，轨道透过来，字和图标照样清楚。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kTracks5Scroll"></div></div><h3>往上滑轨道</h3><p>轨道在主线下面、水线后面滚；工具坞不动。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kTracks5Ctrl"></div></div><h3>五条轨道 · 调一轨（自动调小）</h3><p>正在调的那一轨留在视野里。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kTracks5Vol"></div></div><h3>五条轨道 · 调最下面一轨</h3><p>那一轨滚到水线上面；名字后面是这一轨（它的颜色和图标）。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kTracks"></div></div><h3>几条轨道，选中音乐那一轨</h3><p>补录那一轨静音了。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kTrackVol"></div></div><h3>调一轨的音量</h3><p>按播放只循环这一轨所在的一段（这里铺满，就是整段）。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kLong"></div></div><h3>两小时的音频，放大</h3><p>下面是全局条，拖它或拖刻度换位置；标记在刻度上。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kSpec"></div></div><h3>频谱</h3></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kAudio"></div></div><h3>分类：更多</h3></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kPlay"></div></div><h3>点时间：也是「更多」</h3><p>试听速度不是 1× 时，时间旁边会写着。</p></div>
+  </div>
+  <h3 class="grp-h">小屏、大字、英文</h3>
+  <div class="shots">
+    <div class="shot w360"><div class="phone w360"><div class="scr" data-scene="kFsRest"></div></div><h3>360 dp · 字号 1.3</h3></div>
+    <div class="shot w360"><div class="phone w360"><div class="scr" data-scene="kFsRange"></div></div><h3>360 dp · 字号 1.3 · 选中一段</h3></div>
+    <div class="shot w360"><div class="phone w360"><div class="scr" data-scene="kFsParam"></div></div><h3>360 dp · 字号 1.3 · 降噪</h3></div>
+    <div class="shot w360"><div class="phone w360"><div class="scr" data-scene="kFsTrack"></div></div><h3>360 dp · 字号 1.3 · 选中一轨</h3></div>
+    <div class="shot w360"><div class="phone w360"><div class="scr" data-scene="kFsExport"></div></div><h3>360 dp · 字号 1.3 · 导出</h3></div>
+    <div class="shot w360"><div class="phone w360"><div class="scr" data-scene="kFsPlan"></div></div><h3>360 dp · 字号 1.3 · 计划</h3></div>
+    <div class="shot w360"><div class="phone w360"><div class="scr" data-scene="kEnRest"></div></div><h3>英文 · 360 dp</h3></div>
+    <div class="shot w360"><div class="phone w360"><div class="scr" data-scene="kEnRange"></div></div><h3>英文 · 选中一段</h3></div>
+    <div class="shot w360"><div class="phone w360"><div class="scr" data-scene="kEnSound"></div></div><h3>英文 · 声音</h3></div>
+    <div class="shot w360"><div class="phone w360"><div class="scr" data-scene="kEnRestSound"></div></div><h3>英文 · 更多</h3></div>
+    <div class="shot w360"><div class="phone w360"><div class="scr" data-scene="kEnTrack"></div></div><h3>英文 · 选中一轨</h3></div>
+    <div class="shot w360"><div class="phone w360"><div class="scr" data-scene="kEnParam"></div></div><h3>英文 · 降噪</h3></div>
+    <div class="shot w360"><div class="phone w360"><div class="scr" data-scene="kEnExport"></div></div><h3>英文 · 导出</h3></div>
+  </div>
+</section>
+
+<section class="sec" id="inv">
+  <h2><span class="n">3</span>功能清单：每一项在骨架里的位置</h2>
+  <p class="lead">第九轮原型里的每个工具和状态，按它的性质分类。只有放进了骨架的才算设计完。数目按工具算（同一个工具出现在几个分类里只算一次）。</p>
+  <div class="inv-wrap"><table class="inv">
+    <thead><tr><th>工具</th><th>从哪打开</th><th>盖住工具坞的是什么 / 面板里是什么</th><th>怎么结束</th></tr></thead>
+    <tbody>
+      <tr><td class="grp" colspan="4">点一下就做完 · 16 个（加 3 个先过系统界面、1 个先确认）：在工具这一行，撤销收回</td></tr>
+      <tr><td>分割、删除、只留、重复、全选、标记</td><td>常用 / 选中的 / 片段 / 剪辑</td><td>马上做完；选区、片段跟着变</td><td>撤销</td></tr>
+      <tr><td>倒放、静音、独听、循环播放、频谱</td><td>声音 / 轨道 / 更多</td><td>开关，工具上显示「开着」</td><td>再点一下；撤销</td></tr>
+      <tr><td>删除这一轨、在标记处分割、删除标记、全部（看整段）、另存一份</td><td>轨道 / 标记 / 更多 / 面板②</td><td>马上做完</td><td>撤销（另存不进历史）</td></tr>
+      <tr><td>文件、视频（插入）、工程包</td><td>添加 / 更多 / 面板②</td><td>先过系统选文件、选位置</td><td>系统界面里取消</td></tr>
+      <tr><td>删除这段音频</td><td>面板②</td><td>唯一的确认框：删了找不回</td><td>确认框</td></tr>
+      <tr><td class="grp" colspan="4">即时设置，一个值 · 16 个：盖住工具坞，和工具栏一样高</td></tr>
+      <tr><td>降噪</td><td>常用 / 声音 / 选中的</td><td>「降噪 适中」+ 六档滑杆，第一档是「关」</td><td>「完成」或系统返回（值留着，撤销收回）；拨到「关」再完成 = 去掉</td></tr>
+      <tr><td>统一音量、声道、人声分离</td><td>常用 / 声音</td><td>几个选项加「关」；声道：原样 / 单声道 / 左右交换，下面一条宽度；人声分离：下面一条强度</td><td>同上</td></tr>
+      <tr><td>音量（整段 / 选中的）、轨道音量</td><td>常用 / 声音 / 选中的 / 轨道</td><td>名字和值 + 滑杆；零有刻痕会吸住，零就是「关」</td><td>同上</td></tr>
+      <tr><td>自动调小</td><td>轨道</td><td>「说话时 降到 25%」+ 滑杆，最左是「关」</td><td>同上</td></tr>
+      <tr><td>变声</td><td>声音</td><td>一排横滑的小块，第一个「关」</td><td>同上</td></tr>
+      <tr><td>空白、接缝、循环到</td><td>添加 / 剪辑</td><td>几个选项</td><td>同上</td></tr>
+      <tr><td>试听速度、跳到</td><td>更多</td><td>档位；四个快进快退和时间</td><td>同上</td></tr>
+      <tr><td>音量曲线</td><td>声音</td><td>在波形上点、拖；左上写点数，下面「清空」</td><td>同上</td></tr>
+      <tr><td>片段</td><td>剪辑</td><td>每个片段一个小块，点了就选中它</td><td>点一个就选中并收起</td></tr>
+      <tr><td>转文字（未接通）</td><td>更多</td><td>说明未接通，下面「导出音频」</td><td>同上</td></tr>
+      <tr><td class="grp" colspan="4">即时设置，几个值 · 9 个：一样高，第二个值放在下面一行（和「完成」同一行）</td></tr>
+      <tr><td>淡化（整段）、轨道淡化</td><td>常用 / 声音 / 轨道</td><td><b>一条滑杆两个钮</b>：左钮开头淡入、右钮结尾淡出</td><td>同上</td></tr>
+      <tr><td>淡化（选中的）</td><td>选中的</td><td>淡入 / 淡出 + 四条曲线（图标）</td><td>同上</td></tr>
+      <tr><td>变速、起点</td><td>声音 / 轨道</td><td>档位或滑杆，后面一个开关（音高不变 / 循环）</td><td>同上</td></tr>
+      <tr><td>修复</td><td>声音</td><td>力度三档 + 七项开关，横滑</td><td>同上；七项都关 = 去掉</td></tr>
+      <tr><td>效果</td><td>常用 / 声音</td><td>九种，点一下轻、再点中、强、关</td><td>同上；都关 = 去掉</td></tr>
+      <tr><td>分段、精确、节拍</td><td>剪辑 / 选中的</td><td>方式 + 步进；起点终点两个步进；速度 + 两个开关</td><td>同上</td></tr>
+      <tr><td class="grp" colspan="4">要拍板的事 · 14 个：接管整个工具坞，最后一行是写着字的决定</td></tr>
+      <tr><td>导出（右上，选中的里也有）</td><td>标题栏 / 选中的</td><td>用途（存文件 / 分享 / 设铃声；有选区时下面是「整段 / 选中的」），一行音质，点开在里面展开</td><td>取消 / 保存 MP3（分享 M4A、设为来电铃声）；生成中：取消；完成：完成</td></tr>
+      <tr><td>朗读、字幕配音、克隆声音</td><td>常用 / 添加</td><td>文字、音色、快慢；字幕行；同意、读一句、录</td><td>取消 / 生成；不要了 / 保存为音色</td></tr>
+      <tr><td>录音</td><td>常用 / 添加</td><td>播放让开；录音键（唯一的圆按钮）、时间、这段录音的电平，设置在下面展开</td><td>取消（没录时）、不要了 / 完成</td></tr>
+      <tr><td>移动、复制、粘贴</td><td>选中的 / 片段 / 添加</td><td>放到开头 / 结尾</td><td>放回去 / 放这里</td></tr>
+      <tr><td>删停顿、副歌</td><td>常用 / 剪辑</td><td>长短；候选和长度</td><td>取消 / 删掉 N 处；取消 / 只留这段 / 做铃声</td></tr>
+      <tr><td>历史（按住撤销，或更多）</td><td>水线 / 更多</td><td>一步步在波形上看</td><td>取消 / 回到这一步</td></tr>
+      <tr><td>说一句 → 计划</td><td>工具栏的第一格（静止时）</td><td>打字时骑在键盘上；计划画在波形上</td><td>发送；不改了 / 应用</td></tr>
+      <tr><td>标记改名</td><td>标记</td><td>名字框，骑在键盘上</td><td>取消 / 好</td></tr>
+      <tr><td class="grp" colspan="4">面板 · 2 张（每张写了理由，可以逐条不要）</td></tr>
+      <tr><td>面板①「选声音」：音乐、换一首、插入音频、在线音乐库</td><td>常用 / 添加 / 轨道</td><td><b>理由</b>：从列表里选、要试听，不需要看波形；列表需要高度（来源、分类、授权）</td><td>选一首；往下关、点外面、系统返回</td></tr>
+      <tr><td>面板②「这段音频」：改名、详情与署名、另存、工程包、删除</td><td>点名字；更多 → 改名 / 详情</td><td><b>理由</b>：讲的是这个文件本身，不是声音；改名要打字；删除要接确认</td><td>往下关、点外面、系统返回</td></tr>
+      <tr><td class="grp" colspan="4">不是工具</td></tr>
+      <tr><td>播放</td><td>水线左边</td><td>浮标；开着作用在选区或某一轨的设置时，按下去只循环那一段，浮标上一个小循环标</td><td>—</td></tr>
+      <tr><td>按住听原声</td><td>水线，播放旁边</td><td>有声音设置时才出现</td><td>松手</td></tr>
+      <tr><td>撤销、重做</td><td>水线右边，离播放远</td><td>要拍板的事开着时不在（决定结束它，不是历史）</td><td>—</td></tr>
+      <tr><td>分类</td><td>工具坞最下面</td><td>最轻的一行；打开设置或要拍板的事时被盖住</td><td>—</td></tr>
+      <tr><td>声音上的标签、时间标签</td><td>主线顶上、刻度上</td><td>点标签 = 打开那个设置；点时间 = 更多（有选区时 = 精确）</td><td>—</td></tr>
+    </tbody>
+  </table></div>
+  <div class="card" style="margin-top:16px">
+    <h2>几个值的设置，按类解决</h2>
+    <ul>
+      <li><b>规则</b>：盖住工具坞的设置有三行——名字和数值；主要的值，占满宽度；第二个值和「完成」。高度和工具栏一样，所以一个设置不管几个值，画布和播放都不动。</li>
+      <li><b>两个对称的值</b>（淡入和淡出）：一个控件——一条滑杆两个钮，滑杆代表这段声音，两头写着各自的秒数。</li>
+      <li><b>一个值加一个开关或一个次要的量</b>（变速 + 音高不变、起点 + 循环、声道 + 宽度、分离 + 强度、修复 + 力度）：开关或次要的量在第二行。</li>
+      <li><b>很多个开关或预设</b>（变声、修复、效果）：一排横滑的小块，后一个露出半个；效果的力度用点的次数（轻、中、强、关）。滑杆从不放进横滑的行。</li>
+      <li><b>开 / 关加一个量</b>（自动调小）：一条滑杆，最左是关。</li>
+      <li><b>「去掉」按钮</b>：所有设置都能表达「关」（关的档、零、原样），收起时拿掉，和调整算同一步历史。第九轮的「去掉」按钮没有了。</li>
+      <li><b>换了类的</b>：历史从「工具坞里的一张列表」变成要拍板的事（看 → 回到这一步 / 取消）；详情、改名进了面板②；选音乐、插入音频进了面板①。</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="notes">
+  <h2><span class="n">4</span>说明</h2>
+  <div class="notes">
+    <div class="card">
+      <h2>骨架：每个状态允许几层</h2>
+      <p>「层」是工具坞里能一眼读成一样东西的一条。检查时数的是工具坞里看得见的层（v10checks）。</p>
+      <table class="mini">
+        <tr><th>状态</th><th>工具坞里的层</th><th>最多</th></tr>
+        <tr><td>静止</td><td>说一句 · 工具 · 分类</td><td>3</td></tr>
+        <tr><td>打开一个即时设置</td><td>名字和数值 · 控件 · 第二个值和「完成」（盖住工具坞，和工具栏一样高）</td><td>3</td></tr>
+        <tr><td>要拍板的事</td><td>设置的行 · 决定（盖住工具坞，按需要的高度；放不下的在自己里面滚）</td><td>4</td></tr>
+        <tr><td>打字</td><td>例句 · 句子（骑在键盘上）</td><td>2</td></tr>
+        <tr><td>面板</td><td>盖在工具坞上，一次一张</td><td>—</td></tr>
+      </table>
+      <p>第九轮：开着降噪 5 层（力度 / 两个按钮 / 播放·说一句·撤销 / 工具 / 分类），导出 7 层。这一版：降噪 3 层，导出 3 层（有选区 4 层）。</p>
+    </div>
+    <div class="card">
+      <h2>高度（dp）</h2>
+      <p>每格：工具坞 · 看得见的画布 · 主线 · 播放键离屏幕顶（手机上不显示状态栏和导航条）。</p>
+      <table class="mini">
+        <tr><th>状态</th><th>360 × 780</th><th>390 × 844</th></tr>
+        <tr><td>静止</td><td>174 · 554 · 444 · 540</td><td>174 · 618 · 508 · 604</td></tr><tr><td>开着降噪（盖住）</td><td>174 · 554 · 444 · 540</td><td>174 · 618 · 508 · 604</td></tr><tr><td>导出（没有选区）</td><td>148 · 580 · 444 · 566</td><td>148 · 644 · 508 · 630</td></tr><tr><td>朗读</td><td>177 · 551 · 441 · 537</td><td>177 · 615 · 505 · 601</td></tr><tr><td>打字（含键盘 268）</td><td>414 · 314 · 264 · —</td><td>414 · 378 · 328 · —</td></tr>
+      </table>
+      <p>第九轮在 360：静止画布 554，开着降噪 450，朗读 429。这一版开着任何一个即时设置都和静止一样（554）：设置盖住工具坞，不往上长。播放键只在要拍板的事打开时跟着水线走，差的就是两个高度之差。</p>
+    </div>
+    <div class="card">
+      <h2>什么时候动</h2>
+      <table class="mini">
+        <tr><th>手在做什么</th><th>工具坞</th><th>播放</th></tr>
+        <tr><td>播放、浏览、缩放、选一段、拖把手、滑多条轨道</td><td>不动</td><td>不动</td></tr>
+        <tr><td>打开、收起一个即时设置</td><td>盖住 / 回来，一样高</td><td>不动</td></tr>
+        <tr><td>打开要拍板的事</td><td>换成它的面板，按需要变高或变矮</td><td>跟着水线（总在工具坞上沿上方 10 dp）</td></tr>
+        <tr><td>打字</td><td>骑在键盘上</td><td>让开（水线空出来）</td></tr>
+        <tr><td>打开面板</td><td>被面板盖住</td><td>被面板盖住</td></tr>
+        <tr><td>减少动态</td><td colspan="2">同样的状态，没有移动的过程</td></tr>
+      </table>
+      <p>第九轮滑多条轨道时工具行会让开；这一版不让：轨道在主线下面、水线后面滚，工具坞不动。</p>
+    </div>
+    <div class="card">
+      <h2>水线</h2>
+      <p>播放是一个 56 dp、声音蓝的实心圆，离工具坞的亮边 10 dp；除了工具坞，只有它投影子。主线和它的把手停在它上方至少 8 dp（第十二轮：一段音频时声音贴着这一条，竖条最高约 235，把手挂在声音和播放之间）；录音时播放让开。撤销和重做是一对细线胶囊，在水线另一头，离播放远，读起来是历史不是快进快退；没得撤时底更淡。有声音设置时，播放后面拖出一截「原声」，按住听没处理的（开着一个设置时只去掉那一个）。</p>
+      <p>开着一个作用在选区或某一轨上的设置时，按播放只放那一段并循环，浮标上有个小循环标，时间标签上也有；不会自己开始放。</p>
+      <p>要拍板的事开着时，水线上只剩播放：撤销不在（决定结束它，不是历史），「原声」不在。</p>
+      <p>多条轨道：主线先让出高度（最少 120），轨道在它下面；放不下时从水线后面滚上来，最后一条总能滚到水线上面（检查过八条）。</p>
+    </div>
+    <div class="card">
+      <h2>覆盖层：今天 16 个，第九轮 1 个，这一版 3 个</h2>
+      <ul>
+        <li><b>面板①「选声音」</b>：配乐、换一首、插入音频、在线音乐库。理由：从列表里选、要试听，不需要看波形；列表需要高度。</li>
+        <li><b>面板②「这段音频」</b>：点名字打开。改名、详情与署名、另存、工程包、删除。理由：讲的是文件本身；改名要打字；删除要接确认。</li>
+        <li><b>确认框</b>：删除这段音频（撤不回）。还有删除克隆的音色、保存失败时离开，同一个样式。</li>
+        <li>其余都是系统的：选文件、选保存位置、分享、权限、键盘。</li>
+      </ul>
+      <p>两张面板可以逐条不要：面板①可以回到第九轮那样放进工具坞（三行列表，要滚）；面板②可以回到「更多」里的几个工具。</p>
+    </div>
+    <div class="card">
+      <h2>在 Android 上的代价</h2>
+      <ul>
+        <li>背后的实时模糊只在 Android 12+（RenderEffect）有，minSdk 26 以下的手机用实色底；层次靠色阶、亮边和阴影，不靠模糊（页面顶上可以切换看）。工具坞、两张面板、水线上的三个小东西都是同一种玻璃。</li>
+        <li>模糊要在玻璃后面的画布变化时重算：播放时播放头每帧动，所以有模糊的手机上播放时工具坞和浮标下的那一条每帧重算；浮标小，代价主要在工具坞。可以只模糊工具坞上沿往上一小段，或播放时换成实色。</li>
+        <li>工具坞的玻璃在单独的一层上（这里是一个伪元素），水线上的浮标才模糊得到画布本身；Compose 里是两个同级的层，各自 RenderEffect。</li>
+        <li>盖住、换回是一次淡入加 8 dp 的位移，没有高度动画（一样高）；要拍板的事变高时，工具坞的高度跟着弹簧走，水线和主线逐帧跟着（本来就在逐帧画播放头）。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>对产品模型的要求（规划用，同第九轮）</h2>
+      <ul>
+        <li><b>一个工程多个源</b>：原始音频、录音、朗读、插进来的音频都是工程里的不可变文件，跨音频粘贴是普通的时间线修改。</li>
+        <li><b>轨道</b>：主线下面最多 7 轨，锚在主线的源帧上；铺满的音乐自动循环、截断、淡出。</li>
+        <li><b>声音设置是图层</b>：存成参数，作用于整轨或一段，渲染时按顺序跑；重的在后台算成缓存。「关」不进渲染。</li>
+        <li><b>一条历史</b>：所有改动进同一个撤销栈；一次打开设置里的连续调整是一步，收起时拨到「关」把它拿掉也算同一步。</li>
+        <li><b>导出</b>把主线、轨道、图层一起混合。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>只有你能定的</h2>
+      <ul>
+        <li>换一个设置要两下（完成、再点）。主流剪辑应用都这样；如果你在意，可以加「在设置里左右滑换到旁边的工具」，但那是看不见的手势，我没有加。</li>
+        <li>两张面板留不留（理由在上面）。</li>
+        <li>要拍板的事打开时播放跟着水线走（导出没有选区时往下 26 dp，带选区往上 16，朗读往上 3）；如果你要它永远不动，代价是要拍板的事也固定成工具栏的高度，高的那几个（导出带选区、历史、计划）要在里面滚。</li>
+        <li>旧的版本家族合并成一段音频，还是保持各自独立；声音设置第一版就支持「只作用于一段」吗；轨道最多几条（建议 7）；历史保留多少步。（同第九轮）</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="look">
+  <h2><span class="n">5</span>画面：清水（第九轮定的方向，这一版修的地方）</h2>
+  <p class="lead">一句话：<b>声音是清水上的光</b>。地面是一层由上往下渐深的浅蓝水色（深色是蓝色的夜），声音后面一片静止的光；波形是屏幕上最深的蓝，横在一条水平线上，下面是更轻的倒影；玻璃的工具坞和标签用同一片水做成。橙色只留给一个主动作。</p>
+  <div class="card">
+    <h2>这一版修的</h2>
+    <ul>
+      <li><b>暖色的遗留</b>：「说一句」的米色底换成水色的白（橙色只剩麦克风）；「取消」这类次要按钮从暖灰换成水色的淡蓝；导出里选中的「分享」从橙色换成数值的蓝；所有暖灰的底色（surface、raised、outline）换成冷的同一族。</li>
+      <li><b>数值的颜色</b>：滑杆当前档的文字以前是橙色，现在数值在设置的左上，是声音的蓝；档位上不再有一排文字。</li>
+      <li><b>五条轨道分得开</b>：每一种一个水里的颜色——音乐天蓝、配音青绿、录音靛蓝、音效石板蓝；主线仍是最深的蓝。标签上有类型图标和同一种颜色；选中的轨道描一圈它自己的颜色。对地面都 ≥ 3:1。</li>
+      <li><b>浅色更有层次</b>：地面往工具坞那头更深（底部 #C6D6EC，第九轮 #CFDCEE），白色的玻璃浮在更深的水上；没有加任何装饰。</li>
+      <li><b>播放</b>（第十一轮）：声音蓝的实心圆，画面的锚点；播放时外面一圈光。只有它和工具坞投影子，其余浮着的东西是淡底加细线。</li>
+      <li><b>它作用在哪</b>：选中一段时工具行前头一道选区的橙色、设置名字后面写「选中的」；选中一轨时是那一轨的颜色和图标。</li>
+      <li><b>水面</b>（第十二轮）：从声音的水平线往下，地面深一点、冷一点，边是软的；声音浮在水面上，倒影落在水里。浅色里清水这才看得出来，深色里水面下是更深的夜。没有加任何装饰。</li>
+      <li><b>真的声音</b>（第十二轮）：说话一段一段，停顿处只剩房间的底噪，用淡的水色画、不画倒影；主持人离麦克风远，竖条比嘉宾的矮。</li>
+    </ul>
+  </div>
+  <div class="ba" style="margin-top:16px">
+    <figure><img src="ba/study-s1-light.png" alt="清水，浅色"><figcaption>第九轮定的清水 · 浅色</figcaption></figure>
+    <figure><img src="ba/study-s1-dark.png" alt="清水，深色"><figcaption>清水 · 深色</figcaption></figure>
+  </div>
+</section>
+
+<section class="sec" id="squint">
+  <h2><span class="n">6</span>眯眼看：主角是不是最显眼</h2>
+  <p class="lead">每个状态先说好主角是谁，再把截图变灰、模糊约 7 dp，看最显眼的是不是它（squint.py：每一部分最突出的 24 × 24 dp 和工具坞本身的色调差多少）。第十二轮 10 个状态 × 360/390 × 浅/深 共 40 张，40 张通过。这一轮波形变成真的声音、播放头变细变短、导出的主按钮写着会发生什么、录音时播放让开；主角没有被它们抢走。左边是截图，右边是眯眼看到的。</p>
+  <div class="squint"><figure><img src="ba/sq-v11-rest-390l.png" alt="第十一轮 静止" loading="lazy"><figcaption><b>第十一轮 · 静止</b></figcaption></figure><figure><img src="ba/sq-v12-rest-390l.png" alt="第十二轮 静止" loading="lazy"><figcaption><b>第十二轮 · 静止</b>：主角是播放（声音蓝的实心圆），眯眼看最显眼的也是它</figcaption></figure><figure><img src="ba/sq-v11-denoise-390l.png" alt="第十一轮 降噪" loading="lazy"><figcaption><b>第十一轮 · 降噪</b></figcaption></figure><figure><img src="ba/sq-v12-denoise-390l.png" alt="第十二轮 降噪" loading="lazy"><figcaption><b>第十二轮 · 降噪</b>：主角是降噪的滑杆，眯眼看最显眼的也是它</figcaption></figure><figure><img src="ba/sq-v11-fade-390l.png" alt="第十一轮 淡化" loading="lazy"><figcaption><b>第十一轮 · 淡化</b></figcaption></figure><figure><img src="ba/sq-v12-fade-390l.png" alt="第十二轮 淡化" loading="lazy"><figcaption><b>第十二轮 · 淡化</b>：主角是淡化的两个钮，眯眼看最显眼的也是它</figcaption></figure><figure><img src="ba/sq-v11-export-390l.png" alt="第十一轮 导出" loading="lazy"><figcaption><b>第十一轮 · 导出</b></figcaption></figure><figure><img src="ba/sq-v12-export-390l.png" alt="第十二轮 导出" loading="lazy"><figcaption><b>第十二轮 · 导出</b>：主角是写着会发生什么的主按钮，眯眼看最显眼的也是它</figcaption></figure><figure><img src="ba/sq-v11-tts-390l.png" alt="第十一轮 朗读" loading="lazy"><figcaption><b>第十一轮 · 朗读</b></figcaption></figure><figure><img src="ba/sq-v12-tts-390l.png" alt="第十二轮 朗读" loading="lazy"><figcaption><b>第十二轮 · 朗读</b>：主角是「生成」，眯眼看最显眼的也是它</figcaption></figure><figure><img src="ba/sq-v11-move-390l.png" alt="第十一轮 移动一段" loading="lazy"><figcaption><b>第十一轮 · 移动一段</b></figcaption></figure><figure><img src="ba/sq-v12-move-390l.png" alt="第十二轮 移动一段" loading="lazy"><figcaption><b>第十二轮 · 移动一段</b>：主角是「放这里」，眯眼看最显眼的也是它</figcaption></figure><figure><img src="ba/sq-v11-record-390l.png" alt="第十一轮 录音" loading="lazy"><figcaption><b>第十一轮 · 录音</b></figcaption></figure><figure><img src="ba/sq-v12-record-390l.png" alt="第十二轮 录音" loading="lazy"><figcaption><b>第十二轮 · 录音</b>：主角是红色录音键（播放让开了），眯眼看最显眼的也是它</figcaption></figure><figure><img src="ba/sq-v11-range-390l.png" alt="第十一轮 选中一段" loading="lazy"><figcaption><b>第十一轮 · 选中一段</b></figcaption></figure><figure><img src="ba/sq-v12-range-390l.png" alt="第十二轮 选中一段" loading="lazy"><figcaption><b>第十二轮 · 选中一段</b>：主角是播放，眯眼看最显眼的也是它</figcaption></figure><figure><img src="ba/sq-v11-typing-390l.png" alt="第十一轮 打字" loading="lazy"><figcaption><b>第十一轮 · 打字</b></figcaption></figure><figure><img src="ba/sq-v12-typing-390l.png" alt="第十二轮 打字" loading="lazy"><figcaption><b>第十二轮 · 打字</b>：主角是句子框，眯眼看最显眼的也是它</figcaption></figure><figure><img src="ba/sq-v11-tracks-390l.png" alt="第十一轮 五条轨道 · 调一轨" loading="lazy"><figcaption><b>第十一轮 · 五条轨道 · 调一轨</b></figcaption></figure><figure><img src="ba/sq-v12-tracks-390l.png" alt="第十二轮 五条轨道 · 调一轨" loading="lazy"><figcaption><b>第十二轮 · 五条轨道 · 调一轨</b>：主角是音量滑杆，眯眼看最显眼的也是它</figcaption></figure><figure><img src="ba/sq-v12-denoise-360d.png" alt="第十二轮 降噪 · 360 深色" loading="lazy"><figcaption><b>第十二轮 · 降噪 · 360 深色</b></figcaption></figure><figure><img src="ba/sq-v12-export-360d.png" alt="第十二轮 导出 · 360 深色" loading="lazy"><figcaption><b>第十二轮 · 导出 · 360 深色</b></figcaption></figure><figure><img src="ba/sq-v12-record-360d.png" alt="第十二轮 录音 · 360 深色" loading="lazy"><figcaption><b>第十二轮 · 录音 · 360 深色</b></figcaption></figure></div>
+</section>
+
+<section class="sec" id="eval">
+  <h2><span class="n">7</span>评估：给我的方向、参考的两个应用、三个难点</h2>
+  <div class="inv-wrap"><table class="inv">
+    <thead><tr><th>建议</th><th>结果</th><th>决定它的任务或证据</th></tr></thead>
+    <tbody>
+      <tr><td class="grp" colspan="3">协调者给的起点</td></tr>
+      <tr><td>工具坞三层由重到轻，没有哪个状态加一层</td><td>采纳</td><td>降噪从 5 层变 3 层，导出从 7 层变 3–4 层；眯眼看第九轮最显眼的永远是那一行播放</td></tr>
+      <tr><td>即时设置只换「那一格」，工具和分类留着（A）</td><td><b>改成 B：设置盖住整个工具坞，一样高</b>。A 我先做了一版（下面的图），并加了「退到后面」</td><td>见下面的 A / B 对比</td></tr>
+      <tr><td>要拍板的事接管工具坞，只能拍板结束</td><td>采纳；撤销在这时离开水线（Ctrl+Z 也不会结束它，只让决定那一行抖一下）</td><td>十二个任务逐个检查：点波形、标题、时间、撤销都不结束，系统返回 = 取消且声音不变</td></tr>
+      <tr><td>播放放在水线上，撤销分开</td><td>采纳，播放在左端，不放在中间</td><td>见下面「播放放哪」</td></tr>
+      <tr><td>「按住听原声」跟播放在一起</td><td>采纳：有声音设置时才出现，开着一个设置时只去掉那一个</td><td>—</td></tr>
+      <tr><td>「去掉」不需要单独的按钮</td><td>采纳：每个设置都能拨到关（关的档、零、原样），收起时拿掉，算同一步</td><td>降噪、拉齐、音量、变声、分离、修复、效果都检查过</td></tr>
+      <tr><td>放不进的按类解决</td><td>采纳；B 让这一类简单了：第二个值有自己的一行，声道的宽度、分离的强度不用删</td><td>功能清单里的「几个值」</td></tr>
+      <tr><td>可以用老实的面板（不需要看波形的事）</td><td>采纳两张：选声音、这段音频；导出没有用面板（它和选区有关，要看得见选了哪段）</td><td>见说明里的理由</td></tr>
+      <tr><td class="grp" colspan="3">A：只换那一格 · B：盖住整个工具坞（主人问「很多剪辑工具都是点了以后直接覆盖工具栏，你觉得如何」）</td></tr>
+      <tr><td>A 的好处</td><td>换一个设置一下就到；工具行一直看得见</td><td>「一项一项清理人声」A 4 步，B 6 步</td></tr>
+      <tr><td>A 的毛病</td><td>控件挤在 48 dp 的一行里，几个值的设置（淡化、变速 + 音高、声道 + 宽度、修复 + 力度）只能横滑或删掉；屏幕下半部还是三层，退到后面的工具和分类仍在和控件抢</td><td>A 的眯眼看要靠「退到后面」才过，五条轨道调音量时亮着的工具比控件还显眼（改了之后才过）</td></tr>
+      <tr><td>B 的好处</td><td>下半部一次只有一样东西，主次是结构给的，不用每个状态去争；控件占满宽度、有第二行；和要拍板的事是同一个行为（打开的东西上台）；高度和工具栏一样，画布和播放不动</td><td>B 的眯眼看 40 张全部通过，控件和「完成」差一倍以上</td></tr>
+      <tr><td>B 的代价和防线</td><td>换设置两下；我没有加左右滑换工具（看不见的手势）。防线：盖住时没有标题栏、没有 ✕、没有返回箭头——这三样是你在第二、三轮否掉的；只有左上「名字 数值」和右下一个写着字的「完成」，它是细线的，不和控件抢</td><td><b>选 B</b>：决定它的是「主次靠结构」和「几个值的设置不用删」，代价是两下</td></tr>
+      <tr><td class="grp" colspan="3">参考应用一（黑底红色的多轨「混音」页）</td></tr>
+      <tr><td>打开设置时其余的退到后面</td><td>B 里更彻底：不是退，是盖住；A 时我做了退到后面，眯眼看确实有用</td><td>—</td></tr>
+      <tr><td>名字和数值是一个标签（「音量：100%」）</td><td>采纳：设置左上「降噪 较强」，数值是声音的蓝；档位下面不再有一排字</td><td>—</td></tr>
+      <tr><td>试听跟着目标走</td><td>采纳但不自动放：开着作用在选区或某一轨的设置时，按播放只循环那一段；浮标和时间标签上有循环标</td><td>触摸、鼠标、减少动态三遍都检查了循环范围</td></tr>
+      <tr><td>撤销重做是一对小胶囊，离播放远</td><td>本来就这样</td><td>—</td></tr>
+      <tr><td>明显的缩放 −/+ 按钮</td><td>没采纳：画布上常驻两个按钮会挡声音；双指、Ctrl+滚轮、更多 → 全部、跳到都在</td><td>—</td></tr>
+      <tr><td>选中片段前沿的拖柄（在片段里面）</td><td>没采纳：我们的圆点在主线下沿，拇指够得到，离屏幕边 32 dp 以上；放进片段里面会和波形上的拖动选择打架</td><td>—</td></tr>
+      <tr><td class="grp" colspan="3">参考应用二（多轨音乐编辑器：底部一行固定的播放条）</td></tr>
+      <tr><td>播放条做成最底下一行固定不变</td><td><b>没采纳，播放留在水线上（左端）</b></td><td>见下面「播放放哪」</td></tr>
+      <tr><td>那一行说明它作用在谁身上</td><td>采纳：工具行前头一道目标的颜色（选区橙色、轨道自己的颜色）；设置左上名字后面写「选中的」或那一轨的图标和名字</td><td>—</td></tr>
+      <tr><td>滑杆两头放方向图标；就地复位</td><td>采纳图标：音量（静音 ↔ 大声）、变速（慢 ↔ 快）；复位用吸附：零、1×、「关」的档，没有另加按钮</td><td>—</td></tr>
+      <tr><td>轨道一眼分得开</td><td>采纳：类型图标 + 每种一个水里的颜色，不要彩虹</td><td>五条轨道的截图</td></tr>
+      <tr><td class="grp" colspan="3">三个难点</td></tr>
+      <tr><td>要拍板的事整个换掉工具行，会不会像「换了个皮的面板」</td><td>不像：没有标题、没有 ✕/✓，最后一行是写着字的决定；而且现在设置也是同样地盖住，盖住是这个工具坞唯一的规则，不是例外</td><td>第二轮被否的是居中标题加 ✕/✓；这里一个都没有</td></tr>
+      <tr><td>播放浮在画布上会不会挡声音、挡圆点</td><td>不会：主线和圆点永远停在浮标上方 8 dp；圆点在开头、在结尾、放大、五条轨道时都检查过；多条轨道可以从水线后面滚上来</td><td>v10checks 第 3 部分：360/390、字号 1.0/1.3，九种选区情形和所有带选区的静态画面</td></tr>
+      <tr><td>要拍板的事让工具坞变高，播放跟着动</td><td>接受：只在打开要拍板的事时动，幅度是两个高度之差（导出没选区往下 26，带选区往上 16，朗读往上 3）；即时设置、播放、浏览、选择都不动它</td><td>如果要它永远不动，要拍板的事就得固定成工具栏的高度，导出带选区、历史、计划得在里面滚</td></tr>
+      <tr><td class="grp" colspan="3">播放放哪：水线 还是 最底下一行</td></tr>
+      <tr><td>最底下一行固定</td><td>好处：永远不动，不会和圆点碰。坏处：和我们的分类是第四层（正是要结束的叠加）；要么把分类挤进同一行，导航和播放混在一起；它在每个状态下面都垫着，盖住时也得留着</td><td>—</td></tr>
+      <tr><td>水线（选的）</td><td>工具坞只做「做什么」，听属于声音；单轨时它所在的那一条本来就是空水；360×780 上它的中心在离屏幕顶 568 dp（73%），拇指够得着；不在中间，所以不会出现第二轮「播放居中、下面的标题一直换」的问题</td><td>代价：画布最下面留 74 dp；要拍板的事打开时跟着走</td></tr>
+    </tbody>
+  </table></div>
+  <div class="ba" style="margin-top:16px">
+    <figure><img src="ba/optA-denoise.png" alt="A：只换那一格"><figcaption><b>A</b>：只换那一格（这是 A 的第一版，后来加了名字和「退到后面」）</figcaption></figure>
+    <figure><img src="ba/optB-denoise.png" alt="B：盖住整个工具坞"><figcaption><b>B（选的）</b>：盖住整个工具坞，一样高</figcaption></figure>
+    <figure><img src="ba/optA-duck.png" alt="A：五条轨道调一轨"><figcaption><b>A</b>：五条轨道调一轨</figcaption></figure>
+    <figure><img src="ba/optB-tvol.png" alt="B：五条轨道调一轨"><figcaption><b>B</b>：五条轨道调一轨（名字后面是那一轨）</figcaption></figure>
+  </div>
+  <div class="card" style="margin-top:16px">
+    <h2>没人要求、这一版加的（可以逐条不要）</h2>
+    <ul>
+      <li>历史变成要拍板的事：点一步就在波形上看那一步，「回到这一步」或「取消」（第九轮是工具坞里的一张列表，点了就跳）。</li>
+      <li>标记改名是真的打字（骑在键盘上，「取消」「好」），第九轮只是一个提示。</li>
+      <li>效果的力度用点的次数：轻、中、强、关，小块里三道竖线。</li>
+      <li>淡化（整段）是一条滑杆两个钮，滑杆代表这段声音。</li>
+      <li>导出预测会削波时直接打开「压低峰值」（应用里本来就这样），不再单独一行提醒；WAV / FLAC 的清晰度换成位深。</li>
+      <li>工具行宽度的算法改成只看行宽（第九轮的算法在行被滚动过、或格子正在入场动画时，会算出 55、68、83 三种宽度，打开设置时工具会变宽变窄——减少动态那一遍测出来的）。</li>
+      <li>多条轨道时主线让出高度（最少 120），让五条轨道尽量一屏放下。</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="ba">
+  <h2><span class="n">8</span>前后对比（第十一轮 → 第十二轮）</h2>
+  <p class="lead">结构不变；换的是画面这一层：波形来自真的说话声，停顿是淡色的缺口；一段音频时声音贴近播放，播放头细而短；时间用界面字体；选区两头是把手；录音时只有一个圆按钮；导出先问用途。</p>
+  <div class="ba"><figure><img src="ba/v11-r12-rest-390l.png" alt="第十一轮 静止 · 390 浅色（第十二轮是第一次打开：「说一句」写着一句话）" loading="lazy"><figcaption>第十一轮 · 静止 · 390 浅色（第十二轮是第一次打开：「说一句」写着一句话）</figcaption></figure><figure><img src="ba/v12-r12-rest-390l.png" alt="第十二轮 静止 · 390 浅色（第十二轮是第一次打开：「说一句」写着一句话）" loading="lazy"><figcaption>第十二轮 · 静止 · 390 浅色（第十二轮是第一次打开：「说一句」写着一句话）</figcaption></figure><figure><img src="ba/v11-r12-rest-360d.png" alt="第十一轮 静止 · 360 深色" loading="lazy"><figcaption>第十一轮 · 静止 · 360 深色</figcaption></figure><figure><img src="ba/v12-r12-rest-360d.png" alt="第十二轮 静止 · 360 深色" loading="lazy"><figcaption>第十二轮 · 静止 · 360 深色</figcaption></figure><figure><img src="ba/v11-r12-plan-390l.png" alt="第十一轮 人声清理的计划（删掉停顿）· 390 浅色" loading="lazy"><figcaption>第十一轮 · 人声清理的计划（删掉停顿）· 390 浅色</figcaption></figure><figure><img src="ba/v12-r12-plan-390l.png" alt="第十二轮 人声清理的计划（删掉停顿）· 390 浅色" loading="lazy"><figcaption>第十二轮 · 人声清理的计划（删掉停顿）· 390 浅色</figcaption></figure><figure><img src="ba/v11-r12-range-390l.png" alt="第十一轮 选中一段 · 390 浅色" loading="lazy"><figcaption>第十一轮 · 选中一段 · 390 浅色</figcaption></figure><figure><img src="ba/v12-r12-range-390l.png" alt="第十二轮 选中一段 · 390 浅色" loading="lazy"><figcaption>第十二轮 · 选中一段 · 390 浅色</figcaption></figure><figure><img src="ba/v11-r12-record-390l.png" alt="第十一轮 录音 · 390 浅色" loading="lazy"><figcaption>第十一轮 · 录音 · 390 浅色</figcaption></figure><figure><img src="ba/v12-r12-record-390l.png" alt="第十二轮 录音 · 390 浅色" loading="lazy"><figcaption>第十二轮 · 录音 · 390 浅色</figcaption></figure><figure><img src="ba/v11-r12-export-390l.png" alt="第十一轮 导出 · 分享 · 390 浅色" loading="lazy"><figcaption>第十一轮 · 导出 · 分享 · 390 浅色</figcaption></figure><figure><img src="ba/v12-r12-export-390l.png" alt="第十二轮 导出 · 分享 · 390 浅色" loading="lazy"><figcaption>第十二轮 · 导出 · 分享 · 390 浅色</figcaption></figure></div>
+  <h3 style="margin-top:28px">上一轮：第十轮 → 第十一轮</h3>
+  <p class="lead">结构不变；换的是重量和材质：只有工具坞和播放投影子，播放是声音蓝的实心圆，其余浮着的东西是淡底加细线；「说一句」凹进工具坞；刻度写出两头；淡化曲线是蓝的。</p>
+  <div class="ba"><figure><img src="ba/v10-r11-rest-390l.png" alt="第十轮 静止 · 390 浅色" loading="lazy"><figcaption>第十轮 · 静止 · 390 浅色</figcaption></figure><figure><img src="ba/v11-r11-rest-390l.png" alt="第十一轮 静止 · 390 浅色" loading="lazy"><figcaption>第十一轮 · 静止 · 390 浅色</figcaption></figure><figure><img src="ba/v10-r11-rest-360d.png" alt="第十轮 静止 · 360 深色" loading="lazy"><figcaption>第十轮 · 静止 · 360 深色</figcaption></figure><figure><img src="ba/v11-r11-rest-360d.png" alt="第十一轮 静止 · 360 深色" loading="lazy"><figcaption>第十一轮 · 静止 · 360 深色</figcaption></figure><figure><img src="ba/v10-r11-denoise-360l.png" alt="第十轮 降噪（「原声」在播放后面）· 360 浅色" loading="lazy"><figcaption>第十轮 · 降噪（「原声」在播放后面）· 360 浅色</figcaption></figure><figure><img src="ba/v11-r11-denoise-360l.png" alt="第十一轮 降噪（「原声」在播放后面）· 360 浅色" loading="lazy"><figcaption>第十一轮 · 降噪（「原声」在播放后面）· 360 浅色</figcaption></figure><figure><img src="ba/v10-r11-tracks8-360l.png" alt="第十轮 八条轨道从水线下面滚过 · 360 浅色" loading="lazy"><figcaption>第十轮 · 八条轨道从水线下面滚过 · 360 浅色</figcaption></figure><figure><img src="ba/v11-r11-tracks8-360l.png" alt="第十一轮 八条轨道从水线下面滚过 · 360 浅色" loading="lazy"><figcaption>第十一轮 · 八条轨道从水线下面滚过 · 360 浅色</figcaption></figure><figure><img src="ba/v10-r11-fade-390l.png" alt="第十轮 选区淡化（曲线是蓝的）· 390 浅色" loading="lazy"><figcaption>第十轮 · 选区淡化（曲线是蓝的）· 390 浅色</figcaption></figure><figure><img src="ba/v11-r11-fade-390l.png" alt="第十一轮 选区淡化（曲线是蓝的）· 390 浅色" loading="lazy"><figcaption>第十一轮 · 选区淡化（曲线是蓝的）· 390 浅色</figcaption></figure></div>
+  <h3 style="margin-top:28px">上一轮：第九轮 → 第十轮</h3>
+<div class="ba"><figure><img src="ba/v9-rest-390l.png" alt="第九轮 静止 · 390 浅色" loading="lazy"><figcaption>第九轮 · 静止 · 390 浅色</figcaption></figure><figure><img src="ba/v10-rest-390l.png" alt="第十轮 静止 · 390 浅色" loading="lazy"><figcaption>第十轮 · 静止 · 390 浅色</figcaption></figure><figure><img src="ba/v9-rest-360d.png" alt="第九轮 静止 · 360 深色" loading="lazy"><figcaption>第九轮 · 静止 · 360 深色</figcaption></figure><figure><img src="ba/v10-rest-360d.png" alt="第十轮 静止 · 360 深色" loading="lazy"><figcaption>第十轮 · 静止 · 360 深色</figcaption></figure><figure><img src="ba/v9-denoise-360l.png" alt="第九轮 降噪 · 360 浅色" loading="lazy"><figcaption>第九轮 · 降噪 · 360 浅色</figcaption></figure><figure><img src="ba/v10-denoise-360l.png" alt="第十轮 降噪 · 360 浅色" loading="lazy"><figcaption>第十轮 · 降噪 · 360 浅色</figcaption></figure><figure><img src="ba/v9-denoise-360d.png" alt="第九轮 降噪 · 360 深色" loading="lazy"><figcaption>第九轮 · 降噪 · 360 深色</figcaption></figure><figure><img src="ba/v10-denoise-360d.png" alt="第十轮 降噪 · 360 深色" loading="lazy"><figcaption>第十轮 · 降噪 · 360 深色</figcaption></figure><figure><img src="ba/v9-export-390l.png" alt="第九轮 导出 · 390" loading="lazy"><figcaption>第九轮 · 导出 · 390</figcaption></figure><figure><img src="ba/v10-export-390l.png" alt="第十轮 导出 · 390" loading="lazy"><figcaption>第十轮 · 导出 · 390</figcaption></figure><figure><img src="ba/v9-tts-390l.png" alt="第九轮 朗读 · 390" loading="lazy"><figcaption>第九轮 · 朗读 · 390</figcaption></figure><figure><img src="ba/v10-tts-390l.png" alt="第十轮 朗读 · 390" loading="lazy"><figcaption>第十轮 · 朗读 · 390</figcaption></figure><figure><img src="ba/v9-move-360l.png" alt="第九轮 移动一段 · 360" loading="lazy"><figcaption>第九轮 · 移动一段 · 360</figcaption></figure><figure><img src="ba/v10-move-360l.png" alt="第十轮 移动一段 · 360" loading="lazy"><figcaption>第十轮 · 移动一段 · 360</figcaption></figure><figure><img src="ba/v9-record-360l.png" alt="第九轮 录音 · 360" loading="lazy"><figcaption>第九轮 · 录音 · 360</figcaption></figure><figure><img src="ba/v10-record-360l.png" alt="第十轮 录音 · 360" loading="lazy"><figcaption>第十轮 · 录音 · 360</figcaption></figure><figure><img src="ba/v9-range-390l.png" alt="第九轮 选中一段 · 390" loading="lazy"><figcaption>第九轮 · 选中一段 · 390</figcaption></figure><figure><img src="ba/v10-range-390l.png" alt="第十轮 选中一段 · 390" loading="lazy"><figcaption>第十轮 · 选中一段 · 390</figcaption></figure><figure><img src="ba/v9-typing-360l.png" alt="第九轮 打字 · 360" loading="lazy"><figcaption>第九轮 · 打字 · 360</figcaption></figure><figure><img src="ba/v10-typing-360l.png" alt="第十轮 打字 · 360" loading="lazy"><figcaption>第十轮 · 打字 · 360</figcaption></figure><figure><img src="ba/v9-tracks-360l.png" alt="第九轮 五条轨道 · 360" loading="lazy"><figcaption>第九轮 · 五条轨道 · 360</figcaption></figure><figure><img src="ba/v10-tracks-360l.png" alt="第十轮 五条轨道 · 360" loading="lazy"><figcaption>第十轮 · 五条轨道 · 360</figcaption></figure></div>
+</section>
+
+<footer class="end">交互稿，不放声音：说话的波形量自真的说话声（局域网语音服务的内置音色说的一段采访，叠上房间的底噪），歌和背景音乐是生成的；处理和导出是模拟的。图标来自应用的 AppIcons（Material Symbols Rounded）。</footer>
+
+<script src="icons.js"></script>
+<script src="speech.js"></script>
+<script src="bench.js"></script>
+<script src="scenes.js"></script>
+<script>
+  (function () {
+    const seg = document.getElementById('theme');
+    const set = t => {
+      if (t) document.documentElement.dataset.theme = t; else delete document.documentElement.dataset.theme;
+      seg.querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.t === t));
+      try { localStorage.setItem('wb-theme', t); } catch (e) { /* private window */ }
+      document.dispatchEvent(new Event('themechange'));
+    };
+    seg.addEventListener('click', e => { const b = e.target.closest('button'); if (b) set(b.dataset.t); });
+    // the material without backdrop blur, as on Android before 12 (minSdk 26)
+    const bl = document.getElementById('blur');
+    if (bl) bl.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; document.body.classList.toggle('noblur', b.dataset.b === 'noblur'); bl.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b)); });
+    let saved = ''; try { saved = localStorage.getItem('wb-theme') || ''; } catch (e) { /* none */ }
+    if (saved) set(saved);
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,2502 @@
+[
+ {
+  "ver": "v12",
+  "name": "rest",
+  "scene": "t6a",
+  "prim": "play",
+  "w": 390,
+  "theme": "light",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-rest-390l.png",
+  "parts": {
+   "dock": [
+    0,
+    643,
+    390,
+    178
+   ],
+   "slot": [
+    12,
+    651,
+    366,
+    48
+   ],
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": [
+    0,
+    707,
+    390,
+    62
+   ],
+   "cats": [
+    0,
+    769,
+    390,
+    48
+   ],
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    577,
+    56,
+    56
+   ],
+   "ur": [
+    282,
+    581,
+    96,
+    48
+   ],
+   "tm": [
+    140,
+    211,
+    85,
+    24
+   ],
+   "xbtn": [
+    306,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "denoise",
+  "scene": "t4d",
+  "prim": "slot",
+  "w": 390,
+  "theme": "light",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-denoise-390l.png",
+  "parts": {
+   "dock": [
+    0,
+    643,
+    390,
+    178
+   ],
+   "slot": [
+    12,
+    697,
+    366,
+    52
+   ],
+   "done": [
+    310,
+    767,
+    64,
+    40
+   ],
+   "head": [
+    16,
+    653,
+    358,
+    30
+   ],
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": null,
+   "cancel": [
+    310,
+    767,
+    64,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    577,
+    56,
+    56
+   ],
+   "ur": [
+    282,
+    581,
+    96,
+    48
+   ],
+   "tm": [
+    8,
+    211,
+    85,
+    24
+   ],
+   "xbtn": [
+    306,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "fade",
+  "scene": "kFadeRest",
+  "prim": "slot",
+  "w": 390,
+  "theme": "light",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-fade-390l.png",
+  "parts": {
+   "dock": [
+    0,
+    643,
+    390,
+    178
+   ],
+   "slot": [
+    12,
+    697,
+    366,
+    52
+   ],
+   "done": [
+    310,
+    767,
+    64,
+    40
+   ],
+   "head": [
+    16,
+    653,
+    358,
+    30
+   ],
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": null,
+   "cancel": [
+    310,
+    767,
+    64,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    577,
+    56,
+    56
+   ],
+   "ur": [
+    282,
+    581,
+    96,
+    48
+   ],
+   "tm": [
+    8,
+    211,
+    85,
+    24
+   ],
+   "xbtn": [
+    306,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "export",
+  "scene": "t8a",
+  "prim": "main",
+  "w": 390,
+  "theme": "light",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-export-390l.png",
+  "parts": {
+   "dock": [
+    0,
+    633,
+    390,
+    188
+   ],
+   "slot": null,
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": [
+    284,
+    769,
+    90,
+    40
+   ],
+   "cancel": [
+    212,
+    769,
+    64,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    567,
+    56,
+    56
+   ],
+   "ur": null,
+   "tm": [
+    8,
+    207,
+    85,
+    24
+   ],
+   "xbtn": [
+    306,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "tts",
+  "scene": "kTts",
+  "prim": "main",
+  "w": 390,
+  "theme": "light",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-tts-390l.png",
+  "parts": {
+   "dock": [
+    0,
+    640,
+    390,
+    181
+   ],
+   "slot": null,
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": [
+    310,
+    769,
+    64,
+    40
+   ],
+   "cancel": [
+    238,
+    769,
+    64,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    574,
+    56,
+    56
+   ],
+   "ur": null,
+   "tm": [
+    8,
+    210,
+    85,
+    24
+   ],
+   "xbtn": [
+    306,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "move",
+  "scene": "t2d",
+  "prim": "main",
+  "w": 390,
+  "theme": "light",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-move-390l.png",
+  "parts": {
+   "dock": [
+    0,
+    759,
+    390,
+    62
+   ],
+   "slot": null,
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": [
+    303,
+    769,
+    71,
+    40
+   ],
+   "cancel": [
+    224,
+    769,
+    71,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    693,
+    56,
+    56
+   ],
+   "ur": null,
+   "tm": [
+    216,
+    173,
+    93,
+    24
+   ],
+   "xbtn": [
+    306,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "record",
+  "scene": "t6b",
+  "prim": "rec",
+  "w": 390,
+  "theme": "light",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-record-390l.png",
+  "parts": {
+   "dock": [
+    0,
+    683,
+    390,
+    138
+   ],
+   "slot": null,
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": [
+    310,
+    769,
+    64,
+    40
+   ],
+   "cancel": [
+    231,
+    769,
+    71,
+    40
+   ],
+   "rec": [
+    16,
+    697,
+    60,
+    60
+   ],
+   "field": null,
+   "play": [
+    12,
+    617,
+    56,
+    56
+   ],
+   "ur": null,
+   "tm": [
+    147,
+    211,
+    85,
+    24
+   ],
+   "xbtn": [
+    306,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "range",
+  "scene": "t1b",
+  "prim": "play",
+  "w": 390,
+  "theme": "light",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-range-390l.png",
+  "parts": {
+   "dock": [
+    0,
+    643,
+    390,
+    178
+   ],
+   "slot": [
+    12,
+    651,
+    366,
+    48
+   ],
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": [
+    0,
+    707,
+    390,
+    62
+   ],
+   "cats": [
+    0,
+    769,
+    390,
+    48
+   ],
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    577,
+    56,
+    56
+   ],
+   "ur": [
+    282,
+    581,
+    96,
+    48
+   ],
+   "tm": [
+    63,
+    211,
+    143,
+    24
+   ],
+   "xbtn": [
+    306,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "typing",
+  "scene": "kSayFocus",
+  "prim": "field",
+  "w": 390,
+  "theme": "light",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-typing-390l.png",
+  "parts": {
+   "dock": [
+    0,
+    403,
+    390,
+    150
+   ],
+   "slot": null,
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": [
+    16,
+    497,
+    358,
+    42
+   ],
+   "play": [
+    12,
+    337,
+    56,
+    56
+   ],
+   "ur": null,
+   "tm": [
+    8,
+    132,
+    85,
+    24
+   ],
+   "xbtn": [
+    306,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "tracks",
+  "scene": "kTracks5Vol",
+  "prim": "slot",
+  "w": 390,
+  "theme": "light",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-tracks-390l.png",
+  "parts": {
+   "dock": [
+    0,
+    643,
+    390,
+    178
+   ],
+   "slot": [
+    12,
+    697,
+    366,
+    52
+   ],
+   "done": [
+    310,
+    767,
+    64,
+    40
+   ],
+   "head": [
+    16,
+    653,
+    358,
+    30
+   ],
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": null,
+   "cancel": [
+    310,
+    767,
+    64,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    577,
+    56,
+    56
+   ],
+   "ur": [
+    282,
+    581,
+    96,
+    48
+   ],
+   "tm": [
+    8,
+    111,
+    85,
+    24
+   ],
+   "xbtn": [
+    306,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "rest",
+  "scene": "t6a",
+  "prim": "play",
+  "w": 390,
+  "theme": "dark",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-rest-390d.png",
+  "parts": {
+   "dock": [
+    0,
+    643,
+    390,
+    178
+   ],
+   "slot": [
+    12,
+    651,
+    366,
+    48
+   ],
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": [
+    0,
+    707,
+    390,
+    62
+   ],
+   "cats": [
+    0,
+    769,
+    390,
+    48
+   ],
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    577,
+    56,
+    56
+   ],
+   "ur": [
+    282,
+    581,
+    96,
+    48
+   ],
+   "tm": [
+    140,
+    211,
+    85,
+    24
+   ],
+   "xbtn": [
+    306,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "denoise",
+  "scene": "t4d",
+  "prim": "slot",
+  "w": 390,
+  "theme": "dark",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-denoise-390d.png",
+  "parts": {
+   "dock": [
+    0,
+    643,
+    390,
+    178
+   ],
+   "slot": [
+    12,
+    697,
+    366,
+    52
+   ],
+   "done": [
+    310,
+    767,
+    64,
+    40
+   ],
+   "head": [
+    16,
+    653,
+    358,
+    30
+   ],
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": null,
+   "cancel": [
+    310,
+    767,
+    64,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    577,
+    56,
+    56
+   ],
+   "ur": [
+    282,
+    581,
+    96,
+    48
+   ],
+   "tm": [
+    8,
+    211,
+    85,
+    24
+   ],
+   "xbtn": [
+    306,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "fade",
+  "scene": "kFadeRest",
+  "prim": "slot",
+  "w": 390,
+  "theme": "dark",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-fade-390d.png",
+  "parts": {
+   "dock": [
+    0,
+    643,
+    390,
+    178
+   ],
+   "slot": [
+    12,
+    697,
+    366,
+    52
+   ],
+   "done": [
+    310,
+    767,
+    64,
+    40
+   ],
+   "head": [
+    16,
+    653,
+    358,
+    30
+   ],
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": null,
+   "cancel": [
+    310,
+    767,
+    64,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    577,
+    56,
+    56
+   ],
+   "ur": [
+    282,
+    581,
+    96,
+    48
+   ],
+   "tm": [
+    8,
+    211,
+    85,
+    24
+   ],
+   "xbtn": [
+    306,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "export",
+  "scene": "t8a",
+  "prim": "main",
+  "w": 390,
+  "theme": "dark",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-export-390d.png",
+  "parts": {
+   "dock": [
+    0,
+    633,
+    390,
+    188
+   ],
+   "slot": null,
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": [
+    284,
+    769,
+    90,
+    40
+   ],
+   "cancel": [
+    212,
+    769,
+    64,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    567,
+    56,
+    56
+   ],
+   "ur": null,
+   "tm": [
+    8,
+    207,
+    85,
+    24
+   ],
+   "xbtn": [
+    306,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "tts",
+  "scene": "kTts",
+  "prim": "main",
+  "w": 390,
+  "theme": "dark",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-tts-390d.png",
+  "parts": {
+   "dock": [
+    0,
+    640,
+    390,
+    181
+   ],
+   "slot": null,
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": [
+    310,
+    769,
+    64,
+    40
+   ],
+   "cancel": [
+    238,
+    769,
+    64,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    574,
+    56,
+    56
+   ],
+   "ur": null,
+   "tm": [
+    8,
+    210,
+    85,
+    24
+   ],
+   "xbtn": [
+    306,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "move",
+  "scene": "t2d",
+  "prim": "main",
+  "w": 390,
+  "theme": "dark",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-move-390d.png",
+  "parts": {
+   "dock": [
+    0,
+    759,
+    390,
+    62
+   ],
+   "slot": null,
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": [
+    303,
+    769,
+    71,
+    40
+   ],
+   "cancel": [
+    224,
+    769,
+    71,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    693,
+    56,
+    56
+   ],
+   "ur": null,
+   "tm": [
+    216,
+    173,
+    93,
+    24
+   ],
+   "xbtn": [
+    306,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "record",
+  "scene": "t6b",
+  "prim": "rec",
+  "w": 390,
+  "theme": "dark",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-record-390d.png",
+  "parts": {
+   "dock": [
+    0,
+    683,
+    390,
+    138
+   ],
+   "slot": null,
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": [
+    310,
+    769,
+    64,
+    40
+   ],
+   "cancel": [
+    231,
+    769,
+    71,
+    40
+   ],
+   "rec": [
+    16,
+    697,
+    60,
+    60
+   ],
+   "field": null,
+   "play": [
+    12,
+    617,
+    56,
+    56
+   ],
+   "ur": null,
+   "tm": [
+    147,
+    211,
+    85,
+    24
+   ],
+   "xbtn": [
+    306,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "range",
+  "scene": "t1b",
+  "prim": "play",
+  "w": 390,
+  "theme": "dark",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-range-390d.png",
+  "parts": {
+   "dock": [
+    0,
+    643,
+    390,
+    178
+   ],
+   "slot": [
+    12,
+    651,
+    366,
+    48
+   ],
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": [
+    0,
+    707,
+    390,
+    62
+   ],
+   "cats": [
+    0,
+    769,
+    390,
+    48
+   ],
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    577,
+    56,
+    56
+   ],
+   "ur": [
+    282,
+    581,
+    96,
+    48
+   ],
+   "tm": [
+    63,
+    211,
+    143,
+    24
+   ],
+   "xbtn": [
+    306,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "typing",
+  "scene": "kSayFocus",
+  "prim": "field",
+  "w": 390,
+  "theme": "dark",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-typing-390d.png",
+  "parts": {
+   "dock": [
+    0,
+    403,
+    390,
+    150
+   ],
+   "slot": null,
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": [
+    16,
+    497,
+    358,
+    42
+   ],
+   "play": [
+    12,
+    337,
+    56,
+    56
+   ],
+   "ur": null,
+   "tm": [
+    8,
+    132,
+    85,
+    24
+   ],
+   "xbtn": [
+    306,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "tracks",
+  "scene": "kTracks5Vol",
+  "prim": "slot",
+  "w": 390,
+  "theme": "dark",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-tracks-390d.png",
+  "parts": {
+   "dock": [
+    0,
+    643,
+    390,
+    178
+   ],
+   "slot": [
+    12,
+    697,
+    366,
+    52
+   ],
+   "done": [
+    310,
+    767,
+    64,
+    40
+   ],
+   "head": [
+    16,
+    653,
+    358,
+    30
+   ],
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": null,
+   "cancel": [
+    310,
+    767,
+    64,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    577,
+    56,
+    56
+   ],
+   "ur": [
+    282,
+    581,
+    96,
+    48
+   ],
+   "tm": [
+    8,
+    111,
+    85,
+    24
+   ],
+   "xbtn": [
+    306,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "rest",
+  "scene": "t6a",
+  "prim": "play",
+  "w": 360,
+  "theme": "light",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-rest-360l.png",
+  "parts": {
+   "dock": [
+    0,
+    580,
+    360,
+    178
+   ],
+   "slot": [
+    12,
+    588,
+    336,
+    48
+   ],
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": [
+    0,
+    644,
+    360,
+    62
+   ],
+   "cats": [
+    0,
+    706,
+    360,
+    48
+   ],
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    514,
+    56,
+    56
+   ],
+   "ur": [
+    252,
+    518,
+    96,
+    48
+   ],
+   "tm": [
+    126,
+    184,
+    85,
+    24
+   ],
+   "xbtn": [
+    276,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "denoise",
+  "scene": "t4d",
+  "prim": "slot",
+  "w": 360,
+  "theme": "light",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-denoise-360l.png",
+  "parts": {
+   "dock": [
+    0,
+    580,
+    360,
+    178
+   ],
+   "slot": [
+    12,
+    634,
+    336,
+    52
+   ],
+   "done": [
+    280,
+    704,
+    64,
+    40
+   ],
+   "head": [
+    16,
+    590,
+    328,
+    30
+   ],
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": null,
+   "cancel": [
+    280,
+    704,
+    64,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    514,
+    56,
+    56
+   ],
+   "ur": [
+    252,
+    518,
+    96,
+    48
+   ],
+   "tm": [
+    8,
+    185,
+    85,
+    24
+   ],
+   "xbtn": [
+    276,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "fade",
+  "scene": "kFadeRest",
+  "prim": "slot",
+  "w": 360,
+  "theme": "light",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-fade-360l.png",
+  "parts": {
+   "dock": [
+    0,
+    580,
+    360,
+    178
+   ],
+   "slot": [
+    12,
+    634,
+    336,
+    52
+   ],
+   "done": [
+    280,
+    704,
+    64,
+    40
+   ],
+   "head": [
+    16,
+    590,
+    328,
+    30
+   ],
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": null,
+   "cancel": [
+    280,
+    704,
+    64,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    514,
+    56,
+    56
+   ],
+   "ur": [
+    252,
+    518,
+    96,
+    48
+   ],
+   "tm": [
+    8,
+    184,
+    85,
+    24
+   ],
+   "xbtn": [
+    276,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "export",
+  "scene": "t8a",
+  "prim": "main",
+  "w": 360,
+  "theme": "light",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-export-360l.png",
+  "parts": {
+   "dock": [
+    0,
+    570,
+    360,
+    188
+   ],
+   "slot": null,
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": [
+    254,
+    706,
+    90,
+    40
+   ],
+   "cancel": [
+    182,
+    706,
+    64,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    504,
+    56,
+    56
+   ],
+   "ur": null,
+   "tm": [
+    8,
+    181,
+    85,
+    24
+   ],
+   "xbtn": [
+    276,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "tts",
+  "scene": "kTts",
+  "prim": "main",
+  "w": 360,
+  "theme": "light",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-tts-360l.png",
+  "parts": {
+   "dock": [
+    0,
+    577,
+    360,
+    181
+   ],
+   "slot": null,
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": [
+    280,
+    706,
+    64,
+    40
+   ],
+   "cancel": [
+    208,
+    706,
+    64,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    511,
+    56,
+    56
+   ],
+   "ur": null,
+   "tm": [
+    8,
+    183,
+    85,
+    24
+   ],
+   "xbtn": [
+    276,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "move",
+  "scene": "t2d",
+  "prim": "main",
+  "w": 360,
+  "theme": "light",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-move-360l.png",
+  "parts": {
+   "dock": [
+    0,
+    696,
+    360,
+    62
+   ],
+   "slot": null,
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": [
+    273,
+    706,
+    71,
+    40
+   ],
+   "cancel": [
+    194,
+    706,
+    71,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    630,
+    56,
+    56
+   ],
+   "ur": null,
+   "tm": [
+    195,
+    155,
+    93,
+    24
+   ],
+   "xbtn": [
+    276,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "record",
+  "scene": "t6b",
+  "prim": "rec",
+  "w": 360,
+  "theme": "light",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-record-360l.png",
+  "parts": {
+   "dock": [
+    0,
+    620,
+    360,
+    138
+   ],
+   "slot": null,
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": [
+    280,
+    706,
+    64,
+    40
+   ],
+   "cancel": [
+    201,
+    706,
+    71,
+    40
+   ],
+   "rec": [
+    16,
+    634,
+    60,
+    60
+   ],
+   "field": null,
+   "play": [
+    12,
+    554,
+    56,
+    56
+   ],
+   "ur": null,
+   "tm": [
+    133,
+    185,
+    85,
+    24
+   ],
+   "xbtn": [
+    276,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "range",
+  "scene": "t1b",
+  "prim": "play",
+  "w": 360,
+  "theme": "light",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-range-360l.png",
+  "parts": {
+   "dock": [
+    0,
+    580,
+    360,
+    178
+   ],
+   "slot": [
+    12,
+    588,
+    336,
+    48
+   ],
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": [
+    0,
+    644,
+    360,
+    62
+   ],
+   "cats": [
+    0,
+    706,
+    360,
+    48
+   ],
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    514,
+    56,
+    56
+   ],
+   "ur": [
+    252,
+    518,
+    96,
+    48
+   ],
+   "tm": [
+    54,
+    184,
+    143,
+    24
+   ],
+   "xbtn": [
+    276,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "typing",
+  "scene": "kSayFocus",
+  "prim": "field",
+  "w": 360,
+  "theme": "light",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-typing-360l.png",
+  "parts": {
+   "dock": [
+    0,
+    340,
+    360,
+    150
+   ],
+   "slot": null,
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": [
+    16,
+    434,
+    328,
+    42
+   ],
+   "play": [
+    12,
+    274,
+    56,
+    56
+   ],
+   "ur": null,
+   "tm": [
+    8,
+    105,
+    85,
+    24
+   ],
+   "xbtn": [
+    276,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "tracks",
+  "scene": "kTracks5Vol",
+  "prim": "slot",
+  "w": 360,
+  "theme": "light",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-tracks-360l.png",
+  "parts": {
+   "dock": [
+    0,
+    580,
+    360,
+    178
+   ],
+   "slot": [
+    12,
+    634,
+    336,
+    52
+   ],
+   "done": [
+    280,
+    704,
+    64,
+    40
+   ],
+   "head": [
+    16,
+    590,
+    328,
+    30
+   ],
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": null,
+   "cancel": [
+    280,
+    704,
+    64,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    514,
+    56,
+    56
+   ],
+   "ur": [
+    252,
+    518,
+    96,
+    48
+   ],
+   "tm": [
+    8,
+    73,
+    85,
+    24
+   ],
+   "xbtn": [
+    276,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "rest",
+  "scene": "t6a",
+  "prim": "play",
+  "w": 360,
+  "theme": "dark",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-rest-360d.png",
+  "parts": {
+   "dock": [
+    0,
+    580,
+    360,
+    178
+   ],
+   "slot": [
+    12,
+    588,
+    336,
+    48
+   ],
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": [
+    0,
+    644,
+    360,
+    62
+   ],
+   "cats": [
+    0,
+    706,
+    360,
+    48
+   ],
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    514,
+    56,
+    56
+   ],
+   "ur": [
+    252,
+    518,
+    96,
+    48
+   ],
+   "tm": [
+    126,
+    184,
+    85,
+    24
+   ],
+   "xbtn": [
+    276,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "denoise",
+  "scene": "t4d",
+  "prim": "slot",
+  "w": 360,
+  "theme": "dark",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-denoise-360d.png",
+  "parts": {
+   "dock": [
+    0,
+    580,
+    360,
+    178
+   ],
+   "slot": [
+    12,
+    634,
+    336,
+    52
+   ],
+   "done": [
+    280,
+    704,
+    64,
+    40
+   ],
+   "head": [
+    16,
+    590,
+    328,
+    30
+   ],
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": null,
+   "cancel": [
+    280,
+    704,
+    64,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    514,
+    56,
+    56
+   ],
+   "ur": [
+    252,
+    518,
+    96,
+    48
+   ],
+   "tm": [
+    8,
+    185,
+    85,
+    24
+   ],
+   "xbtn": [
+    276,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "fade",
+  "scene": "kFadeRest",
+  "prim": "slot",
+  "w": 360,
+  "theme": "dark",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-fade-360d.png",
+  "parts": {
+   "dock": [
+    0,
+    580,
+    360,
+    178
+   ],
+   "slot": [
+    12,
+    634,
+    336,
+    52
+   ],
+   "done": [
+    280,
+    704,
+    64,
+    40
+   ],
+   "head": [
+    16,
+    590,
+    328,
+    30
+   ],
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": null,
+   "cancel": [
+    280,
+    704,
+    64,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    514,
+    56,
+    56
+   ],
+   "ur": [
+    252,
+    518,
+    96,
+    48
+   ],
+   "tm": [
+    8,
+    184,
+    85,
+    24
+   ],
+   "xbtn": [
+    276,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "export",
+  "scene": "t8a",
+  "prim": "main",
+  "w": 360,
+  "theme": "dark",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-export-360d.png",
+  "parts": {
+   "dock": [
+    0,
+    570,
+    360,
+    188
+   ],
+   "slot": null,
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": [
+    254,
+    706,
+    90,
+    40
+   ],
+   "cancel": [
+    182,
+    706,
+    64,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    504,
+    56,
+    56
+   ],
+   "ur": null,
+   "tm": [
+    8,
+    181,
+    85,
+    24
+   ],
+   "xbtn": [
+    276,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "tts",
+  "scene": "kTts",
+  "prim": "main",
+  "w": 360,
+  "theme": "dark",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-tts-360d.png",
+  "parts": {
+   "dock": [
+    0,
+    577,
+    360,
+    181
+   ],
+   "slot": null,
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": [
+    280,
+    706,
+    64,
+    40
+   ],
+   "cancel": [
+    208,
+    706,
+    64,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    511,
+    56,
+    56
+   ],
+   "ur": null,
+   "tm": [
+    8,
+    183,
+    85,
+    24
+   ],
+   "xbtn": [
+    276,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "move",
+  "scene": "t2d",
+  "prim": "main",
+  "w": 360,
+  "theme": "dark",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-move-360d.png",
+  "parts": {
+   "dock": [
+    0,
+    696,
+    360,
+    62
+   ],
+   "slot": null,
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": [
+    273,
+    706,
+    71,
+    40
+   ],
+   "cancel": [
+    194,
+    706,
+    71,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    630,
+    56,
+    56
+   ],
+   "ur": null,
+   "tm": [
+    195,
+    155,
+    93,
+    24
+   ],
+   "xbtn": [
+    276,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "record",
+  "scene": "t6b",
+  "prim": "rec",
+  "w": 360,
+  "theme": "dark",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-record-360d.png",
+  "parts": {
+   "dock": [
+    0,
+    620,
+    360,
+    138
+   ],
+   "slot": null,
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": [
+    280,
+    706,
+    64,
+    40
+   ],
+   "cancel": [
+    201,
+    706,
+    71,
+    40
+   ],
+   "rec": [
+    16,
+    634,
+    60,
+    60
+   ],
+   "field": null,
+   "play": [
+    12,
+    554,
+    56,
+    56
+   ],
+   "ur": null,
+   "tm": [
+    133,
+    185,
+    85,
+    24
+   ],
+   "xbtn": [
+    276,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "range",
+  "scene": "t1b",
+  "prim": "play",
+  "w": 360,
+  "theme": "dark",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-range-360d.png",
+  "parts": {
+   "dock": [
+    0,
+    580,
+    360,
+    178
+   ],
+   "slot": [
+    12,
+    588,
+    336,
+    48
+   ],
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": [
+    0,
+    644,
+    360,
+    62
+   ],
+   "cats": [
+    0,
+    706,
+    360,
+    48
+   ],
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    514,
+    56,
+    56
+   ],
+   "ur": [
+    252,
+    518,
+    96,
+    48
+   ],
+   "tm": [
+    54,
+    184,
+    143,
+    24
+   ],
+   "xbtn": [
+    276,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "typing",
+  "scene": "kSayFocus",
+  "prim": "field",
+  "w": 360,
+  "theme": "dark",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-typing-360d.png",
+  "parts": {
+   "dock": [
+    0,
+    340,
+    360,
+    150
+   ],
+   "slot": null,
+   "done": null,
+   "head": null,
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": null,
+   "cancel": null,
+   "rec": null,
+   "field": [
+    16,
+    434,
+    328,
+    42
+   ],
+   "play": [
+    12,
+    274,
+    56,
+    56
+   ],
+   "ur": null,
+   "tm": [
+    8,
+    105,
+    85,
+    24
+   ],
+   "xbtn": [
+    276,
+    8,
+    76,
+    36
+   ]
+  }
+ },
+ {
+  "ver": "v12",
+  "name": "tracks",
+  "scene": "kTracks5Vol",
+  "prim": "slot",
+  "w": 360,
+  "theme": "dark",
+  "file": "/home/game168/wangwei/Projects/shengjian-design/workbench-work/v12.1/shots/squint/v12-tracks-360d.png",
+  "parts": {
+   "dock": [
+    0,
+    580,
+    360,
+    178
+   ],
+   "slot": [
+    12,
+    634,
+    336,
+    52
+   ],
+   "done": [
+    280,
+    704,
+    64,
+    40
+   ],
+   "head": [
+    16,
+    590,
+    328,
+    30
+   ],
+   "lit": null,
+   "tools": null,
+   "cats": null,
+   "main": null,
+   "cancel": [
+    280,
+    704,
+    64,
+    40
+   ],
+   "rec": null,
+   "field": null,
+   "play": [
+    12,
+    514,
+    56,
+    56
+   ],
+   "ur": [
+    252,
+    518,
+    96,
+    48
+   ],
+   "tm": [
+    8,
+    73,
+    85,
+    24
+   ],
+   "xbtn": [
+    276,
+    8,
+    76,
+    36
+   ]
+  }
+ }
+]

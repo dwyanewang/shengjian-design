@@ -1,0 +1,16 @@
+# Chrome 调试用的浏览器配置目录（含 cookie / 缓存，不上传）
+chr-*/
+
+# workbench-work 里的截图、录音、日志等产物
+workbench-work/**/*.png
+workbench-work/**/*.jpg
+workbench-work/**/*.wav
+workbench-work/**/*.log
+
+# 系统 / 编辑器杂项
+.DS_Store
+node_modules/
+
+# 不公开的参考资料：其他 App 的商店截图、从内网服务下载的接口文档
+redesign/refs/
+workbench-work/v12/audio/dl/apidocs.html

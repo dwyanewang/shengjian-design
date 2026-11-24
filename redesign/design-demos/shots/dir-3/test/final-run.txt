@@ -1,0 +1,18 @@
+PASS page loads without errors
+PASS workbench scrolls down in time (wheel)  0:20.0 -> 0:43.1
+PASS workbench drag scrolls back up  0:43.1 -> 0:32.1
+PASS swipe across a pause closes it  停顿 2.2 秒 | 18:40和王老师聊阅读 -> 18:38原 18:40和王老师聊阅读 | 这处停顿合上了，留 0.3 秒，省下 1.9 秒撤销
+PASS undo brings the pause back  18:40和王老师聊阅读
+PASS sentence becomes a 4-step plan on the spine  听懂了 4 件事
+PASS plan steps are tagged on the spine  12 tags visible
+PASS apply changes the audio as one step  18:23原 18:40和王老师聊阅读 | 改好了。4 步算一步，可以一起撤销撤销整条
+PASS voice upsell opens the membership page  声剪会员
+PASS subscribing asks to sign in first (Google / email)  登录声剪用 Google 账号登录用邮箱验证码登录只用于身份和会员，不会上传你的
+PASS after paying the page shows the member state  年度会员，试用到 11月30日
+PASS export: purpose 设成铃声 changes the main button  设成来电铃声
+PASS ringtone set after the system permission  好了已设为来电铃声最后一秒淡出；「铃声」文件夹里也留了一份再
+PASS coverage item A9 jumps the voice phone to cloning  克隆我的声音
+PASS coverage item D2 opens 删掉停顿 on the processing phone  删掉停顿
+PASS pinch / ctrl+wheel zooms  每屏 39 秒 -> 每屏 12 秒
+PASS chorus → ringtone opens export with 设成铃声 chosen  设成铃声来电 / 通知 / 闹钟，最后一秒自动淡出
+PASS no page errors after all interactions

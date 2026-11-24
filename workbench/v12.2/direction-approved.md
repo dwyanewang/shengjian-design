@@ -1,0 +1,55 @@
+# v12 · direction
+
+Iteration inside the approved direction (三方向门 exempt: same project, direction already chosen).
+
+- Structure: one canvas + one floating dock (approved since v7/v8).
+- Visual direction: 清水 (approved 2026-11-21, user: "我同意清水方向").
+- Dock: v10's fixed-height dock, an opened setting or a task covers it (user, 2026-11-22: "保留 v10的参数/工具替换结构").
+
+v12 brief, approved by the user on 2026-11-22: "好，按这个顺序做 v12", after a review of v11
+(user's questions: "你觉得v11版本如何，是否符合一个产品？是否能够吸引用户？用户操作是否便捷？"). In this order:
+
+1. Real speech waveform: you can see where speech is and where the pauses are.
+2. Single audio: taller waveform, lower and nearer the play button, no empty middle; a thinner, lighter playhead drawn only as far as the last line with sound; times in the UI font with tabular figures.
+3. Holding a selection handle magnifies locally; handles larger and apart.
+4. While recording, play gives way. Export asks the purpose first; format and bitrate default from the purpose and fold into one "音质" row.
+5. First run only: the 说一句 bar shows one example sentence. Tool names in the user's words (e.g. 统一音量).
+
+## v12.1 · 2026-11-23 · a narrow fix round
+
+The user approved exactly two layout fixes to v12: "好，按这两项修". Nothing else changes. Scope:
+
+1. The ruler belongs to the sound. At rest the ruler and the time pill sat under the title while the tallest bars began
+   about 130 dp lower, and the playhead line began far below its marker on the ruler. The ruler (ticks, labels, time
+   pill, playhead marker) sits just above the main line's top, derived from where the main line actually is; the
+   leftover height goes above the ruler as air under the title, never between the ruler and its sound; the playhead
+   marker and line read as one object. Everything the ruler did (tap or drag to seek, zoom labels) still works.
+2. No reserved grip row with tracks. With background tracks and nothing selected an empty ~44 dp strip sat between the
+   main line's reflection and the first track. The grips are drawn over the main line's reflection (decoration, may be
+   covered), so tracks sit up under the main line and do not move when a selection appears or goes. The grips keep
+   v12's rules: at least 48 × 44 dp touch area, outward, never overlapping, the 260 ms hold magnify; a grip never covers
+   the first track's label chip or loses its touches to the track.
+
+## v12.2 · 2026-11-23 · the canvas gestures
+
+Why (the user, after trying v12.1): "放大手势和双指移动会存在冲突，而且双指滚动其实也不是很符合用户的习惯，用户一般习惯单指滚动，
+双指放大，但是这又会出现一个新情况，就是无法快捷的选中某一段。" The proposal: the phone's text-editing grammar (the audio is a
+line of text, the playhead is the caret). The user: "继续" (2026-11-23). Only the canvas gestures change; not the look,
+not the dock. Scope:
+
+1. One-finger swipe anywhere on the canvas scrolls the view (flings; rubber-band at the fitted zoom); vertical drags in
+   the lanes still scroll the lanes; a user swipe wins over following the playhead.
+2. A pinch only zooms: the time under the starting midpoint stays at its x, no pan.
+3. A tap places the playhead at once.
+4. A double tap selects the sentence under the finger (pause mids, seams, markers as stops; a piece without stops: the
+   piece); a triple tap selects the whole piece.
+5. Press and hold, then drag: a free range from the press point (snapping as before); a haptic tick and an anchor line
+   when the hold registers; released without dragging: nothing selected.
+6. Hold inside the selection lifts it (move); a hold elsewhere starts a selection.
+7. The grips are unchanged (drag; hold still 260 ms to magnify); their hit areas win over everything; edge auto-scroll
+   and the system Back strips stay.
+8. Volume curve: tap adds, drag a point moves it, any other swipe scrolls; holding tasks: swipe scrolls; lanes mapped
+   onto the same grammar.
+9. One first-run hint line, once ("点两下选一句 · 按住再拖选一段"), at a moment that does not compete with the example
+   sentence.
+10. Mouse keeps desktop conventions: drag selects, wheel scrolls, ctrl/⌘+wheel zooms, double click selects the sentence.

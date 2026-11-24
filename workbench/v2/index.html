@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>声剪工作台 第二轮</title>
+<meta name="description" content="声剪工作台重做：工具都在底部，随你点的东西变化；能操作的原型、八个任务、关键画面、功能清单。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="sec live-sec" id="live">
+  <div class="live-wrap">
+    <div class="phone live"><div class="scr live" data-scene="live"></div></div>
+    <div class="live-notes">
+      <header class="topbar">
+        <b>声剪 · 工作台</b><span class="tag acc">第二轮</span>
+        <span class="pseg" id="theme" role="group" aria-label="主题"><button data-t="" class="on">系统</button><button data-t="light">浅色</button><button data-t="dark">深色</button></span>
+        <nav class="toc"><a href="#tasks">八个任务</a><a href="#states">关键画面</a><a href="#inv">功能清单</a><a href="#notes">说明</a></nav>
+      </header>
+      <div class="card">
+        <h2>试一试</h2>
+        <ol class="try">
+          <li><i>1</i><span>在波形上拖动，选一段；点「删除」或「只留」。撤销、重做在播放键右边，按住撤销看全部历史。</span></li>
+          <li><i>2</i><span>选一段，<b>按住它</b>拖到别处松手；或点「移动」，再点要放的位置。</span></li>
+          <li><i>3</i><span>「声音 → 降噪」：在底部调力度，按住「原声」对比，✓ 留下。之后点波形上方的「降噪」标签还能改或去掉。</span></li>
+          <li><i>4</i><span>「添加 → 音乐 → 音频库」：音乐成为下面一轨，有人说话的地方自动变小。点那一轨调它。</span></li>
+          <li><i>5</i><span>「说一句」→ 点一个例子：要改的地方画在波形上，勾掉不要的步骤，✓ 一次改完。</span></li>
+          <li><i>6</i><span>右上「导出」：在底部选好，导出，系统存文件。</span></li>
+          <li><i>7</i><span>点上面的名字、点时间：这段音频本身的事、播放和查看。</span></li>
+        </ol>
+        <div class="demo-ctl"><button class="pri" onclick="resetLive()">从头再来</button></div>
+      </div>
+      <div class="card">
+        <h2>手势</h2>
+        <table class="gest">
+          <tr><td>点</td><td>放播放头；点选区外面就放开选区；点下面的轨道就选中那一轨</td></tr>
+          <tr><td>横着拖</td><td>选一段（边缘吸附到片段接缝、标记、播放头）</td></tr>
+          <tr><td>竖着拖</td><td>交给页面滚动（先动 8 像素再判断方向）</td></tr>
+          <tr><td>按住 0.4 秒再拖</td><td>拿起选区或一个片段，挪到别处；靠近左右边缘时自动滚动</td></tr>
+          <tr><td>拖选区下面的圆点</td><td>改选区的起点或终点</td></tr>
+          <tr><td>双击</td><td>选中整个片段</td></tr>
+          <tr><td>拖时间刻度、双指</td><td>滚动、缩放（电脑：滚轮滚动，Ctrl+滚轮缩放）</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="idea">
+  <div class="idea">
+    <div class="card">
+      <h2>这一版的工作台</h2>
+      <p class="big-idea">工作台就是这段声音。<b>点到什么，底部就是能对它做的事</b>；调的时候声音一直在上面、一直能听；做过的每件事都留在声音上，随时改、随时撤。</p>
+    </div>
+    <div class="card">
+      <ol class="rules">
+        <li><b>工具在底部，跟着你点的东西变</b><span>什么都没点：说一句、剪辑、声音、添加。选了一段、一个片段、一轨、一个标签，底部就换成对应的工具。往下一层也在原地换，左边一个返回。</span></li>
+        <li><b>不弹窗，不跳页</b><span>调参数、选音乐、录音、计划、导出都在底部完成。只有系统自己的选择器和「删了就找不回」的确认才盖住画面。</span></li>
+        <li><b>一条主线，下面垫声音</b><span>剪掉就合上，插进就让开；同时响的（音乐、另一段人声、伴奏）放在下面的轨道。只有一轨时，就是一条波形。</span></li>
+        <li><b>没有版本，只有一条历史</b><span>降噪、音乐、音量这些是贴在声音上的设置，点标签就能改或去掉；原始音频不动。要分开保存，用「另存」。</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="tasks">
+  <h2><span class="n">1</span>八个任务</h2>
+
+  <div class="task">
+    <div class="task-h"><h3><span class="n">①</span>剪掉一段，或只留一段，然后保存</h3><span class="count">现在 <b>5</b> 步 · 今天 <b>5</b> 步</span></div>
+    <p>步数一样：今天这条路本来就短。不同的是页面上只有声音、播放和四个入口；导出也不离开工作台。只留一段：2 步，和今天一样。</p>
+    <div class="strip">
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t1a"></div></div></div><p class="cap"><b>0</b>打开。提示只在第一次出现。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t1b"></div></div></div><p class="cap"><b>1</b>拖一下，底部换成对这一段的工具。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t1c"></div></div></div><p class="cap"><b>2</b>删除，后面的合上来。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t1d"></div></div></div><p class="cap"><b>3–5</b>导出 → 导出 → 系统选位置保存。</p></div>
+    </div>
+  </div>
+
+  <div class="task">
+    <div class="task-h"><h3><span class="n">②</span>把一段挪到别处</h3><span class="count">现在 <b>2</b> 步（远处 <b>4</b> 步）· 今天 <b>7</b> 步</span></div>
+    <p>今天：拖选、⋯、剪切、点位置、全部工具、展开时间线、粘贴（粘贴进了「最近用过」后是 6 步）。</p>
+    <div class="strip">
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t2a"></div></div></div><p class="cap"><b>1</b>选一段。第一次会提示可以按住拖走。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t2b"></div></div></div><p class="cap"><b>2</b>按住拖：原处合上，要放的地方让开。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t2c"></div></div></div><p class="cap">松手就放好，还是选中的，可以接着调。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t2d"></div></div></div><p class="cap">很远时点「移动」，滚过去点位置，✓。</p></div>
+    </div>
+  </div>
+
+  <div class="task">
+    <div class="task-h"><h3><span class="n">③</span>用一首歌做铃声</h3><span class="count">现在 <b>4</b> 步（第一次 5）· 今天 <b>8</b> 步（之后 7）</span></div>
+    <p>找到的第一段已经选好，长度记住上次的。「做铃声」只留这一段并把导出切到铃声，结尾自动淡出 1 秒。第一次系统还会问一次「修改系统设置」权限，两边都一样。</p>
+    <div class="strip">
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t3a"></div></div></div><p class="cap"><b>1–2</b>剪辑 → 副歌。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t3b"></div></div></div><p class="cap">几段候选标在波形上，30 秒那一段已选中。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t3c"></div></div></div><p class="cap"><b>3–4</b>做铃声 → 设为铃声。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t3d"></div></div></div><p class="cap">设好了。</p></div>
+    </div>
+  </div>
+
+  <div class="task">
+    <div class="task-h"><h3><span class="n">④</span>整理一段人声：降噪、音量拉齐、去掉长停顿</h3><span class="count">现在 <b>3</b> 步 · 今天 <b>9</b> 步、3 次跳页、多出 3 个版本（用一句话是 5 步、3 次跳页）</span></div>
+    <p>「人声清理」是一句话配方，排在「说一句」的第一个。也可以一项一项来（声音 → 降噪 → ✓，拉齐 → ✓，剪辑 → 停顿 → 删掉，共 9 步），区别是每一项事后都能改。</p>
+    <div class="strip">
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t4a"></div></div></div><p class="cap"><b>1–2</b>说一句 → 人声清理。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t4b"></div></div></div><p class="cap">要删的停顿画在波形上，要加的设置是虚线标签。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t4c"></div></div></div><p class="cap"><b>3</b>✓ 一次改完，一次能撤。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t4d"></div></div></div><p class="cap">之后点「降噪」标签：改力度、按住听原声、或去掉。</p></div>
+    </div>
+  </div>
+
+  <div class="task">
+    <div class="task-h"><h3><span class="n">⑤</span>给人声配背景音乐，说话时音乐变小</h3><span class="count">现在 <b>4</b> 步 · 今天 <b>5</b> 步，结果是另一段新音频</span></div>
+    <p>音乐铺满整段、开头结尾淡化、说话时自动变小，这些都是默认的，所以选完就好了。它在同一个工作台里成为下面一轨，人声还能继续剪。</p>
+    <div class="strip">
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t5a"></div></div></div><p class="cap"><b>1–2</b>添加 → 音乐。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t5b"></div></div></div><p class="cap"><b>3–4</b>音频库 → 选一首。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t5c"></div></div></div><p class="cap">音乐在下面，人声出现的地方它就压低。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t5d"></div></div></div><p class="cap">要改多小：点那一轨 → 自动调小。</p></div>
+    </div>
+  </div>
+
+  <div class="task">
+    <div class="task-h"><h3><span class="n">⑥</span>在某处插入一段新录音；把几段接起来</h3><span class="count">插录音：现在 <b>5</b> 步 · 今天 <b>7</b> 步、2 次跳页 &nbsp; 接 N 个文件：现在 <b>4+N</b> · 今天每个 6 步</span></div>
+    <p>今天的插入工具默认插在开头，要拖滑块找到位置。现在就插在播放头，录的时候那里一点点让开。从音频库新建「把几段接起来」和今天一样是 3+N 步，打开就是工作台，每段开头一个标记。</p>
+    <div class="strip">
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t6a"></div></div></div><p class="cap"><b>1–3</b>点 1:02 → 添加 → 录音。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t6b"></div></div></div><p class="cap"><b>4</b>录。后面的声音被推开。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t6c"></div></div></div><p class="cap"><b>5</b>✓ 录音落在那里，选中着。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t6d"></div></div></div><p class="cap">接起来的三段，标记就是文件名。</p></div>
+    </div>
+  </div>
+
+  <div class="task">
+    <div class="task-h"><h3><span class="n">⑦</span>说一句，看清会改什么再确认</h3><span class="count">现在 <b>4</b> 步 · 今天 <b>3</b> 步；句子里有工具时 现在 4 · 今天 4 步、跳 2 个页面、多出 2 个版本</span></div>
+    <p>静止时输入框不常驻，所以多一步。换来的是：计划画在波形上而不是另一页；句子里的降噪、拉齐也在这一步里，不再一个工具一个页面地走。</p>
+    <div class="strip">
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t7a"></div></div></div><p class="cap"><b>1–3</b>说一句 → 打字或说话 → 发送。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t7b"></div></div></div><p class="cap">删的、淡出的都画在波形上；可以切到「改后」听。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t7c"></div></div></div><p class="cap"><b>4</b>✓ 后底部接着是导出，MP3 已选好。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t7d"></div></div></div><p class="cap">没看懂的部分不执行，给几个说法可选。</p></div>
+    </div>
+  </div>
+
+  <div class="task">
+    <div class="task-h"><h3><span class="n">⑧</span>导出或分享</h3><span class="count">存文件 <b>3</b> 步、分享 <b>4</b> 步 · 今天一样，但要走两个页面；有选区时今天多一步</span></div>
+    <p>格式、清晰度在第一层；音质、标签、预设、每段一个文件往下一层。生成时可以取消。</p>
+    <div class="strip">
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t8a"></div></div></div><p class="cap"><b>1–3</b>导出 → 分享 → 分享。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t8b"></div></div></div><p class="cap">生成中，× 取消。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t8c"></div></div></div><p class="cap"><b>4</b>系统的分享。</p></div>
+      <div class="step"><div class="zoom08"><div class="phone"><div class="scr" data-scene="t8d"></div></div></div><p class="cap">选着一段时，第一行就是「整段 / 选中的」。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="states">
+  <h2><span class="n">2</span>关键画面</h2>
+  <div class="shots">
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kNew"></div></div><h3>新的录音</h3><p>新建 → 录一段，直接在工作台里录。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kLong"></div></div><h3>两小时的音频，放大</h3><p>下面是全局条，拖它或拖刻度换位置；标记在刻度上。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kTracks"></div></div><h3>几条轨道，选中音乐那一轨</h3><p>补录那一轨静音了。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kTrackVol"></div></div><h3>调一轨的音量</h3><p>边拖边听，✓ 留下。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kRepair"></div></div><h3>修复：七项可开关</h3></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kFx"></div></div><h3>效果：九种，点哪个调哪个</h3></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kSpeed"></div></div><h3>变速与音高</h3></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kRangeSound"></div></div><h3>只给选中的一段加声音设置</h3></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kFade"></div></div><h3>选区淡化</h3></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kEnv"></div></div><h3>音量曲线</h3><p>直接在波形上点、拖。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kPauses"></div></div><h3>停顿</h3><p>点一处可以留下它。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kBeats"></div></div><h3>节拍与标记</h3><p>选的时候吸附到拍子。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kChorusNone"></div></div><h3>没找到副歌</h3></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kProc"></div></div><h3>人声分离进行中</h3><p>处理好的部分先能听；× 取消。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kErr"></div></div><h3>出错</h3><p>标签变红，点开是原因和两个出路。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="t1e"></div></div><h3>导出完成</h3></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kStt"></div></div><h3>转文字：未接通</h3></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kOnlineOff"></div></div><h3>在线音乐库：未接通</h3></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kOnline"></div></div><h3>在线音乐库：接通时</h3><p>授权写在每首后面。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kTts"></div></div><h3>朗读</h3><p>生成后插在播放头。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kVoiceOff"></div></div><h3>在线音色：未接通</h3></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kSub"></div></div><h3>字幕配音</h3><p>生成后成为下面的「配音」轨。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kClone"></div></div><h3>克隆声音</h3></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kHistory"></div></div><h3>历史</h3><p>按住撤销打开；点一步就回到那里。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kAudio"></div></div><h3>点名字：这段音频本身</h3></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kDetails"></div></div><h3>详情与署名</h3></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kPlay"></div></div><h3>点时间：播放与查看</h3><p>试听速度不是 1× 时，时间旁边会写着。</p></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kSpec"></div></div><h3>频谱</h3></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kPicker"></div></div><h3>留下的覆盖层①：系统选文件</h3></div>
+    <div class="shot"><div class="phone"><div class="scr" data-scene="kConfirm"></div></div><h3>留下的覆盖层②：删了找不回的确认</h3></div>
+    <div class="shot w360"><div class="phone w360"><div class="scr" data-scene="kFsRest"></div></div><h3>360 dp · 字号 1.3</h3></div>
+    <div class="shot w360"><div class="phone w360"><div class="scr" data-scene="kFsRange"></div></div><h3>360 dp · 字号 1.3 · 选中一段</h3></div>
+    <div class="shot w360"><div class="phone w360"><div class="scr" data-scene="kFsParam"></div></div><h3>360 dp · 字号 1.3 · 降噪</h3></div>
+    <div class="shot w360"><div class="phone w360"><div class="scr" data-scene="kFsExport"></div></div><h3>360 dp · 字号 1.3 · 导出</h3></div>
+    <div class="shot w360"><div class="phone w360"><div class="scr" data-scene="kFsPlan"></div></div><h3>360 dp · 字号 1.3 · 说一句的计划</h3></div>
+    <div class="shot w360"><div class="phone w360"><div class="scr" data-scene="kEnRest"></div></div><h3>英文 · 360 dp</h3></div>
+    <div class="shot w360"><div class="phone w360"><div class="scr" data-scene="kEnRange"></div></div><h3>英文 · 选中一段</h3></div>
+    <div class="shot w360"><div class="phone w360"><div class="scr" data-scene="kEnSound"></div></div><h3>英文 · 声音</h3></div>
+    <div class="shot w360"><div class="phone w360"><div class="scr" data-scene="kEnExport"></div></div><h3>英文 · 导出</h3></div>
+  </div>
+</section>
+
+<section class="sec" id="inv">
+  <h2><span class="n">3</span>功能清单</h2>
+  <p class="lead">今天工具面板、选区「⋯」、新建里的每一项，加上任务里提到的每个功能。步数从工作台静止时算（选一段算 1 步）。</p>
+  <div class="inv-wrap"><table class="inv">
+    <thead><tr><th>功能</th><th>现在在哪</th><th>步数</th><th>今天</th></tr></thead>
+    <tbody>
+      <tr><td class="grp" colspan="4">剪辑：选中一段之后，底部第一层</td></tr>
+      <tr><td>删除</td><td>拖选 → 删除</td><td class="n">2</td><td>2</td></tr>
+      <tr><td>保留（只留这段）</td><td>拖选 → 只留</td><td class="n">2</td><td>2</td></tr>
+      <tr><td>剪切 + 粘贴（移动）</td><td>拖选 → 按住拖走；或 移动 → 点位置 → ✓</td><td class="n">2 / 4</td><td>7（工具面板里的粘贴要展开）</td></tr>
+      <tr><td>复制</td><td>拖选 → 复制 → 点位置 → ✓（同时进剪贴板）</td><td class="n">4</td><td>3 + 粘贴 3–4</td></tr>
+      <tr><td>粘贴（来自另一段音频）</td><td>添加 → 粘贴 → 点位置 → ✓，同一个工作台里完成</td><td class="n">4</td><td>3 + 插入工具页 + 存新版本</td></tr>
+      <tr><td>重复一遍</td><td>拖选 → 重复</td><td class="n">2</td><td>3</td></tr>
+      <tr><td>淡化（选区）、曲线</td><td>拖选 → 淡化 →（淡出）→ ✓</td><td class="n">3–4</td><td>3–4</td></tr>
+      <tr><td>调这段的音量</td><td>拖选 → 音量 → ✓</td><td class="n">3</td><td>4</td></tr>
+      <tr><td>对这段做声音处理</td><td>拖选 → 声音 → 某项 → ✓（只作用在这段，波形上方一条色带）</td><td class="n">4</td><td>不能（处理整版）</td></tr>
+      <tr><td>精确时间</td><td>拖选 → 精确</td><td class="n">2</td><td>3</td></tr>
+      <tr><td>对齐节拍</td><td>剪辑 → 节拍：刻度上出现拍子，拖选时吸附</td><td class="n">2</td><td>3 + 页面</td></tr>
+      <tr><td>边缘吸附到过零点</td><td>每次选都自动做</td><td class="n">0</td><td>3</td></tr>
+      <tr><td>只导出这一段</td><td>拖选 → 导出（或 导出 → 选中的）</td><td class="n">2</td><td>3</td></tr>
+      <tr><td>取消选择</td><td>点选区外面</td><td class="n">1</td><td>1</td></tr>
+      <tr><td class="grp" colspan="4">剪辑：什么都没选时，剪辑一层</td></tr>
+      <tr><td>分割</td><td>剪辑 → 分割（在播放头）；选着一段时在两头分</td><td class="n">2</td><td>2</td></tr>
+      <tr><td>片段顺序</td><td>按住片段拖；或 剪辑 → 片段</td><td class="n">1 / 2</td><td>3</td></tr>
+      <tr><td>片段的音量与淡化</td><td>双击片段 → 音量 / 淡化</td><td class="n">3</td><td>4</td></tr>
+      <tr><td>接缝交叉淡化</td><td>剪辑 → 接缝 → ✓</td><td class="n">3</td><td>3</td></tr>
+      <tr><td>标记</td><td>剪辑 → 标记（在播放头）；点刻度上的旗子：改名、分割、删除</td><td class="n">2</td><td>3</td></tr>
+      <tr><td>每隔几秒分 / 平均分几段 / 按标记分</td><td>剪辑 → 分段 → ✓</td><td class="n">3</td><td>只能说一句；按标记分 3</td></tr>
+      <tr><td>一分钟循环</td><td>剪辑 → 循环到 → ✓</td><td class="n">3</td><td>2 + 页面，存新音频</td></tr>
+      <tr><td>全选</td><td>剪辑 → 全选</td><td class="n">2</td><td>—</td></tr>
+      <tr><td>找副歌</td><td>剪辑 → 副歌（候选标在波形上）</td><td class="n">2</td><td>2 + 页面</td></tr>
+      <tr><td>删掉停顿</td><td>剪辑 → 停顿 → 删掉</td><td class="n">3</td><td>3 + 页面</td></tr>
+      <tr><td class="grp" colspan="4">声音：贴在声音上的设置，点波形上方的标签随时改或去掉</td></tr>
+      <tr><td>降噪、音量拉齐、修复、效果、变声、快慢与音高、左右声道</td><td>声音 → 某项 → ✓</td><td class="n">3</td><td>3（工具页，存成新版本）</td></tr>
+      <tr><td>人声分离</td><td>声音 → 分离：留人声 / 留伴奏 / 两轨（伴奏成为下面一轨）</td><td class="n">3</td><td>3，存成一个或两个新版本</td></tr>
+      <tr><td>倒放</td><td>声音 → 倒放（再点一次取消）</td><td class="n">2</td><td>3</td></tr>
+      <tr><td>整段音量、两头淡入淡出</td><td>声音 → 音量 / 淡化 → ✓</td><td class="n">3</td><td>3</td></tr>
+      <tr><td>音量曲线</td><td>声音 → 曲线：在波形上点、拖 → ✓</td><td class="n">3+</td><td>3+</td></tr>
+      <tr><td>改或去掉已经加的处理</td><td>点标签 → 改 → ✓，或 删除</td><td class="n">2</td><td>不能，只能切回旧版本</td></tr>
+      <tr><td class="grp" colspan="4">添加：都落在这个工作台里</td></tr>
+      <tr><td>插入录音</td><td>添加 → 录音（插入或叠加）</td><td class="n">2</td><td>3 + 录音页 + 工具页</td></tr>
+      <tr><td>插入音频（音频库、文件、视频）</td><td>添加 → 音频 / 文件 / 视频；音频库那一层可选 插入 · 接在结尾 · 叠加</td><td class="n">3</td><td>3 + 页面</td></tr>
+      <tr><td>配背景音乐</td><td>添加 → 音乐 → 音频库 / 文件 / 在线</td><td class="n">4</td><td>5，存成新音频</td></tr>
+      <tr><td>在线音乐库</td><td>添加 → 音乐 → 在线（未配置时显示未接通和原因）</td><td class="n">3</td><td>2 + 页面；未配置时入口在别处会隐藏</td></tr>
+      <tr><td>多轨混音</td><td>添加时选「叠加」；点一轨：音量、自动调小、淡化、起点、换一首、静音、独听、删除</td><td class="n">2–3</td><td>2 + 页面</td></tr>
+      <tr><td>串烧</td><td>添加 → 文件（多选）→ 剪辑 → 接缝</td><td class="n">5+N</td><td>2 + 页面</td></tr>
+      <tr><td>文字读出来</td><td>添加 → 朗读 → ✓（音色 → 本机 / 在线）</td><td class="n">3</td><td>新建里，单独页面，新音频</td></tr>
+      <tr><td>字幕配音</td><td>添加 → 字幕 → 生成 → ✓（成为「配音」轨）</td><td class="n">4</td><td>2 + 页面</td></tr>
+      <tr><td>克隆声音</td><td>添加 → 克隆；朗读的音色里也有</td><td class="n">2</td><td>2 + 页面</td></tr>
+      <tr><td>插入静音</td><td>添加 → 空白 → ✓</td><td class="n">3</td><td>3–4</td></tr>
+      <tr><td class="grp" colspan="4">说一句</td></tr>
+      <tr><td>一句话</td><td>说一句（第一个入口，任何时候都在第一位）</td><td class="n">1</td><td>0（输入框常驻）</td></tr>
+      <tr><td>配方、最近说过的、例子</td><td>说一句 → 第一排</td><td class="n">2</td><td>2</td></tr>
+      <tr><td>语音输入</td><td>说一句 → 麦克风</td><td class="n">2</td><td>1</td></tr>
+      <tr><td>AI 改写</td><td>计划里没看懂的部分 → AI</td><td class="n">—</td><td>自动问</td></tr>
+      <tr><td>计划审阅</td><td>就在工作台：标在波形上，勾掉、调数字，✓</td><td class="n">—</td><td>单独页面</td></tr>
+      <tr><td class="grp" colspan="4">播放与查看：点时间</td></tr>
+      <tr><td>播放 / 暂停、只听选区</td><td>▶（选着一段时只放这段）</td><td class="n">1</td><td>1 / 2</td></tr>
+      <tr><td>循环、试听速度、频谱</td><td>点时间 → 循环 / 速度 / 频谱</td><td class="n">2</td><td>1</td></tr>
+      <tr><td>缩放、显示全部</td><td>双指；点时间 → 全部</td><td class="n">1 / 2</td><td>1</td></tr>
+      <tr><td>跳到某个时间</td><td>点时间 → 跳到</td><td class="n">2</td><td>—</td></tr>
+      <tr><td class="grp" colspan="4">历史</td></tr>
+      <tr><td>撤销 / 重做</td><td>播放键右边</td><td class="n">1</td><td>1（列表占半页）</td></tr>
+      <tr><td>历史列表</td><td>按住撤销；或 点名字 → 历史</td><td class="n">1</td><td>0</td></tr>
+      <tr><td>版本</td><td>不再有：处理都在同一段的历史里；需要分开就「另存」</td><td class="n">—</td><td>1</td></tr>
+      <tr><td>另存一份</td><td>点名字 → 另存</td><td class="n">2</td><td>—</td></tr>
+      <tr><td class="grp" colspan="4">这段音频：点名字</td></tr>
+      <tr><td>改名</td><td>点名字 → 改名</td><td class="n">2</td><td>1</td></tr>
+      <tr><td>详情、署名（用到的音乐）</td><td>点名字 → 详情</td><td class="n">2</td><td>音频库 ⋯ → 占用空间</td></tr>
+      <tr><td>从备份恢复</td><td>点名字 → 详情 → 从备份恢复</td><td class="n">3</td><td>音频库里</td></tr>
+      <tr><td>导出工程包</td><td>点名字 → 工程包</td><td class="n">2</td><td>音频库 ⋯</td></tr>
+      <tr><td>删除这段音频</td><td>点名字 → 删除（确认）</td><td class="n">3</td><td>音频库 ⋯</td></tr>
+      <tr><td>音频转文字（未接通）</td><td>点名字 → 转文字：未接通和原因，可以导出音频</td><td class="n">2</td><td>2 + 页面</td></tr>
+      <tr><td class="grp" colspan="4">导出：右上，在底部完成</td></tr>
+      <tr><td>存文件 / 分享 / 设为铃声、通知音、闹钟</td><td>导出 → 选 → 导出</td><td class="n">2–3</td><td>2 + 两个页面</td></tr>
+      <tr><td>格式（MP3 M4A WAV FLAC Opus AMR）、清晰度</td><td>导出 第一层</td><td class="n">2</td><td>同一页</td></tr>
+      <tr><td>音质（采样率、声道、压低峰值）、标签与封面、预设、每段一个文件</td><td>导出 → 下一层</td><td class="n">3</td><td>同一页往下</td></tr>
+      <tr><td class="grp" colspan="4">新建（音频库里，不在工作台）</td></tr>
+      <tr><td>录一段</td><td>直接打开工作台，正在录</td><td class="n">—</td><td>录音页，录完再打开</td></tr>
+      <tr><td>手机里的文件、视频里的声音、在线音乐</td><td>导入后打开工作台</td><td class="n">—</td><td>同</td></tr>
+      <tr><td>文字读出来、字幕配音</td><td>打开一段空白的工作台，底部就是朗读 / 字幕</td><td class="n">—</td><td>单独页面</td></tr>
+      <tr><td>把几段接起来</td><td>打开工作台：每个文件一个片段，开头一个标记</td><td class="n">—</td><td>同（标记已有）</td></tr>
+      <tr><td>一段空白、先拿示例试试</td><td>不变</td><td class="n">—</td><td>同</td></tr>
+      <tr><td>一次处理很多个文件、导入工程包、设置、账号</td><td>不变，在音频库（与这段音频无关）</td><td class="n">—</td><td>同</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="sec" id="notes">
+  <h2><span class="n">4</span>说明</h2>
+  <div class="notes">
+    <div class="card">
+      <h2>覆盖层：今天 16 个，这一版 1 个</h2>
+      <p>规则：只有两种东西可以盖住工作台。① 系统自己的界面：选文件、选保存位置、分享、权限、键盘。② 做了就撤不回的事之前的确认。</p>
+      <h3>这一版剩下的</h3>
+      <ul>
+        <li>确认对话框，一个样式，三处用：删除这段音频；删除克隆的音色（在服务器上，撤不回）；保存失败时仍要离开（改动会丢）。</li>
+        <li>其余都是系统的：选音频/视频/字幕/封面文件，选保存位置，分享，麦克风和「修改系统设置」权限，键盘。</li>
+      </ul>
+      <h3>今天的工作台（EditorScreen、EditorDialogs、EditorExtras、ToolsSheet 四个文件）</h3>
+      <ul>
+        <li>14 个底部面板：全部工具、在线音乐库说明、精确时间、片段音量与淡化、片段与接缝、配方管理、版本、选区淡化、插入静音、标记、选区音量、选区「⋯」、改名、导出前的选区提示。</li>
+        <li>2 个确认框：保存失败时离开、精确时间放弃修改。</li>
+        <li>另外从工作台会跳到 24 个单独页面（12 个处理工具，加上副歌、节拍、配乐、多轨、串烧、一分钟循环、字幕配音、克隆、一句话计划、导出、导出进度、录音）。这一版是 0 个。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>对产品模型的要求（规划用）</h2>
+      <ul>
+        <li><b>一个工程可以有多个源</b>：原始音频、每次录音、朗读、插进来的别的音频、空白，都是工程里的不可变文件；主线的片段可以引用任何一个。跨音频粘贴因此变成普通的时间线修改。</li>
+        <li><b>轨道</b>：主线下面最多 7 轨。每轨的片段锚在主线的源帧上（像今天的标记），主线剪掉前面的内容，下面的音乐跟着对齐；铺满整段的音乐随长度自动循环、截断、淡出。</li>
+        <li><b>声音设置是图层</b>：降噪、拉齐、修复、效果、变声、变速、声道、分离、倒放、音量曲线存成参数，作用于整轨或一个范围，渲染时按顺序跑。重的（分离、降噪、响度要两遍）在后台算成缓存文件，按内容哈希命名，撤销不用重算；没算完的部分先放原声。</li>
+        <li><b>一条历史</b>：所有改动（含图层、轨道）进同一个撤销栈并持久保存；今天的「版本」不再产生。现有的版本家族迁移成一段音频，旧版本变成历史里的节点。</li>
+        <li><b>一句话计划</b>直接产出一次修订（含图层），SessionState.chain 和工具页链条不再需要；计划画在时间线上。</li>
+        <li><b>录音写进工程</b>：录到的就是工程的新源，暂停/继续、中断恢复照旧（「之前录的」列表保留）。</li>
+        <li><b>导出</b>把主线、轨道、图层一起混合；以后可以加「每轨一个文件」。批量处理走同一条渲染。</li>
+        <li><b>存储</b>：源和缓存会比今天多，缓存可清，需要在详情里显示并能清理。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>可能出问题的地方，和设计怎么接住</h2>
+      <ul>
+        <li><b>不知道能按住拖</b>：第一次选中后提示一次；「移动」按钮一直在第二位，做同一件事。</li>
+        <li><b>工具藏在下一层</b>：第一层只有 4 个，名字就是去处；「说一句」也认工具名（说「降噪」就是降噪）。</li>
+        <li><b>小屏、大字</b>：底部工具可以横滑，标签放不下就折成两行；参数层高度有上限，声音至少留一半屏。</li>
+        <li><b>用惯了旧版</b>：选区操作原样还在第一层；旧的工具名都能在「说一句」里说；旧版本变成历史节点，不会消失。</li>
+        <li><b>很长的音频</b>：全局条、刻度拖动、双指缩放、跳到某个时间、标记；拿着一段时靠边自动滚，太远就用「移动」。</li>
+        <li><b>手机上处理慢</b>：设置先生效在前面几十秒，标签上转圈显示进度，别的照常做；导出会等它算完；离开应用也继续算。</li>
+        <li><b>误操作</b>：除了删整段音频，一切都能撤销，撤销键在拇指下面。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>只有你能定的</h2>
+      <ul>
+        <li>旧的版本家族合并成一段音频（旧版本进历史），还是保持各自独立？</li>
+        <li>声音设置第一版就支持「只作用于一段」，还是先只做整轨？</li>
+        <li>下面的轨道最多几条（建议 7，加主线 8，和今天的多轨上限一致）？</li>
+        <li>内置「人声清理」这类配方可以吗？内置几条？</li>
+        <li>要不要新增「每轨一个文件」导出（分轨）？</li>
+        <li>历史保留多少步（今天 50），要不要随工程包带走？</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="end">交互稿，不连真实音频：波形是生成的，处理和导出是模拟的。图标来自应用的 AppIcons（Material Symbols Rounded）。</footer>
+
+<script src="icons.js"></script>
+<script src="bench.js"></script>
+<script src="scenes.js"></script>
+<script>
+  (function () {
+    const seg = document.getElementById('theme');
+    const set = t => {
+      if (t) document.documentElement.dataset.theme = t; else delete document.documentElement.dataset.theme;
+      seg.querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.t === t));
+      try { localStorage.setItem('wb-theme', t); } catch (e) { /* private window */ }
+      document.dispatchEvent(new Event('themechange'));
+    };
+    seg.addEventListener('click', e => { const b = e.target.closest('button'); if (b) set(b.dataset.t); });
+    let saved = ''; try { saved = localStorage.getItem('wb-theme') || ''; } catch (e) { /* none */ }
+    if (saved) set(saved);
+  })();
+</script>
+</body>
+</html>

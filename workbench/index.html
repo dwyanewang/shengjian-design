@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>工作台重排</title>
+<meta name="description" content="声剪编辑页（工作台）重排交互稿：移动一段、平静的默认工作台、原地处理、创作任务的去处。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="page-head">
+  <h1>工作台重排 · 交互稿</h1>
+  <p class="sub">声剪 Android · 编辑页（工作台）· 2026-11-20 · 只是设计稿，App 代码和字符串都没动。画面用的是 Theme.kt 的颜色、Components.kt 的尺寸和 values-zh 里现有的叫法。</p>
+  <div class="toolbar">
+    <span class="lbl">外观</span>
+    <div class="pseg" role="group" aria-label="外观">
+      <button data-theme-btn="system" class="on">跟随系统</button><button data-theme-btn="light">浅色</button><button data-theme-btn="dark">深色</button>
+    </div>
+  </div>
+  <ul class="toc">
+    <li><a href="#s1">1 默认</a></li><li><a href="#s2">2 有选区</a></li><li><a href="#s3">3 移动</a></li><li><a href="#s4">4 粘贴</a></li>
+    <li><a href="#s5">5 工具入口</a></li><li><a href="#s6">6 原地处理</a></li><li><a href="#s7">7 撤销与版本</a></li><li><a href="#s8">8 创作去哪了</a></li>
+    <li><a href="#s9">9 清单</a></li><li><a href="#s10">10 说明</a></li>
+  </ul>
+  <div class="brief">
+    <div class="card">
+      <h2>用户说的</h2>
+      <ol>
+        <li>功能都有，但乱。只想剪一下的人被太多东西干扰。</li>
+        <li>既然是工作台，操作就该在工作台里做。现在很多工具跳到另一页，很突兀。</li>
+        <li>想把一段剪下来放到别的位置，做不到（其实能做，但要 6 步、2 次撤销，界面上没有“移动”两个字）。</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h2>这一稿的回应</h2>
+      <p><b>A 真正的“移动”</b>：按住选区拖到新位置，一步撤销；操作条上有“移动到…”。</p>
+      <p><b>B 平静的默认</b>：默认只露剪辑；处理声音收进一个二级入口，其余靠搜索和一句话。</p>
+      <p><b>C 原地处理</b>：降噪这类工具在同一块波形下面开面板，不换页、不丢位置。</p>
+      <p><b>D 创作任务挪出去</b>：配乐、多轨、串烧等走自己的页面，入口只留一个。</p>
+    </div>
+    <div class="card">
+      <h2>怎么看</h2>
+      <ul>
+        <li>橙色描边的两台手机<span class="tag live">可以操作</span>：第 3 节（移动、粘贴、撤销、工具单）和第 6 节（降噪面板）。手机上用手指，电脑上用鼠标按住。</li>
+        <li>其余是同一个渲染器画的静止画面。</li>
+        <li>说明里 <span class="tag brief-t">简报定的</span> 是之前和你商量好的方向，<span class="tag mine">我定的</span> 是这一稿替你做的选择，最后一节有待你拍板的问题。</li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<!-- 1 -->
+<section class="sec" id="s1">
+  <h2><span class="n">1</span>平静的默认工作台</h2>
+  <p class="lead">打开一段音频，看到的只有剪辑要用的：选一段、保留或删除、移动、剪切复制粘贴、淡化和音量、听、撤销、导出。版面和现在一样，变的是工具按钮里装了什么、选区上能做什么。</p>
+  <div class="shots">
+    <div class="shot">
+      <div class="phone"><div class="scr" data-scene="s1-rest"></div></div>
+      <h3><span class="st">①</span>什么都没选</h3>
+      <ul>
+        <li>上：返回、名字和版本标签、导出；时钟、试听速度、频谱开关。</li>
+        <li>中：波形，没选区时提示“在波形上拖动选一段 · 双指缩放”。</li>
+        <li>下：循环 / 播放 / 只听选区；“改动”列表，标题右边新加撤销、重做 <span class="tag mine">我定的</span>（现在只能点列表里的某一步）。</li>
+        <li>最底：工具按钮和一句话框，都还在原处。工具按钮里的东西从 29 个减到第一层 9 个（第 5 节）。</li>
+      </ul>
+    </div>
+    <div class="shot wide-note">
+      <div class="card">
+        <h2>默认露出来的</h2>
+        <ul>
+          <li>选区操作条：保留、删除、<b>移动</b>、淡化、⋯</li>
+          <li>播放头上的“粘贴”（剪贴板里有东西时）</li>
+          <li>工具第一层：剪辑 7 个 + 两个入口行</li>
+          <li>撤销 / 重做、改动列表、导出、一句话</li>
+        </ul>
+        <h2 style="margin-top:14px">收起来的（一个都没删）</h2>
+        <ul>
+          <li>处理声音 11 个：工具 → 处理声音（第二层），用的时候在波形下打开 <span class="tag brief-t">简报定的</span></li>
+          <li>创作任务 7 个：工具 → 用这段音频创作，和新建里 <span class="tag brief-t">简报定的</span></li>
+          <li>对齐节拍、吸附过零点：只在选区的“⋯”里 <span class="tag mine">我定的</span></li>
+          <li>任何一个都能在工具单的搜索里找到，也能用一句话说出来</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="sec" id="s2">
+  <h2><span class="n">2</span>有选区时</h2>
+  <p class="lead">选区上的操作条多一个“移动”。“⋯”里的 9 项都还在，按常用程度重排。</p>
+  <div class="shots">
+    <div class="shot">
+      <div class="phone"><div class="scr" data-scene="s2-sel"></div></div>
+      <h3><span class="st">①</span>选区操作条：保留 / 删除 / 移动 / 淡化 / ⋯</h3>
+      <ul>
+        <li>“移动”排第三，紧跟两个最常用的 <span class="tag mine">我定的</span>。点它打开“移动到…”（第 3 节）。</li>
+        <li>操作条照旧像水滴一样从箭头处长开；宽 300，五格各约 58，英文 Keep / Delete / Move / Fade 也放得下。</li>
+        <li>头几次出现选区时，波形上提示“按住选区，拖到别处”，之后不再出现 <span class="tag mine">我定的</span>。</li>
+        <li>下面“说的话改动”自动切到这个选区（和现在一样）。</li>
+      </ul>
+    </div>
+    <div class="shot">
+      <div class="phone"><div class="scr" data-scene="s2-more"></div></div>
+      <h3><span class="st">②</span>“⋯” 更多选区操作</h3>
+      <ul>
+        <li>上排四个格子：复制、剪切、重复一遍、调这段的音量。</li>
+        <li>下面：精确时间、边缘吸附到过零点、对齐节拍、只导出这一段、取消选择。</li>
+        <li>对齐节拍不再跳页：节拍标在这块波形上，面板在下面（同第 6 节的面板框架）。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section class="sec" id="s3">
+  <h2><span class="n">3</span>移动一段</h2>
+  <p class="lead">用户点名要的能力。一个动作、一步撤销，界面上写着“移动”。主入口是手势：按住选区，拖到新位置松手 <span class="tag brief-t">简报定的</span>。精确入口是操作条上的“移动到…”。</p>
+  <div class="shots">
+    <div class="shot">
+      <div class="phone live"><div class="scr" data-scene="s3-live" data-live></div></div>
+      <div class="demo-ctl"><button data-demo="move" data-target="s3-live">自动演示一次</button><button class="sec" data-demo="reset" data-target="s3-live">重来</button></div>
+      <h3><span class="st">试</span>可以操作 <span class="tag live">可以操作</span></h3>
+      <ul>
+        <li>按住橙色选区约半秒（手指下会出现一个圈），选区浮起后左右拖，松手。</li>
+        <li>拖的时候其余音频让出位置，虚线框就是它会落下的地方；靠近开头、结尾、接缝、播放头时会吸过去，气泡里写着吸到了什么。</li>
+        <li>其它也能试：在空白处拖出新选区、拖两端改范围、操作条上的保留 / 删除 / 移动、“⋯”里复制后点播放头上的“粘贴”、撤销重做、点改动列表的某一行、工具按钮。</li>
+      </ul>
+    </div>
+    <div class="shot">
+      <div class="phone"><div class="scr" data-scene="s3-drag"></div></div>
+      <h3><span class="st">①</span>拖动中</h3>
+      <ul>
+        <li>拿起的一段：阴影、橙色描边、顶部握点，跟着手指走。</li>
+        <li>落点：虚线框，上方气泡“放到 0:27.0”，意思是移动后这一段从 27 秒开始。</li>
+        <li>其余音频实时合拢、让开，所以看到的就是松手后的样子，总长不变 <span class="tag mine">我定的</span>（比只画一条插入线更好判断）。</li>
+        <li>标尺上的小三角是原来的位置；拖回去松手就等于没动，不记一步。</li>
+        <li>放大看时拖到屏幕边会自动滚动（稿里整段放得下，没画）。</li>
+      </ul>
+    </div>
+    <div class="shot">
+      <div class="phone"><div class="scr" data-scene="s3-drop"></div></div>
+      <h3><span class="st">②</span>松手后</h3>
+      <ul>
+        <li>落进虚线框，改动里多一步“把 00:12–00:18 移到 00:27”，一步撤销。</li>
+        <li>选区跟到新位置，可以马上听，或者再拖一次 <span class="tag mine">我定的</span>。</li>
+        <li>提示条“已移动到 0:27.0 · 撤销”。</li>
+      </ul>
+    </div>
+    <div class="shot">
+      <div class="phone"><div class="scr" data-scene="s3-moveto"></div></div>
+      <h3><span class="st">③</span>移动到…（操作条上的“移动”）</h3>
+      <ul>
+        <li>移到开头、接到结尾、移到播放头处、指定“移动后从几秒开始”。</li>
+        <li>播放头在选区里时那一行仍然能点，点了说明原因（不放灰掉的按钮）。</li>
+        <li>底部教一次手势，也提醒一句话可以说“把选区移到结尾”。解析器现在读得懂“复制到”，读不懂“移到”，要加。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section class="sec" id="s4">
+  <h2><span class="n">4</span>粘贴</h2>
+  <p class="lead">现在粘贴藏在工具单时间线组折起来的第 6 个。改成：剪贴板里有东西时，粘贴就出现在要放的地方——播放头上。</p>
+  <div class="shots">
+    <div class="shot">
+      <div class="phone"><div class="scr" data-scene="s4-paste"></div></div>
+      <h3><span class="st">①</span>复制之后</h3>
+      <ul>
+        <li>播放头上方出现“粘贴 6 秒”，和操作条同一种水滴形；点波形换个位置，它跟过去。</li>
+        <li>点它：在播放头处插入，一步撤销，插进来的那段变成选区。× 清空剪贴板。</li>
+        <li>有选区、正在播放时它让开。</li>
+        <li>复制自另一段音频时写“粘贴「采访 3」6 秒”，点了在波形下打开插入面板（存为新版本，因为一个工程只有一个源）。</li>
+      </ul>
+    </div>
+    <div class="shot">
+      <div class="phone"><div class="scr" data-scene="s4-insert"></div></div>
+      <h3><span class="st">②</span>工具 → 插入…</h3>
+      <ul>
+        <li>把现在分散的粘贴、插入静音、插入音频（录一段 / 音频库 / 文件）收成一个入口，都插在播放头处 <span class="tag mine">我定的</span>。</li>
+        <li>每行写明是直接改这一版，还是存为新版本。</li>
+        <li>录一段仍然去录音页，录完回到这里。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section class="sec" id="s5">
+  <h2><span class="n">5</span>工具入口</h2>
+  <p class="lead">工具按钮打开的单子：第一层从 29 个格子减到 9 个选择（7 个剪辑 + 2 个入口行），外加最多 4 个“最近用过”。</p>
+  <div class="shots">
+    <div class="shot">
+      <div class="phone"><div class="scr" data-scene="s5-tools"></div></div>
+      <h3><span class="st">①</span>第一层</h3>
+      <ul>
+        <li>最近用过：保留，它可能是处理工具，常用降噪的人仍然一下就到 <span class="tag mine">我定的</span>。</li>
+        <li>剪辑 7 个：分割、插入…、精确时间、片段顺序、音量与淡化、音量曲线、标记。</li>
+        <li>两个入口行：处理声音（第二层，在波形下面调）、用这段音频创作（去单独页面）。</li>
+      </ul>
+    </div>
+    <div class="shot">
+      <div class="phone"><div class="scr" data-scene="s5-process"></div></div>
+      <h3><span class="st">②</span>第二层：处理声音</h3>
+      <ul>
+        <li>处理 9 个，找出来再决定 2 个。点哪个都在波形下打开面板，不跳页。</li>
+        <li>顶部一句：有选区时只处理选区，面板里能改成整段。</li>
+        <li>标题左边的返回回到第一层。</li>
+      </ul>
+    </div>
+    <div class="shot">
+      <div class="phone"><div class="scr" data-scene="s5-search"></div></div>
+      <h3><span class="st">③</span>搜索和一句话</h3>
+      <ul>
+        <li>名字和关键词都能搜到，结果写明它在哪一层（“混响”找到“效果”）。</li>
+        <li>搜不到也不白搜：“对这段音频说「混响」”交给一句话（现在就有）。</li>
+        <li>一句话框也能打开工具：“降噪”“加点混响”会在波形下打开对应面板并带好参数，不再跳到工具页；多个工具连着说时，面板里显示“第 1 步，共 2 步”，应用后直接换到下一步。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section class="sec" id="s6">
+  <h2><span class="n">6</span>原地处理</h2>
+  <p class="lead">降噪、修复、音量拉齐、快慢与音高、效果、变声、左右声道、倒放，以及人声分离、删掉停顿、找副歌：都在同一块波形下面打开面板。波形还是那块，缩放、播放头、选区都在，应用后原地变样 <span class="tag brief-t">简报定的</span>。底层照旧存为新版本，原来的那一版留着。</p>
+  <div class="shots">
+    <div class="shot">
+      <div class="phone live"><div class="scr" data-scene="s6-live" data-live></div></div>
+      <div class="demo-ctl"><button class="sec" data-demo="reset-panel" data-target="s6-live">重来</button></div>
+      <h3><span class="st">试</span>降噪面板 <span class="tag live">可以操作</span></h3>
+      <ul>
+        <li>点力度的圆点、切“处理后 / 原声”、在波形上拖一段改处理范围、点播放、点应用。</li>
+        <li>应用后点“改动”旁的撤销：回到第 1 版处理前的样子；再点重做回到第 2 版。</li>
+      </ul>
+    </div>
+    <div class="shot">
+      <div class="phone"><div class="scr" data-scene="s6-adjust"></div></div>
+      <h3><span class="st">①</span>调参数</h3>
+      <ul>
+        <li>面板从下面升起；时钟、播放三键、改动和一句话框让位，播放放进面板，免得两套播放键 <span class="tag mine">我定的</span>。</li>
+        <li>第二行“处理范围：选区 / 整段”。有选区时默认选区；处理选区是新能力（见第 10 节）。</li>
+        <li>参数一改，预览马上重做（现在的工具页也是这样）；橙色竖线扫过的部分已经是处理后的样子。</li>
+      </ul>
+    </div>
+    <div class="shot">
+      <div class="phone"><div class="scr" data-scene="s6-after"></div></div>
+      <h3><span class="st">②</span>试听：处理后</h3>
+      <ul>
+        <li>波形就是处理后的样子：选区里字与字之间的底噪变平。</li>
+        <li>左上角标“预览：处理后”，提醒这还没应用。</li>
+      </ul>
+    </div>
+    <div class="shot">
+      <div class="phone"><div class="scr" data-scene="s6-orig"></div></div>
+      <h3><span class="st">③</span>试听：原声</h3>
+      <ul>
+        <li>切到原声，波形换回原来，继续从同一位置播（和现在 ListenCard 的切换一样）。</li>
+      </ul>
+    </div>
+    <div class="shot">
+      <div class="phone"><div class="scr" data-scene="s6-whole"></div></div>
+      <h3><span class="st">④</span>处理中：整段、较长的音频</h3>
+      <ul>
+        <li>进度在状态行，竖线在波形上一起走，可以取消。</li>
+        <li>预览生成完才能应用：应用只是把生成好的结果收下，所以是一瞬间（现在的 ProcessScreen 也是这样）。</li>
+      </ul>
+    </div>
+    <div class="shot">
+      <div class="phone"><div class="scr" data-scene="s6-applied"></div></div>
+      <h3><span class="st">⑤</span>已应用</h3>
+      <ul>
+        <li>面板落下，波形原地更新；版本标签从“第 1 版 · 录音”换成“第 2 版 · 本地降噪”。</li>
+        <li>改动列表顶上多一行“本地降噪”，带“第 2 版”标记；下面接着第 1 版的改动（第 7 节）。</li>
+        <li>提示条“已应用：本地降噪 · 存为第 2 版 · 撤销”。缩放、播放头、选区都没变。</li>
+      </ul>
+    </div>
+    <div class="shot">
+      <div class="phone"><div class="scr" data-scene="s6-speed"></div></div>
+      <h3><span class="st">⑥</span>另一种参数：变速与变调</h3>
+      <ul>
+        <li>前后时长、六档速度、保持音高、更多设置（精细速度和音调）——参数和现在的工具页一样。</li>
+        <li>处理后的波形变短（45 秒 → 36 秒），播放头按比例落在同一处内容上。</li>
+        <li>处理范围选“选区”时只有这一段变快，后面的内容往前挪。左右声道只能整段，点“选区”会说明原因。</li>
+      </ul>
+    </div>
+    <div class="shot">
+      <div class="phone"><div class="scr" data-scene="s6-fx"></div></div>
+      <h3><span class="st">⑦</span>参数多的工具：效果（收起）</h3>
+      <ul>
+        <li>预设格子是主选择，效果链收在“更多设置”，右边写着当前开了什么。</li>
+      </ul>
+    </div>
+    <div class="shot">
+      <div class="phone"><div class="scr" data-scene="s6-fxmore"></div></div>
+      <h3><span class="st">⑧</span>效果（展开）</h3>
+      <ul>
+        <li>点“更多设置”，面板往上长，波形缩成一条（还显示播放头）；试听、处理后/原声、应用固定在面板底部 <span class="tag mine">我定的</span>。</li>
+        <li>修复的分项（削波、咔哒、直流、低频、嗡声、齿音、噪声门）同样放在“更多设置”里展开。</li>
+        <li>所以参数再多也只是面板变高，不会变成一个新页面；收起后波形回来。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section class="sec" id="s7">
+  <h2><span class="n">7</span>撤销与版本</h2>
+  <p class="lead">现在每一版有自己的改动记录。处理后进了新的一版，记录从“第 2 版刚生成时”重新开始，撤销回不到处理前。改成：改动列表顺着版本往下接，撤销可以越过处理那一步 <span class="tag brief-t">简报定的</span>。</p>
+  <div class="shots">
+    <div class="shot">
+      <div class="phone"><div class="scr" data-scene="s7-hist"></div></div>
+      <h3><span class="st">①</span>处理后又剪了一刀</h3>
+      <ul>
+        <li>最上是第 2 版的改动；“本地降噪”那一行带“第 2 版”标记，表示这一版从这里开始。</li>
+        <li>分隔线下面是第 1 版的改动，照样能点：点哪行就回到第 1 版的那一步（原地切换，不换页）。</li>
+      </ul>
+    </div>
+    <div class="shot">
+      <div class="phone"><div class="scr" data-scene="s7-undo"></div></div>
+      <h3><span class="st">②</span>撤销越过处理那一步</h3>
+      <ul>
+        <li>回到第 1 版处理前的样子，版本标签换回“第 1 版 · 录音”，第 2 版的两步变成“可重做”。</li>
+        <li>提示条写“已撤销：本地降噪，回到第 1 版 · 重做”（画面里省掉了，免得挡住列表）；重做回到第 2 版。</li>
+        <li>这时在第 1 版上再改，可重做的那两步消失；第 2 版不删，留在“版本”里 <span class="tag mine">我定的</span>（见第 10 节第 1 个问题）。</li>
+      </ul>
+    </div>
+    <div class="shot">
+      <div class="phone"><div class="scr" data-scene="s7-versions"></div></div>
+      <h3><span class="st">③</span>版本标签 → 版本</h3>
+      <ul>
+        <li>和现在一样：每处理一次留一版，原始音频一直在。</li>
+        <li>多一句说明：撤销处理会回到上一版，处理出的那一版仍在这里。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section class="sec" id="s8">
+  <h2><span class="n">8</span>创作任务去哪了</h2>
+  <p class="lead">配背景音乐、多轨混音、串烧、一分钟循环、字幕配音、克隆声音是另一种工作：要几段素材，有自己的页面，做出来的是新音频，以后还能再调。它们不再挤在剪辑工具里 <span class="tag brief-t">简报定的</span>。</p>
+  <div class="shots">
+    <div class="shot">
+      <div class="phone"><div class="scr" data-scene="s8-create"></div></div>
+      <h3><span class="st">①</span>工作台：工具 → 用这段音频创作</h3>
+      <ul>
+        <li>第一层只有一行入口，点进来是这张单子；每项右边是箭头，表示去新页面，这段音频作为第一个素材带过去。</li>
+        <li>在线音乐库并进配背景音乐（选音乐时可选在线），不再单独占一格 <span class="tag mine">我定的</span>。</li>
+        <li>音频转文字放这里，标“未接通”，点开是现在的说明页。</li>
+      </ul>
+    </div>
+    <div class="shot">
+      <div class="phone"><div class="scr" data-scene="s8-new"></div></div>
+      <h3><span class="st">②</span>音频库：新建</h3>
+      <ul>
+        <li>新建里加一组“用已有的音频创作”，点了先选库里的一段，再进各自的页面 <span class="tag mine">我定的</span>。</li>
+        <li>字幕配音、在线音乐本来就在新建里，不重复。</li>
+        <li>画面里“新”字和描边只是为了在稿里标出新增的部分。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 9 -->
+<section class="sec" id="s9">
+  <h2><span class="n">9</span>清单：现在的每一项去了哪里</h2>
+  <p class="lead">工具单（WORKSPACE_TOOLS）29 项、选区操作条 4 项、“⋯”9 项，逐个对照。没有一项被删掉。</p>
+  <div class="counts">
+    <div class="count"><b><s>29</s>9</b><span>工具单第一层的选择（另有最多 4 个“最近用过”）</span></div>
+    <div class="count"><b><s>21</s>8</b><span>会离开工作台的工具（剩下的全是创作任务和一个说明页）</span></div>
+    <div class="count"><b><s>4</s>5</b><span>选区操作条（加“移动”）</span></div>
+    <div class="count"><b><s>6 步</s>1 步</b><span>把一段挪到别处；撤销 2 次 → 1 次</span></div>
+  </div>
+  <div class="inv-wrap">
+  <table class="inv">
+    <thead><tr><th>现在的项（分组）</th><th>现在怎么打开</th><th>改后在哪</th><th>改后怎么打开</th></tr></thead>
+    <tbody>
+      <tr><td class="grp" colspan="4">工具单 · 时间线（9）</td></tr>
+      <tr><td>分割</td><td>工作台里直接做</td><td>工具 · 剪辑（第一层）</td><td>不变</td></tr>
+      <tr><td>音量与淡化</td><td>弹出面板</td><td>工具 · 剪辑（第一层）</td><td>不变</td></tr>
+      <tr><td>精确时间</td><td>弹出面板</td><td>工具 · 剪辑（第一层）；选区“⋯”</td><td>不变</td></tr>
+      <tr><td>片段顺序</td><td>弹出面板</td><td>工具 · 剪辑（第一层）</td><td>不变</td></tr>
+      <tr><td>对齐节拍</td><td>跳到节拍页</td><td>选区“⋯”；搜索</td><td>波形下的面板<span class="tag mine">我定的</span></td></tr>
+      <tr><td>粘贴</td><td>工作台里直接做（折叠在第 6 个）</td><td>播放头上的“粘贴”；工具 · 剪辑 · 插入…</td><td>原地，一步</td></tr>
+      <tr><td>插入静音</td><td>弹出面板</td><td>工具 · 剪辑 · 插入…</td><td>原地，一步</td></tr>
+      <tr><td>标记</td><td>弹出面板</td><td>工具 · 剪辑（第一层）</td><td>不变</td></tr>
+      <tr><td>音量曲线</td><td>在波形上编辑</td><td>工具 · 剪辑（第一层）</td><td>不变</td></tr>
+      <tr><td class="grp" colspan="4">工具单 · 找出来再决定（2）</td></tr>
+      <tr><td>删掉停顿</td><td>跳到工具页</td><td>工具 · 处理声音（第二层）</td><td>波形下的面板，停顿直接标在工作台波形上</td></tr>
+      <tr><td>找副歌</td><td>跳到副歌页，选中的存为新音频</td><td>工具 · 处理声音（第二层）</td><td>波形下的面板，候选标在波形上，点一个就选中，再用保留或导出<span class="tag mine">我定的</span></td></tr>
+      <tr><td class="grp" colspan="4">工具单 · 处理声音（9）</td></tr>
+      <tr><td>降噪、音量拉齐、快慢与音高、效果、倒放、修复、变声</td><td>跳到工具页，存为新版本后重开编辑器</td><td>工具 · 处理声音（第二层）；搜索；一句话</td><td>波形下的面板，存为新版本但不换页</td></tr>
+      <tr><td>左右声道</td><td>同上</td><td>同上</td><td>波形下的面板，只能整段</td></tr>
+      <tr><td>人声分离</td><td>同上</td><td>同上</td><td>波形下的面板；“两个都要”时另一份进“版本”<span class="tag mine">我定的</span></td></tr>
+      <tr><td class="grp" colspan="4">工具单 · 录音与语音（3）</td></tr>
+      <tr><td>插入音频</td><td>跳到工具页</td><td>工具 · 剪辑 · 插入…（录一段 / 音频库 / 文件）</td><td>波形下的面板；录一段仍去录音页<span class="tag mine">我定的</span></td></tr>
+      <tr><td>字幕配音</td><td>跳页</td><td>用这段音频创作；新建（已有）</td><td>跳页，不变</td></tr>
+      <tr><td>克隆声音</td><td>跳页</td><td>用这段音频创作；新建 · 用已有的音频创作</td><td>跳页，不变</td></tr>
+      <tr><td class="grp" colspan="4">工具单 · 混入别的声音（4，接通音乐库时 5）</td></tr>
+      <tr><td>配背景音乐</td><td>跳页</td><td>用这段音频创作；新建 · 用已有的音频创作</td><td>跳页，不变</td></tr>
+      <tr><td>多轨混音</td><td>跳页</td><td>同上</td><td>跳页，不变</td></tr>
+      <tr><td>串烧</td><td>跳页</td><td>同上</td><td>跳页，不变</td></tr>
+      <tr><td>一分钟循环</td><td>跳页</td><td>同上</td><td>跳页，不变</td></tr>
+      <tr><td>在线音乐库（接通时）</td><td>跳到配背景音乐，音乐库已打开</td><td>配背景音乐里选音乐；新建 · 在线音乐</td><td>跳页，不变</td></tr>
+      <tr><td class="grp" colspan="4">工具单 · 还没接通（1，没接音乐库时 2）</td></tr>
+      <tr><td>音频转文字</td><td>说明页（未接通）</td><td>用这段音频创作（标未接通）；搜索</td><td>说明页，不变</td></tr>
+      <tr><td>在线音乐库（没接通时）</td><td>弹出说明</td><td>不再单列；配背景音乐页里照旧说明</td><td>—</td></tr>
+      <tr><td class="grp" colspan="4">选区操作条（4 → 5）</td></tr>
+      <tr><td>保留、删除、淡化、⋯</td><td>操作条</td><td>操作条</td><td>不变</td></tr>
+      <tr><td><b>移动</b>（新）</td><td>—（要剪切、挪播放头、展开工具单、粘贴）</td><td>操作条第 3 个；按住选区拖动；一句话“移到”</td><td>原地，一步</td></tr>
+      <tr><td class="grp" colspan="4">选区“⋯”（9）</td></tr>
+      <tr><td>复制、剪切</td><td>第 1、2 行</td><td>上排格子</td><td>之后播放头上出现“粘贴”</td></tr>
+      <tr><td>重复一遍、调这段的音量</td><td>第 3、7 行</td><td>上排格子</td><td>不变</td></tr>
+      <tr><td>边缘吸附到过零点、精确时间、只导出这一段、取消选择</td><td>第 4、6、8、9 行</td><td>下面的列表</td><td>不变</td></tr>
+      <tr><td>对齐节拍</td><td>第 5 行，跳页</td><td>下面的列表</td><td>波形下的面板</td></tr>
+      <tr><td class="grp" colspan="4">工作台上的其它按钮</td></tr>
+      <tr><td>版本标签、导出、试听速度、频谱、循环、播放、只听选区、改动列表、一句话框和它的范围切换</td><td>—</td><td>原处</td><td>不变；改动列表顺着版本往下接（第 7 节）</td></tr>
+      <tr><td><b>撤销 / 重做</b>（新按钮）</td><td>只能点改动列表的某一行</td><td>“改动”标题右边</td><td>一步</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<!-- 10 -->
+<section class="sec" id="s10">
+  <h2><span class="n">10</span>说明</h2>
+  <div class="notes">
+    <div class="card">
+      <h2>做了哪些决定</h2>
+      <ul>
+        <li><b>A 移动</b> <span class="tag brief-t">简报定的</span>按住拖动为主、“移动到…”为辅、一步撤销。<span class="tag mine">我定的</span>拖动时其余音频实时让位，看到的就是结果；吸附开头、结尾、接缝、播放头；气泡写“移动后从几秒开始”；选区跟着走；拖回原位等于没动。</li>
+        <li><b>B 平静</b> <span class="tag brief-t">简报定的</span>默认只露剪辑，处理声音一个二级入口，其余靠搜索和一句话。<span class="tag mine">我定的</span>版面不动，收的是工具单；保留“最近用过”；加撤销 / 重做按钮；粘贴、插入静音、插入音频合成“插入…”；对齐节拍只留在选区“⋯”。</li>
+        <li><b>C 原地处理</b> <span class="tag brief-t">简报定的</span>单输入工具变成波形下的面板，底层仍是新版本，撤销能回到处理前。<span class="tag mine">我定的</span>面板打开时时钟、播放三键、改动、一句话框让位；面板分收起和展开两种高度；人声分离、找副歌也用这个面板；找副歌改成“选中候选”。</li>
+        <li><b>D 创作</b> <span class="tag brief-t">简报定的</span>挪出剪辑工具单，走自己的页面。<span class="tag mine">我定的</span>工作台只留一行“用这段音频创作”，新建里加一组；在线音乐库并进配背景音乐；音频转文字放在创作单里标未接通。</li>
+        <li>没有并排给第二种方案：每处都有一个我能说清理由的选择。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>和简报不一样的地方</h2>
+      <ul>
+        <li>人声分离、找副歌不在简报的原地列表里，我也放进了面板：它们同样是“一段输入、调参数、听、决定”。</li>
+        <li>插入音频（录一段 / 音频库 / 文件）没当创作任务，归到剪辑的“插入…”：它是往这段里放东西，结果还是这段音频的下一版。</li>
+        <li>撤销 / 重做按钮简报没提，是我加的：移动和原地处理都更依赖随手撤销。</li>
+      </ul>
+      <h2 style="margin-top:14px">在现有代码里大概要动什么</h2>
+      <ul>
+        <li><b>core</b>：新增 <code>EditCommand.MoveRange</code>（效果等于剪切再 <code>insertPieces</code>，但是一步），加标签、<code>PlanRunner</code> 的位置映射和测试；<code>PhraseParser</code> 加“移到 / 挪到 / move … to”，<code>corpus.tsv</code> 补句子。</li>
+        <li><b>Waveform.kt / EditorScreen 的 WaveArea</b>：选区内长按（要和拖选、拖边、点按分开）、拿起的一段、落点框、列的让位动画（可沿用 <code>WaveCut</code> 的做法）、播放头上的粘贴气泡、预览扫线。</li>
+        <li><b>ToolsSheet.kt</b>：<code>WORKSPACE_TOOLS</code> 分成剪辑 / 处理声音 / 创作三层，搜索跨层并写出位置；新的“用这段音频创作”单；<code>CreateSheet</code> 加一组。</li>
+        <li><b>ProcessScreen.kt</b>（最大一块）：现在是一整页，读工程 → 后台流式生成整段候选写进工作文件 → 确认时 <code>createFromPcmFile</code> 存成新工程并 <code>openEditor(replace)</code>。要拆成“候选会话”（生成、取消、确认，放进一个 ViewModel）和“参数面板”（各工具的 Composable 基本能原样搬：<code>StopsSlider</code>、<code>ToolChoices</code>、<code>MoreSettings</code>、<code>EffectsPanel</code>、<code>RepairPanel</code>、<code>SilencePanel</code>）。确认后不导航，<code>EditorViewModel</code> 原地换到新工程，保留缩放、播放头、选区。</li>
+        <li><b>处理选区</b>是新能力：只渲染选区再和前后流式拼接成新源，或让工具带范围处理；左右声道只能整段。</li>
+        <li><b>跨版本的改动列表</b>：撤销历史现在是每个工程一份（<code>history.json</code>）。改成沿 <code>parentId</code> 接上父工程的历史，撤销越过起点等于切到父工程那一步，重做切回来。只动界面和 <code>EditorViewModel</code>，存储格式不用变。</li>
+        <li><b>BeatScreen、ChorusScreen</b> 改成面板：节拍页已经复用 <code>EditorViewModel</code>，改动小；副歌要把候选换算到结果时间。</li>
+        <li>新字符串两种语言都要加，跑 <code>scripts/line-breaks.py</code>。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>需要你拍板的</h2>
+      <ol>
+        <li>撤销一次处理后又在旧版本上改了，被撤销的那一版要不要自动删掉？本稿：不删，留在“版本”里。</li>
+        <li>删掉停顿：存成这一版里的几处删除（每处都能单独撤销），还是像现在存成新版本？我倾向前者，它本来就是剪。</li>
+        <li>有选区时处理范围默认用选区，可以吗？</li>
+        <li>找副歌改成“选中候选”、不再另存一版，可以吗？</li>
+        <li>长按没选中的地方，要不要直接拿起它所在的整个片段（拖动排序，替代片段顺序里的上移下移）？</li>
+        <li>粘贴气泡粘贴一次后要不要自己收起？本稿：剪贴板有东西就一直在，点 × 收起。</li>
+        <li>一句话的计划核对现在是单独一页，以后要不要也放进这个面板？本稿没动它。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<footer class="end">声剪 · 工作台重排交互稿。图标是 AppIcons.kt 里的 Material Symbols Rounded 路径（Apache 2.0）；“拖动”“播放头”两个小图标是稿里临时画的，实现时换成 Material Symbols 的 drag_indicator 等。页面不加载任何外部资源。</footer>
+
+<script src="icons.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

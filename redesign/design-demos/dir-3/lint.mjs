@@ -1,0 +1,33 @@
+// Runs design_lint.py's own page probe (COLLECT_JS, copied verbatim into lint-probe.js) through CDP,
+// because the Python playwright that design_lint.py needs is not installed here. Same thresholds as its judge().
+import { launch, sleep } from '../../tools/cdp.mjs';
+import path from 'node:path';
+import fs from 'node:fs';
+const here = path.dirname(new URL(import.meta.url).pathname);
+const probe = fs.readFileSync(path.join(here, 'lint-probe.js'), 'utf8');
+const b = await launch();
+await b.viewport(1440, 900, false, 1);
+await b.open('file://' + path.resolve(here, '../dir-3.html'));
+await sleep(1800);
+const f = await b.eval(`(${probe})()`);
+const red = [], yellow = [];
+if (b.errors.length) red.push('console errors ' + b.errors.length + ': ' + b.errors.slice(0, 2));
+if (f.broken.length) red.push('broken images ' + f.broken);
+if (f.bodySmall.length) red.push('body text under 14px ' + f.bodySmall.length + ': ' + JSON.stringify(f.bodySmall.slice(0, 4)));
+if (f.small.length >= 3) red.push('text under 12px ' + f.small.length + ': ' + JSON.stringify(f.small.slice(0, 6)));
+if (f.lowContrast.length) red.push('low contrast ' + f.lowContrast.length + ': ' + JSON.stringify(f.lowContrast.slice(0, 6)));
+const chrome = [];
+if (f.eyebrows.length >= 3) chrome.push('uppercase eyebrows ' + f.eyebrows.length + ' ' + JSON.stringify(f.eyebrows.slice(0, 3)));
+if (f.dots >= 2) chrome.push('" · " joiners ' + f.dots);
+if (f.emDashLabels) chrome.push('WORD — labels ' + f.emDashLabels);
+if (f.arrows >= 2) chrome.push('trailing → on buttons ' + f.arrows);
+if (f.monoSmall >= 4) chrome.push('small mono labels ' + f.monoSmall);
+if (chrome.length) yellow.push('template chrome: ' + chrome.join('; '));
+if (f.accentWord.length) yellow.push('one accent word in headline: ' + JSON.stringify(f.accentWord.slice(0, 2)));
+if (f.numbered.length >= 3) yellow.push('01/02/03 numbering ' + f.numbered.length);
+if (f.relImgs.length) yellow.push('relative images ' + f.relImgs.length + ' ' + f.relImgs.slice(0, 2));
+console.log('display font:', f.display, '| body:', f.body, f.bodyPx, '| card kit:', f.cardKit, '| text chars:', f.textTotal);
+console.log('RED   ', red.length ? '\n  ' + red.join('\n  ') : 'none');
+console.log('YELLOW', yellow.length ? '\n  ' + yellow.join('\n  ') : 'none');
+if (process.argv[2] === '--dots') console.log(await b.eval(`[...document.querySelectorAll('body *')].filter(e => [...e.childNodes].some(n => n.nodeType === 3 && /\\s·\\s/.test(n.textContent))).map(e => e.textContent.trim().slice(0, 40)).join('\\n')`));
+await b.close();

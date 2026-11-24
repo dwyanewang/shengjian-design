@@ -1,0 +1,23 @@
+PASS p1 opens the plan
+PASS striking a step updates the button
+PASS apply lands in the editor with the trail
+PASS whole plan undone in one step
+PASS stepper changes the cut
+PASS ringtone purpose shows the 30 s window
+PASS ringtone set
+PASS gate sheet for the online voice
+PASS member page from the voice
+PASS sign-in comes first
+PASS member after the Play sheet
+PASS AI rewrite shown with the guessed number
+PASS tools sheet opens 降噪
+PASS saved as a new version
+PASS record screen
+PASS recording runs
+PASS dark theme applied
+PASS coverage D2 drives phone 5
+PASS board scrolled to phone 5  top=87
+PASS coverage G8 drives phone 4
+PASS drag selects a range
+PASS cut is undoable
+PASS no page errors
